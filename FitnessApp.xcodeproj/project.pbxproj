@@ -9,21 +9,65 @@
 /* Begin PBXBuildFile section */
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
-		9D6616752A406D3C00B43125 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616742A406D3C00B43125 /* ViewController.swift */; };
-		9D6616782A406D3C00B43125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616762A406D3C00B43125 /* Main.storyboard */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
 		9D66167D2A406D4000B43125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D66167B2A406D4000B43125 /* LaunchScreen.storyboard */; };
+		9D6616862A44417000B43125 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616852A44417000B43125 /* Coordinator.swift */; };
+		9D6616882A44420800B43125 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616872A44420800B43125 /* AppCoordinator.swift */; };
+		9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66168B2A4444E500B43125 /* UserDefaultsEnum.swift */; };
+		9D6616942A4447B400B43125 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616932A4447B400B43125 /* LoginVC.swift */; };
+		9D6616962A4447BF00B43125 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616952A4447BF00B43125 /* LoginVM.swift */; };
+		9D6616982A4447D300B43125 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616972A4447D300B43125 /* LoginCoordinator.swift */; };
+		9D66169A2A4447E100B43125 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616992A4447E100B43125 /* LoginAssembler.swift */; };
+		9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66169B2A44481B00B43125 /* LoginVMProtocol.swift */; };
+		9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66169D2A4449B400B43125 /* LoginCoordinatorProtocol.swift */; };
+		9D6616A02A444B5800B43125 /* LoginRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66169F2A444B5800B43125 /* LoginRootCoordinatorProtocol.swift */; };
+		9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616A22A444F1500B43125 /* RegisterVMProtocol.swift */; };
+		9D6616A52A444F2800B43125 /* RegisterCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616A42A444F2800B43125 /* RegisterCoordinatorProtocol.swift */; };
+		9D6616A72A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616A62A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift */; };
+		9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616A82A444FF100B43125 /* RegisterVC.swift */; };
+		9D6616AB2A444FFB00B43125 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616AA2A444FFB00B43125 /* RegisterVM.swift */; };
+		9D6616AD2A44500C00B43125 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616AC2A44500B00B43125 /* RegisterCoordinator.swift */; };
+		9D6616AF2A44503500B43125 /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616AE2A44503500B43125 /* RegisterAssembler.swift */; };
+		9D6616B22A44778A00B43125 /* ForgotPasswordVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616B12A44778A00B43125 /* ForgotPasswordVMProtocol.swift */; };
+		9D6616B42A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616B32A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift */; };
+		9D6616B62A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616B52A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift */; };
+		9D6616B82A44786B00B43125 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616B72A44786B00B43125 /* ForgotPasswordVC.swift */; };
+		9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616B92A44794300B43125 /* ForgotPasswordVM.swift */; };
+		9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616BB2A447B1100B43125 /* ForgotPasswordCoordinator.swift */; };
+		9D6616BE2A447B2400B43125 /* ForgotPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616BD2A447B2400B43125 /* ForgotPasswordAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D6616742A406D3C00B43125 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9D6616772A406D3C00B43125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D6616792A406D4000B43125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D66167C2A406D4000B43125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D66167E2A406D4000B43125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D6616852A44417000B43125 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9D6616872A44420800B43125 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9D66168B2A4444E500B43125 /* UserDefaultsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsEnum.swift; sourceTree = "<group>"; };
+		9D6616932A4447B400B43125 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9D6616952A4447BF00B43125 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		9D6616972A4447D300B43125 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		9D6616992A4447E100B43125 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		9D66169B2A44481B00B43125 /* LoginVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMProtocol.swift; sourceTree = "<group>"; };
+		9D66169D2A4449B400B43125 /* LoginCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D66169F2A444B5800B43125 /* LoginRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616A22A444F1500B43125 /* RegisterVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVMProtocol.swift; sourceTree = "<group>"; };
+		9D6616A42A444F2800B43125 /* RegisterCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616A62A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616A82A444FF100B43125 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		9D6616AA2A444FFB00B43125 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		9D6616AC2A44500B00B43125 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		9D6616AE2A44503500B43125 /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
+		9D6616B12A44778A00B43125 /* ForgotPasswordVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVMProtocol.swift; sourceTree = "<group>"; };
+		9D6616B32A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616B52A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616B72A44786B00B43125 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		9D6616B92A44794300B43125 /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
+		9D6616BB2A447B1100B43125 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
+		9D6616BD2A447B2400B43125 /* ForgotPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +84,7 @@
 		9D6616642A406D3C00B43125 = {
 			isa = PBXGroup;
 			children = (
+				9D66168A2A4444CC00B43125 /* GlobalEnums */,
 				9D66166F2A406D3C00B43125 /* FitnessApp */,
 				9D66166E2A406D3C00B43125 /* Products */,
 			);
@@ -56,15 +101,116 @@
 		9D66166F2A406D3C00B43125 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
-				9D6616702A406D3C00B43125 /* AppDelegate.swift */,
-				9D6616722A406D3C00B43125 /* SceneDelegate.swift */,
-				9D6616742A406D3C00B43125 /* ViewController.swift */,
-				9D6616762A406D3C00B43125 /* Main.storyboard */,
+				9D6616852A44417000B43125 /* Coordinator.swift */,
+				9D6616892A44433F00B43125 /* App */,
+				9D66168D2A44474800B43125 /* Modules */,
 				9D6616792A406D4000B43125 /* Assets.xcassets */,
 				9D66167B2A406D4000B43125 /* LaunchScreen.storyboard */,
 				9D66167E2A406D4000B43125 /* Info.plist */,
 			);
 			path = FitnessApp;
+			sourceTree = "<group>";
+		};
+		9D6616892A44433F00B43125 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616702A406D3C00B43125 /* AppDelegate.swift */,
+				9D6616722A406D3C00B43125 /* SceneDelegate.swift */,
+				9D6616872A44420800B43125 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9D66168A2A4444CC00B43125 /* GlobalEnums */ = {
+			isa = PBXGroup;
+			children = (
+				9D66168B2A4444E500B43125 /* UserDefaultsEnum.swift */,
+			);
+			path = GlobalEnums;
+			sourceTree = "<group>";
+		};
+		9D66168D2A44474800B43125 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9D66168E2A44475500B43125 /* Authentification */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9D66168E2A44475500B43125 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616912A44477500B43125 /* ForgotPasswordPage */,
+				9D6616902A44476A00B43125 /* RegisterPage */,
+				9D66168F2A44476300B43125 /* LoginPage */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		9D66168F2A44476300B43125 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616922A4447A200B43125 /* Protocols */,
+				9D6616932A4447B400B43125 /* LoginVC.swift */,
+				9D6616952A4447BF00B43125 /* LoginVM.swift */,
+				9D6616972A4447D300B43125 /* LoginCoordinator.swift */,
+				9D6616992A4447E100B43125 /* LoginAssembler.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		9D6616902A44476A00B43125 /* RegisterPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616A12A444EFA00B43125 /* Protocols */,
+				9D6616A82A444FF100B43125 /* RegisterVC.swift */,
+				9D6616AA2A444FFB00B43125 /* RegisterVM.swift */,
+				9D6616AC2A44500B00B43125 /* RegisterCoordinator.swift */,
+				9D6616AE2A44503500B43125 /* RegisterAssembler.swift */,
+			);
+			path = RegisterPage;
+			sourceTree = "<group>";
+		};
+		9D6616912A44477500B43125 /* ForgotPasswordPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616B02A44775000B43125 /* Protocols */,
+				9D6616B72A44786B00B43125 /* ForgotPasswordVC.swift */,
+				9D6616B92A44794300B43125 /* ForgotPasswordVM.swift */,
+				9D6616BB2A447B1100B43125 /* ForgotPasswordCoordinator.swift */,
+				9D6616BD2A447B2400B43125 /* ForgotPasswordAssembler.swift */,
+			);
+			path = ForgotPasswordPage;
+			sourceTree = "<group>";
+		};
+		9D6616922A4447A200B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D66169B2A44481B00B43125 /* LoginVMProtocol.swift */,
+				9D66169D2A4449B400B43125 /* LoginCoordinatorProtocol.swift */,
+				9D66169F2A444B5800B43125 /* LoginRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D6616A12A444EFA00B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616A22A444F1500B43125 /* RegisterVMProtocol.swift */,
+				9D6616A42A444F2800B43125 /* RegisterCoordinatorProtocol.swift */,
+				9D6616A62A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D6616B02A44775000B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616B12A44778A00B43125 /* ForgotPasswordVMProtocol.swift */,
+				9D6616B32A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift */,
+				9D6616B52A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +273,6 @@
 			files = (
 				9D66167D2A406D4000B43125 /* LaunchScreen.storyboard in Resources */,
 				9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */,
-				9D6616782A406D3C00B43125 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +283,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D6616752A406D3C00B43125 /* ViewController.swift in Sources */,
+				9D6616A72A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift in Sources */,
+				9D6616A02A444B5800B43125 /* LoginRootCoordinatorProtocol.swift in Sources */,
+				9D6616B22A44778A00B43125 /* ForgotPasswordVMProtocol.swift in Sources */,
+				9D6616962A4447BF00B43125 /* LoginVM.swift in Sources */,
+				9D6616882A44420800B43125 /* AppCoordinator.swift in Sources */,
+				9D6616B42A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift in Sources */,
+				9D6616B82A44786B00B43125 /* ForgotPasswordVC.swift in Sources */,
+				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
+				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
+				9D6616942A4447B400B43125 /* LoginVC.swift in Sources */,
+				9D6616A52A444F2800B43125 /* RegisterCoordinatorProtocol.swift in Sources */,
+				9D6616BE2A447B2400B43125 /* ForgotPasswordAssembler.swift in Sources */,
+				9D6616B62A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift in Sources */,
+				9D6616AF2A44503500B43125 /* RegisterAssembler.swift in Sources */,
 				9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */,
+				9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */,
+				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
+				9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */,
+				9D6616AD2A44500C00B43125 /* RegisterCoordinator.swift in Sources */,
+				9D66169A2A4447E100B43125 /* LoginAssembler.swift in Sources */,
+				9D6616862A44417000B43125 /* Coordinator.swift in Sources */,
+				9D6616982A4447D300B43125 /* LoginCoordinator.swift in Sources */,
+				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
+				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,
+				9D6616AB2A444FFB00B43125 /* RegisterVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9D6616762A406D3C00B43125 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9D6616772A406D3C00B43125 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9D66167B2A406D4000B43125 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +454,6 @@
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +481,6 @@
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
