@@ -40,6 +40,34 @@
 		9D6616C72A45836400B43125 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616C62A45836400B43125 /* TabBarController.swift */; };
 		9D6616C92A45837500B43125 /* TabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616C82A45837500B43125 /* TabBarAssembler.swift */; };
 		9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616CA2A45838D00B43125 /* TabBarCoordinator.swift */; };
+		9D6616CF2A458BB600B43125 /* TrainingVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616CE2A458BB600B43125 /* TrainingVMProtocol.swift */; };
+		9D6616D12A458BC900B43125 /* TrainingCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616D02A458BC900B43125 /* TrainingCoordinatorProtocol.swift */; };
+		9D6616D32A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616D22A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift */; };
+		9D6616D52A458C7F00B43125 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616D42A458C7F00B43125 /* TrainingVC.swift */; };
+		9D6616D72A458E1A00B43125 /* TrainingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616D62A458E1A00B43125 /* TrainingVM.swift */; };
+		9D6616D92A458E9100B43125 /* TrainingCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616D82A458E9100B43125 /* TrainingCoordiantor.swift */; };
+		9D6616DB2A458F2900B43125 /* TrainingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616DA2A458F2900B43125 /* TrainingAssembler.swift */; };
+		9D6616DF2A45B55800B43125 /* HistoryVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616DE2A45B55800B43125 /* HistoryVMProtocol.swift */; };
+		9D6616E12A45B56600B43125 /* HistoryCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616E02A45B56600B43125 /* HistoryCoordinatorProtocol.swift */; };
+		9D6616E32A45B57600B43125 /* HistoryRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616E22A45B57600B43125 /* HistoryRootCoordinatorProtocol.swift */; };
+		9D6616E52A45B5E300B43125 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616E42A45B5E300B43125 /* HistoryVC.swift */; };
+		9D6616E72A45B70D00B43125 /* HistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616E62A45B70D00B43125 /* HistoryVM.swift */; };
+		9D6616E92A45B75D00B43125 /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616E82A45B75D00B43125 /* HistoryCoordinator.swift */; };
+		9D6616EB2A45B79000B43125 /* HistoryAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616EA2A45B79000B43125 /* HistoryAssembler.swift */; };
+		9D6616F12A45B9A700B43125 /* ProfileVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616F02A45B9A700B43125 /* ProfileVMProtocol.swift */; };
+		9D6616F32A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616F22A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift */; };
+		9D6616F52A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616F42A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift */; };
+		9D6616F72A45BA0800B43125 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616F62A45BA0700B43125 /* ProfileVC.swift */; };
+		9D6616F92A45BA8800B43125 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616F82A45BA8800B43125 /* ProfileVM.swift */; };
+		9D6616FB2A45BAB700B43125 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616FA2A45BAB700B43125 /* ProfileCoordinator.swift */; };
+		9D6616FD2A45BAFD00B43125 /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616FC2A45BAFD00B43125 /* ProfileAssembler.swift */; };
+		9D6617012A45BC6A00B43125 /* MotivationVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6617002A45BC6A00B43125 /* MotivationVMProtocol.swift */; };
+		9D6617032A45BC8A00B43125 /* MotivationCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6617022A45BC8A00B43125 /* MotivationCoordinatorProtocol.swift */; };
+		9D6617052A45BCB200B43125 /* MotivationRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6617042A45BCB200B43125 /* MotivationRootCoordinatorProtocol.swift */; };
+		9D6617072A45BCDD00B43125 /* MotivationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6617062A45BCDD00B43125 /* MotivationVC.swift */; };
+		9D6617092A45BD7700B43125 /* MotivationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6617082A45BD7700B43125 /* MotivationVM.swift */; };
+		9D66170B2A45BDAA00B43125 /* MotivationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66170A2A45BDAA00B43125 /* MotivationCoordinator.swift */; };
+		9D66170D2A45BDF100B43125 /* MotivationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66170C2A45BDF100B43125 /* MotivationAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +106,34 @@
 		9D6616C62A45836400B43125 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9D6616C82A45837500B43125 /* TabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembler.swift; sourceTree = "<group>"; };
 		9D6616CA2A45838D00B43125 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		9D6616CE2A458BB600B43125 /* TrainingVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVMProtocol.swift; sourceTree = "<group>"; };
+		9D6616D02A458BC900B43125 /* TrainingCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616D22A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616D42A458C7F00B43125 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
+		9D6616D62A458E1A00B43125 /* TrainingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVM.swift; sourceTree = "<group>"; };
+		9D6616D82A458E9100B43125 /* TrainingCoordiantor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCoordiantor.swift; sourceTree = "<group>"; };
+		9D6616DA2A458F2900B43125 /* TrainingAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingAssembler.swift; sourceTree = "<group>"; };
+		9D6616DE2A45B55800B43125 /* HistoryVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVMProtocol.swift; sourceTree = "<group>"; };
+		9D6616E02A45B56600B43125 /* HistoryCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616E22A45B57600B43125 /* HistoryRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616E42A45B5E300B43125 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		9D6616E62A45B70D00B43125 /* HistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVM.swift; sourceTree = "<group>"; };
+		9D6616E82A45B75D00B43125 /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
+		9D6616EA2A45B79000B43125 /* HistoryAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAssembler.swift; sourceTree = "<group>"; };
+		9D6616F02A45B9A700B43125 /* ProfileVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVMProtocol.swift; sourceTree = "<group>"; };
+		9D6616F22A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616F42A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616F62A45BA0700B43125 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		9D6616F82A45BA8800B43125 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		9D6616FA2A45BAB700B43125 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		9D6616FC2A45BAFD00B43125 /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
+		9D6617002A45BC6A00B43125 /* MotivationVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationVMProtocol.swift; sourceTree = "<group>"; };
+		9D6617022A45BC8A00B43125 /* MotivationCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6617042A45BCB200B43125 /* MotivationRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6617062A45BCDD00B43125 /* MotivationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationVC.swift; sourceTree = "<group>"; };
+		9D6617082A45BD7700B43125 /* MotivationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationVM.swift; sourceTree = "<group>"; };
+		9D66170A2A45BDAA00B43125 /* MotivationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationCoordinator.swift; sourceTree = "<group>"; };
+		9D66170C2A45BDF100B43125 /* MotivationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +283,10 @@
 		9D6616BF2A45830C00B43125 /* MainApp */ = {
 			isa = PBXGroup;
 			children = (
+				9D6616FE2A45BC2200B43125 /* MotivationPage */,
+				9D6616EE2A45B8B500B43125 /* ProfilePage */,
+				9D6616DC2A45B53300B43125 /* HistoryPage */,
+				9D6616CC2A458B8900B43125 /* TrainingPage */,
 				9D6616C02A45831700B43125 /* TabBarController */,
 			);
 			path = MainApp;
@@ -248,6 +308,94 @@
 			children = (
 				9D6616C22A45833D00B43125 /* TabBarCoordinatorProtocol.swift */,
 				9D6616C42A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D6616CC2A458B8900B43125 /* TrainingPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616CD2A458B9F00B43125 /* Protocols */,
+				9D6616D42A458C7F00B43125 /* TrainingVC.swift */,
+				9D6616D62A458E1A00B43125 /* TrainingVM.swift */,
+				9D6616D82A458E9100B43125 /* TrainingCoordiantor.swift */,
+				9D6616DA2A458F2900B43125 /* TrainingAssembler.swift */,
+			);
+			path = TrainingPage;
+			sourceTree = "<group>";
+		};
+		9D6616CD2A458B9F00B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616CE2A458BB600B43125 /* TrainingVMProtocol.swift */,
+				9D6616D02A458BC900B43125 /* TrainingCoordinatorProtocol.swift */,
+				9D6616D22A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D6616DC2A45B53300B43125 /* HistoryPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616DD2A45B54200B43125 /* Protocols */,
+				9D6616E42A45B5E300B43125 /* HistoryVC.swift */,
+				9D6616E62A45B70D00B43125 /* HistoryVM.swift */,
+				9D6616E82A45B75D00B43125 /* HistoryCoordinator.swift */,
+				9D6616EA2A45B79000B43125 /* HistoryAssembler.swift */,
+			);
+			path = HistoryPage;
+			sourceTree = "<group>";
+		};
+		9D6616DD2A45B54200B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616DE2A45B55800B43125 /* HistoryVMProtocol.swift */,
+				9D6616E02A45B56600B43125 /* HistoryCoordinatorProtocol.swift */,
+				9D6616E22A45B57600B43125 /* HistoryRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D6616EE2A45B8B500B43125 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616EF2A45B99200B43125 /* Protocols */,
+				9D6616F62A45BA0700B43125 /* ProfileVC.swift */,
+				9D6616F82A45BA8800B43125 /* ProfileVM.swift */,
+				9D6616FA2A45BAB700B43125 /* ProfileCoordinator.swift */,
+				9D6616FC2A45BAFD00B43125 /* ProfileAssembler.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		9D6616EF2A45B99200B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616F02A45B9A700B43125 /* ProfileVMProtocol.swift */,
+				9D6616F22A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift */,
+				9D6616F42A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D6616FE2A45BC2200B43125 /* MotivationPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616FF2A45BC5600B43125 /* Protocols */,
+				9D6617062A45BCDD00B43125 /* MotivationVC.swift */,
+				9D6617082A45BD7700B43125 /* MotivationVM.swift */,
+				9D66170A2A45BDAA00B43125 /* MotivationCoordinator.swift */,
+				9D66170C2A45BDF100B43125 /* MotivationAssembler.swift */,
+			);
+			path = MotivationPage;
+			sourceTree = "<group>";
+		};
+		9D6616FF2A45BC5600B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6617002A45BC6A00B43125 /* MotivationVMProtocol.swift */,
+				9D6617022A45BC8A00B43125 /* MotivationCoordinatorProtocol.swift */,
+				9D6617042A45BCB200B43125 /* MotivationRootCoordinatorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -323,36 +471,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D6616A72A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift in Sources */,
+				9D6616F32A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift in Sources */,
+				9D6617032A45BC8A00B43125 /* MotivationCoordinatorProtocol.swift in Sources */,
+				9D6616EB2A45B79000B43125 /* HistoryAssembler.swift in Sources */,
 				9D6616A02A444B5800B43125 /* LoginRootCoordinatorProtocol.swift in Sources */,
+				9D6616FB2A45BAB700B43125 /* ProfileCoordinator.swift in Sources */,
 				9D6616B22A44778A00B43125 /* ForgotPasswordVMProtocol.swift in Sources */,
+				9D6616CF2A458BB600B43125 /* TrainingVMProtocol.swift in Sources */,
 				9D6616962A4447BF00B43125 /* LoginVM.swift in Sources */,
 				9D6616C92A45837500B43125 /* TabBarAssembler.swift in Sources */,
 				9D6616882A44420800B43125 /* AppCoordinator.swift in Sources */,
+				9D6616F72A45BA0800B43125 /* ProfileVC.swift in Sources */,
+				9D6616F92A45BA8800B43125 /* ProfileVM.swift in Sources */,
+				9D6616E52A45B5E300B43125 /* HistoryVC.swift in Sources */,
+				9D6616D52A458C7F00B43125 /* TrainingVC.swift in Sources */,
+				9D6616F12A45B9A700B43125 /* ProfileVMProtocol.swift in Sources */,
 				9D6616B42A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift in Sources */,
 				9D6616B82A44786B00B43125 /* ForgotPasswordVC.swift in Sources */,
+				9D6616E72A45B70D00B43125 /* HistoryVM.swift in Sources */,
 				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
 				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
 				9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */,
+				9D6616E12A45B56600B43125 /* HistoryCoordinatorProtocol.swift in Sources */,
 				9D6616942A4447B400B43125 /* LoginVC.swift in Sources */,
 				9D6616A52A444F2800B43125 /* RegisterCoordinatorProtocol.swift in Sources */,
 				9D6616BE2A447B2400B43125 /* ForgotPasswordAssembler.swift in Sources */,
+				9D66170D2A45BDF100B43125 /* MotivationAssembler.swift in Sources */,
+				9D6617092A45BD7700B43125 /* MotivationVM.swift in Sources */,
+				9D6616D92A458E9100B43125 /* TrainingCoordiantor.swift in Sources */,
+				9D6616E92A45B75D00B43125 /* HistoryCoordinator.swift in Sources */,
 				9D6616B62A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift in Sources */,
 				9D6616AF2A44503500B43125 /* RegisterAssembler.swift in Sources */,
 				9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */,
+				9D6617072A45BCDD00B43125 /* MotivationVC.swift in Sources */,
 				9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */,
 				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
 				9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */,
+				9D6616DF2A45B55800B43125 /* HistoryVMProtocol.swift in Sources */,
 				9D6616AD2A44500C00B43125 /* RegisterCoordinator.swift in Sources */,
 				9D66169A2A4447E100B43125 /* LoginAssembler.swift in Sources */,
+				9D6616DB2A458F2900B43125 /* TrainingAssembler.swift in Sources */,
+				9D6617052A45BCB200B43125 /* MotivationRootCoordinatorProtocol.swift in Sources */,
 				9D6616862A44417000B43125 /* Coordinator.swift in Sources */,
+				9D6617012A45BC6A00B43125 /* MotivationVMProtocol.swift in Sources */,
+				9D6616D72A458E1A00B43125 /* TrainingVM.swift in Sources */,
+				9D6616FD2A45BAFD00B43125 /* ProfileAssembler.swift in Sources */,
 				9D6616C32A45833D00B43125 /* TabBarCoordinatorProtocol.swift in Sources */,
 				9D6616C72A45836400B43125 /* TabBarController.swift in Sources */,
 				9D6616982A4447D300B43125 /* LoginCoordinator.swift in Sources */,
 				9D6616C52A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift in Sources */,
+				9D6616D12A458BC900B43125 /* TrainingCoordinatorProtocol.swift in Sources */,
+				9D6616F52A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift in Sources */,
+				9D66170B2A45BDAA00B43125 /* MotivationCoordinator.swift in Sources */,
 				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
 				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,
+				9D6616E32A45B57600B43125 /* HistoryRootCoordinatorProtocol.swift in Sources */,
 				9D6616AB2A444FFB00B43125 /* RegisterVM.swift in Sources */,
+				9D6616D32A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
