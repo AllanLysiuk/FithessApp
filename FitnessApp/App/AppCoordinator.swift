@@ -18,7 +18,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-       let isRegistered = false
+       let isRegistered = true
        // let isRegistered = UserDefaults.standard.bool(forKey: UserDefaultsEnum.isRegistered.rawValue)
         
         if !isRegistered {
@@ -46,7 +46,20 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openMainScene() {
-      
+        let mainWindow = UIWindow(windowScene: windowScene)
+        let nc = UINavigationController()
+        mainWindow.rootViewController = nc
+        mainWindow.makeKeyAndVisible()
+        
+        let tabBarCoordinator = TabBarCoordinator(
+            rootNavigationController: nc,
+            rootCoordinator: self
+        )
+        childCoordinators.append(tabBarCoordinator)
+        tabBarCoordinator.start()
+        
+        
+        window = mainWindow
     }
     
 }
@@ -61,3 +74,11 @@ extension AppCoordinator: LoginRootCoordinatorProtocol {
     }
 }
 
+extension AppCoordinator: TabBarRootCoordinatorProtocol {
+    func mainSceneFinished(_ coordinator: Coordinator) {
+        childCoordinators.removeAll { tmp in
+            tmp === coordinator
+        }
+        start()
+    }
+}

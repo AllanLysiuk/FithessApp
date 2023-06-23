@@ -35,6 +35,11 @@
 		9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616B92A44794300B43125 /* ForgotPasswordVM.swift */; };
 		9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616BB2A447B1100B43125 /* ForgotPasswordCoordinator.swift */; };
 		9D6616BE2A447B2400B43125 /* ForgotPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616BD2A447B2400B43125 /* ForgotPasswordAssembler.swift */; };
+		9D6616C32A45833D00B43125 /* TabBarCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616C22A45833D00B43125 /* TabBarCoordinatorProtocol.swift */; };
+		9D6616C52A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616C42A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift */; };
+		9D6616C72A45836400B43125 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616C62A45836400B43125 /* TabBarController.swift */; };
+		9D6616C92A45837500B43125 /* TabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616C82A45837500B43125 /* TabBarAssembler.swift */; };
+		9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616CA2A45838D00B43125 /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +73,11 @@
 		9D6616B92A44794300B43125 /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
 		9D6616BB2A447B1100B43125 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
 		9D6616BD2A447B2400B43125 /* ForgotPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAssembler.swift; sourceTree = "<group>"; };
+		9D6616C22A45833D00B43125 /* TabBarCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616C42A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		9D6616C62A45836400B43125 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9D6616C82A45837500B43125 /* TabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembler.swift; sourceTree = "<group>"; };
+		9D6616CA2A45838D00B43125 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +142,7 @@
 		9D66168D2A44474800B43125 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9D6616BF2A45830C00B43125 /* MainApp */,
 				9D66168E2A44475500B43125 /* Authentification */,
 			);
 			path = Modules;
@@ -213,6 +224,34 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		9D6616BF2A45830C00B43125 /* MainApp */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616C02A45831700B43125 /* TabBarController */,
+			);
+			path = MainApp;
+			sourceTree = "<group>";
+		};
+		9D6616C02A45831700B43125 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616C12A45832B00B43125 /* Protocols */,
+				9D6616C62A45836400B43125 /* TabBarController.swift */,
+				9D6616C82A45837500B43125 /* TabBarAssembler.swift */,
+				9D6616CA2A45838D00B43125 /* TabBarCoordinator.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		9D6616C12A45832B00B43125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D6616C22A45833D00B43125 /* TabBarCoordinatorProtocol.swift */,
+				9D6616C42A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,12 +326,14 @@
 				9D6616A02A444B5800B43125 /* LoginRootCoordinatorProtocol.swift in Sources */,
 				9D6616B22A44778A00B43125 /* ForgotPasswordVMProtocol.swift in Sources */,
 				9D6616962A4447BF00B43125 /* LoginVM.swift in Sources */,
+				9D6616C92A45837500B43125 /* TabBarAssembler.swift in Sources */,
 				9D6616882A44420800B43125 /* AppCoordinator.swift in Sources */,
 				9D6616B42A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift in Sources */,
 				9D6616B82A44786B00B43125 /* ForgotPasswordVC.swift in Sources */,
 				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
 				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
+				9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */,
 				9D6616942A4447B400B43125 /* LoginVC.swift in Sources */,
 				9D6616A52A444F2800B43125 /* RegisterCoordinatorProtocol.swift in Sources */,
 				9D6616BE2A447B2400B43125 /* ForgotPasswordAssembler.swift in Sources */,
@@ -305,7 +346,10 @@
 				9D6616AD2A44500C00B43125 /* RegisterCoordinator.swift in Sources */,
 				9D66169A2A4447E100B43125 /* LoginAssembler.swift in Sources */,
 				9D6616862A44417000B43125 /* Coordinator.swift in Sources */,
+				9D6616C32A45833D00B43125 /* TabBarCoordinatorProtocol.swift in Sources */,
+				9D6616C72A45836400B43125 /* TabBarController.swift in Sources */,
 				9D6616982A4447D300B43125 /* LoginCoordinator.swift in Sources */,
+				9D6616C52A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift in Sources */,
 				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
 				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,
 				9D6616AB2A444FFB00B43125 /* RegisterVM.swift in Sources */,
