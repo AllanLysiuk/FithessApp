@@ -11,19 +11,21 @@ import UIKit
 final class LoginCoordinator: Coordinator {
     private var rootCoordinator: LoginRootCoordinatorProtocol
     private var rootNavigationController: UINavigationController
-    
+    private var container: Container
     var childCoordinators: [Coordinator] = []
     
     init(
         rootNavigationController: UINavigationController,
-        rootCoordinator: LoginRootCoordinatorProtocol
+        rootCoordinator: LoginRootCoordinatorProtocol,
+        container: Container
     ) {
             self.rootNavigationController = rootNavigationController
             self.rootCoordinator = rootCoordinator
+            self.container = container
         }
     
     func start() {
-        let vc = LoginAssembler.makeVC(coordinator: self)
+        let vc = LoginAssembler.makeVC(container: container, coordinator: self)
         rootNavigationController.pushViewController(vc, animated: false)
     }
     

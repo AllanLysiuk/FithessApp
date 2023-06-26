@@ -11,12 +11,16 @@ import UIKit
 final class LoginAssembler {
     private init() { }
     
-    static func makeVC(coordinator: LoginCoordinatorProtocol) -> UIViewController {
-        let vm = makeVM(coordinator: coordinator)
+    static func makeVC(container: Container, coordinator: LoginCoordinatorProtocol) -> UIViewController {
+        let vm = makeVM(container: container, coordinator: coordinator)
         return LoginVC(viewModel: vm)
     }
     
-    private static func makeVM(coordinator: LoginCoordinatorProtocol) -> LoginVMProtocol {
-        return LoginVM(coordinator: coordinator)
+    private static func makeVM(container: Container, coordinator: LoginCoordinatorProtocol) -> LoginVMProtocol {
+        return LoginVM(coordinator: coordinator, authService: makeAuthService(container: container))
+    }
+    
+    private static func makeAuthService(container: Container) -> AuthServiceProtocol {
+        return container.resolve()
     }
 }
