@@ -11,12 +11,16 @@ import UIKit
 final class ForgotPasswordAssembler {
     private init() { }
     
-    static func makeVC(coordinator: ForgotPasswordCoordinatorProtocol) -> UIViewController {
-        let vm = makeVM(coordinator: coordinator)
+    static func makeVC(coordinator: ForgotPasswordCoordinatorProtocol, container: Container) -> UIViewController {
+        let vm = makeVM(coordinator: coordinator, container: container)
         return ForgotPasswordVC(viewModel: vm)
     }
     
-    private static func makeVM(coordinator: ForgotPasswordCoordinatorProtocol) -> ForgotPasswordVMProtocol {
-        return ForgotPasswordVM(coordinator: coordinator)
+    private static func makeVM(coordinator: ForgotPasswordCoordinatorProtocol, container: Container) -> ForgotPasswordVMProtocol {
+        return ForgotPasswordVM(coordinator: coordinator, authService: makeAuthService(container: container))
+    }
+    
+    private static func makeAuthService(container: Container) -> AuthServiceProtocol {
+        return container.resolve()
     }
 }

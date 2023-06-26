@@ -11,15 +11,21 @@ import UIKit
 final class ForgotPasswordCoordinator: Coordinator {
     private var navigationController: UINavigationController
     private var rootCoordinator: ForgotPasswordRootCoordinatorProtocol
+    private var container: Container
     var childCoordinators: [Coordinator] = []
     
-    init(navigationController: UINavigationController, rootCoordinator: ForgotPasswordRootCoordinatorProtocol) {
+    init(
+        navigationController: UINavigationController,
+        rootCoordinator: ForgotPasswordRootCoordinatorProtocol,
+        container: Container
+    ) {
         self.navigationController = navigationController
         self.rootCoordinator = rootCoordinator
+        self.container = container
     }
     
     func start() {
-        let vc = ForgotPasswordAssembler.makeVC(coordinator: self)
+        let vc = ForgotPasswordAssembler.makeVC(coordinator: self, container: container)
         navigationController.pushViewController(vc, animated: true)
     }
     

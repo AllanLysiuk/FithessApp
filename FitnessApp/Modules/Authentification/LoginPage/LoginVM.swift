@@ -17,9 +17,14 @@ final class LoginVM: LoginVMProtocol {
         self.authService = authService
     }
     
-    func login(email: String, password: String) {
-        authService.login(email: email, password: password) { error in
+    func login(email: String?, password: String?) {
+        if let email = email, let password = password, (email != "" && password != "") {
+            authService.login(email: email, password: password) { error in
             
+            }
+        } else {
+           //alert
+            return
         }
     }
     

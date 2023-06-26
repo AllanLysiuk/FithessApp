@@ -9,5 +9,5 @@ import Foundation
 
 protocol ForgotPasswordVMProtocol {
     func finish(shouldMoveToParent: Bool)
-    func forgotPassword()
+    func forgotPassword(email: String?)
 }

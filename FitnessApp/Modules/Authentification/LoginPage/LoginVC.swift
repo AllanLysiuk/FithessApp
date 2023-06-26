@@ -68,16 +68,11 @@ extension LoginVC {
        
     @objc private func securePasswordButtonDidTap(_ sender: UIButton) {
         passwordTextField.togglePasswordVisibility()
-        if !passwordTextField.isSecureTextEntry {
-                   sender.setImage(UIImage(systemName: "eye"), for: .normal)
-               } else {
-                   sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-               }
+        sender.secureButtonToggle(isSecure: passwordTextField.isSecureTextEntry)
     }
     
     @objc private func login() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        viewModel.login(email: email, password: password)
+        viewModel.login(email: emailTextField.text, password: passwordTextField.text)
     }
     
     @objc private func openRegisterPage() {

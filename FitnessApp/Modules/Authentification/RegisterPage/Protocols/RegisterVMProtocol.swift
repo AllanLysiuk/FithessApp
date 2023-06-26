@@ -8,6 +8,6 @@
 import Foundation
 
 protocol RegisterVMProtocol {
-    func register()
-    func finish(shouldMovetoParentVC: Bool)
+    func register(email: String?, password: String?, checkPassword: String?)
+    func finish(shouldMoveToParent: Bool)
 }

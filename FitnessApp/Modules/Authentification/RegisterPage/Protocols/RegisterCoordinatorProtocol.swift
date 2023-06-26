@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RegisterCoordinatorProtocol: AnyObject {
-    func finish(shouldMovetoParentVC: Bool)
+    func finish(shouldMoveToParent: Bool)
 }

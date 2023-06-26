@@ -79,6 +79,7 @@
 		9D75E2862A48CE4100628060 /* ForgotPasswordAuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2852A48CE4100628060 /* ForgotPasswordAuthServiceProtocol.swift */; };
 		9D75E2882A48CE7200628060 /* RegisterAuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2872A48CE7200628060 /* RegisterAuthServiceProtocol.swift */; };
 		9D75E28A2A49898600628060 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2892A49898600628060 /* UITextField+Extension.swift */; };
+		9D75E28C2A499C5300628060 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E28B2A499C5300628060 /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		9D75E2852A48CE4100628060 /* ForgotPasswordAuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAuthServiceProtocol.swift; sourceTree = "<group>"; };
 		9D75E2872A48CE7200628060 /* RegisterAuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAuthServiceProtocol.swift; sourceTree = "<group>"; };
 		9D75E2892A49898600628060 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		9D75E28B2A499C5300628060 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +463,7 @@
 				9D75E2812A48C33500628060 /* UILabel+Extension.swift */,
 				9D75E2832A48C38B00628060 /* UIFont+Extension.swift */,
 				9D75E2892A49898600628060 /* UITextField+Extension.swift */,
+				9D75E28B2A499C5300628060 /* UIButton+Extension.swift */,
 			);
 			path = GlobalExtensions;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				9D6617072A45BCDD00B43125 /* MotivationVC.swift in Sources */,
 				9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */,
 				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
+				9D75E28C2A499C5300628060 /* UIButton+Extension.swift in Sources */,
 				9D75E2722A48BA3000628060 /* Container.swift in Sources */,
 				9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */,
 				9D6616DF2A45B55800B43125 /* HistoryVMProtocol.swift in Sources */,

@@ -12,13 +12,16 @@ final class RegisterAssembler {
     
     private init() { }
     
-    static func makeRegisterVC(coordinator: RegisterCoordinatorProtocol) -> UIViewController {
-        let vm = makeViewModel(coordinator: coordinator)
+    static func makeRegisterVC(coordinator: RegisterCoordinatorProtocol, container: Container) -> UIViewController {
+        let vm = makeViewModel(coordinator: coordinator, container: container)
         return RegisterVC(viewModel: vm)
     }
     
-    private static func makeViewModel(coordinator: RegisterCoordinatorProtocol) -> RegisterVMProtocol {
-        return RegisterVM(coordinator: coordinator)
+    private static func makeViewModel(coordinator: RegisterCoordinatorProtocol, container: Container) -> RegisterVMProtocol {
+        return RegisterVM(coordinator: coordinator, authService: makeAuthService(container: container))
     }
     
+    private static func makeAuthService(container: Container) -> AuthServiceProtocol {
+        return container.resolve()
+    }
 }

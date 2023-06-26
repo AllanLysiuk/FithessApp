@@ -10,5 +10,5 @@ import Foundation
 protocol LoginVMProtocol {
     func openRegisterPage()
     func openForgotPasswordPage()
-    func login(email: String, password: String)
+    func login(email: String?, password: String?)
 }
