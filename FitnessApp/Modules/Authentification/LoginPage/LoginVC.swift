@@ -22,6 +22,7 @@ final class LoginVC: UIViewController {
     init(viewModel: LoginVMProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel.setupViewDelegate(self)
     }
     
     required init?(coder: NSCoder) {
@@ -34,6 +35,13 @@ final class LoginVC: UIViewController {
         setUpViewsAndConstraints()
         setUpActions()
         createRightViewSecureButton(textField: passwordTextField)
+    }
+}
+
+//MARK: LoginVCDelegate
+extension LoginVC: LoginVCDelegate {
+    func setEmail(_ email: String?) {
+        emailTextField.text = email
     }
 }
 
@@ -76,11 +84,11 @@ extension LoginVC {
     }
     
     @objc private func openRegisterPage() {
-        viewModel.openRegisterPage()
+        viewModel.openRegisterPage(with: emailTextField.text)
     }
         
     @objc private func openForgotPasswordPage() {
-        viewModel.openForgotPasswordPage()
+        viewModel.openForgotPasswordPage(with: emailTextField.text)
     }
 }
 

@@ -8,6 +8,8 @@
 import Foundation
 
 protocol ForgotPasswordVMProtocol {
+    var email: String? { get set }
+    
     func finish(shouldMoveToParent: Bool)
     func forgotPassword(email: String?)
 }

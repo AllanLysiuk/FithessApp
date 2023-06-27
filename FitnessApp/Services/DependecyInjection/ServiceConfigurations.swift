@@ -13,11 +13,14 @@ final class ServiceConfigurations {
     
     static func configure(container: Container) {
         container.register({ Self.authService })
+        container.register({Self.alertFactory})
     }
     
 }
 
 protocol AuthServiceProtocol: AnyObject, LoginAuthServiceProtocol & ForgotPasswordAuthServiceProtocol & RegisterAuthServiceProtocol { }
+
+protocol AlertFactoryProtocol: AnyObject, AlertControllerFactoryProtocol { }
 
 private extension ServiceConfigurations {
     
@@ -25,4 +28,7 @@ private extension ServiceConfigurations {
         return AuthService()
     }
     
+    static var alertFactory: AlertFactoryProtocol {
+        return AlertControllerFactory()
+    }
 }

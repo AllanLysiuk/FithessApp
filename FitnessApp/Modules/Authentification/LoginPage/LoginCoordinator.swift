@@ -38,24 +38,28 @@ final class LoginCoordinator: Coordinator {
 }
 
 extension LoginCoordinator: LoginCoordinatorProtocol {
-    func openRegisterScene() {
+    func openRegisterScene(delegate: RegisterLoginDelegate, email: String?) {
         let coordinator = RegisterCoordinator(
             navigationController: rootNavigationController,
             rootCoordinator: self,
             container: container
         )
         childCoordinators.append(coordinator)
-        coordinator.start()
+        coordinator.start(delegate: delegate, email: email)
     }
     
-    func openForgotPasswordScene() {
+    func openForgotPasswordScene(delegate: ForgotPasswordLoginDelegate, email: String?) {
         let coordinator = ForgotPasswordCoordinator(
             navigationController: rootNavigationController,
             rootCoordinator: self,
             container: container
         )
         childCoordinators.append(coordinator)
-        coordinator.start()
+        coordinator.start(delegate: delegate, email: email)
+    }
+    
+    func presentAlert(_ alert: UIViewController) {
+        rootNavigationController.present(alert, animated: true)
     }
 }
 

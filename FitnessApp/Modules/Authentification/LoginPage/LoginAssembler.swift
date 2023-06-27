@@ -17,10 +17,18 @@ final class LoginAssembler {
     }
     
     private static func makeVM(container: Container, coordinator: LoginCoordinatorProtocol) -> LoginVMProtocol {
-        return LoginVM(coordinator: coordinator, authService: makeAuthService(container: container))
+        return LoginVM(
+            coordinator: coordinator,
+            authService: makeAuthService(container: container),
+            alertFactory: makeAlertFactory(container: container)
+        )
     }
     
     private static func makeAuthService(container: Container) -> AuthServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeAlertFactory(container: Container) -> AlertFactoryProtocol {
         return container.resolve()
     }
 }

@@ -80,6 +80,10 @@
 		9D75E2882A48CE7200628060 /* RegisterAuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2872A48CE7200628060 /* RegisterAuthServiceProtocol.swift */; };
 		9D75E28A2A49898600628060 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2892A49898600628060 /* UITextField+Extension.swift */; };
 		9D75E28C2A499C5300628060 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E28B2A499C5300628060 /* UIButton+Extension.swift */; };
+		9D75E2902A4B3F8C00628060 /* AlertControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E28F2A4B3F8C00628060 /* AlertControllerFactory.swift */; };
+		9D75E2922A4B3FC000628060 /* AlertControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2912A4B3FC000628060 /* AlertControllerFactoryProtocol.swift */; };
+		9D75E2942A4B44FA00628060 /* RegisterLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2932A4B44FA00628060 /* RegisterLoginDelegate.swift */; };
+		9D75E2962A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2952A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +162,10 @@
 		9D75E2872A48CE7200628060 /* RegisterAuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAuthServiceProtocol.swift; sourceTree = "<group>"; };
 		9D75E2892A49898600628060 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		9D75E28B2A499C5300628060 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		9D75E28F2A4B3F8C00628060 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
+		9D75E2912A4B3FC000628060 /* AlertControllerFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerFactoryProtocol.swift; sourceTree = "<group>"; };
+		9D75E2932A4B44FA00628060 /* RegisterLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterLoginDelegate.swift; sourceTree = "<group>"; };
+		9D75E2952A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordLoginDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,8 @@
 			children = (
 				9D6616852A44417000B43125 /* Coordinator.swift */,
 				9D6616892A44433F00B43125 /* App */,
+				9D75E26F2A48BA0400628060 /* Services */,
+				9D75E28D2A4B3F6800628060 /* Factories */,
 				9D66168D2A44474800B43125 /* Modules */,
 				9D6616792A406D4000B43125 /* Assets.xcassets */,
 				9D66167B2A406D4000B43125 /* LaunchScreen.storyboard */,
@@ -224,7 +234,6 @@
 		9D66168D2A44474800B43125 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9D75E26F2A48BA0400628060 /* Services */,
 				9D6616BF2A45830C00B43125 /* MainApp */,
 				9D66168E2A44475500B43125 /* Authentification */,
 			);
@@ -295,6 +304,7 @@
 				9D6616A42A444F2800B43125 /* RegisterCoordinatorProtocol.swift */,
 				9D6616A62A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift */,
 				9D75E2872A48CE7200628060 /* RegisterAuthServiceProtocol.swift */,
+				9D75E2932A4B44FA00628060 /* RegisterLoginDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -306,6 +316,7 @@
 				9D6616B32A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift */,
 				9D6616B52A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift */,
 				9D75E2852A48CE4100628060 /* ForgotPasswordAuthServiceProtocol.swift */,
+				9D75E2952A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -468,6 +479,23 @@
 			path = GlobalExtensions;
 			sourceTree = "<group>";
 		};
+		9D75E28D2A4B3F6800628060 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E28E2A4B3F7A00628060 /* AlertFactory */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		9D75E28E2A4B3F7A00628060 /* AlertFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E28F2A4B3F8C00628060 /* AlertControllerFactory.swift */,
+				9D75E2912A4B3FC000628060 /* AlertControllerFactoryProtocol.swift */,
+			);
+			path = AlertFactory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -551,8 +579,10 @@
 				9D75E2882A48CE7200628060 /* RegisterAuthServiceProtocol.swift in Sources */,
 				9D6616CF2A458BB600B43125 /* TrainingVMProtocol.swift in Sources */,
 				9D6616962A4447BF00B43125 /* LoginVM.swift in Sources */,
+				9D75E2902A4B3F8C00628060 /* AlertControllerFactory.swift in Sources */,
 				9D6616C92A45837500B43125 /* TabBarAssembler.swift in Sources */,
 				9D6616882A44420800B43125 /* AppCoordinator.swift in Sources */,
+				9D75E2942A4B44FA00628060 /* RegisterLoginDelegate.swift in Sources */,
 				9D6616F72A45BA0800B43125 /* ProfileVC.swift in Sources */,
 				9D6616F92A45BA8800B43125 /* ProfileVM.swift in Sources */,
 				9D6616E52A45B5E300B43125 /* HistoryVC.swift in Sources */,
@@ -583,6 +613,7 @@
 				9D75E2782A48BAEF00628060 /* LoginAuthServiceProtocol.swift in Sources */,
 				9D6617072A45BCDD00B43125 /* MotivationVC.swift in Sources */,
 				9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */,
+				9D75E2962A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift in Sources */,
 				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
 				9D75E28C2A499C5300628060 /* UIButton+Extension.swift in Sources */,
 				9D75E2722A48BA3000628060 /* Container.swift in Sources */,
@@ -593,6 +624,7 @@
 				9D6616DB2A458F2900B43125 /* TrainingAssembler.swift in Sources */,
 				9D6617052A45BCB200B43125 /* MotivationRootCoordinatorProtocol.swift in Sources */,
 				9D6616862A44417000B43125 /* Coordinator.swift in Sources */,
+				9D75E2922A4B3FC000628060 /* AlertControllerFactoryProtocol.swift in Sources */,
 				9D6617012A45BC6A00B43125 /* MotivationVMProtocol.swift in Sources */,
 				9D6616D72A458E1A00B43125 /* TrainingVM.swift in Sources */,
 				9D6616FD2A45BAFD00B43125 /* ProfileAssembler.swift in Sources */,

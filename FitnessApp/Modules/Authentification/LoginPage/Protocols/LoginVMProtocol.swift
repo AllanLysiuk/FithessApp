@@ -8,7 +8,8 @@
 import Foundation
 
 protocol LoginVMProtocol {
-    func openRegisterPage()
-    func openForgotPasswordPage()
+    func openRegisterPage(with email: String?)
+    func openForgotPasswordPage(with email: String?)
     func login(email: String?, password: String?)
+    func setupViewDelegate(_ delegate: LoginVCDelegate)
 }

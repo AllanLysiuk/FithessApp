@@ -25,7 +25,11 @@ final class RegisterCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = RegisterAssembler.makeRegisterVC(coordinator: self, container: container)
+        assert(false, "Should be open with arguments, please use start(delegate: , email: )")
+    }
+    
+    func start(delegate: RegisterLoginDelegate, email: String?) {
+        let vc = RegisterAssembler.makeRegisterVC(delegate: delegate, email: email, coordinator: self, container: container)
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -42,5 +46,9 @@ extension RegisterCoordinator: RegisterCoordinatorProtocol {
             navigationController.popViewController(animated: true)
         }
         finish()
+    }
+    
+    func presentAlert(_ alert: UIViewController) {
+        navigationController.present(alert, animated: true)
     }
 }

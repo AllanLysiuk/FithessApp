@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     func finish(shouldMoveToParent: Bool)
+    func presentAlert(_ alert: UIViewController)
 }

@@ -25,18 +25,24 @@ final class ForgotPasswordCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ForgotPasswordAssembler.makeVC(coordinator: self, container: container)
+        assert(false, "Should be open with arguments, please use start(delegate: , email: )")
+    }
+    
+    func start(delegate: ForgotPasswordLoginDelegate, email: String?) {
+        let vc = ForgotPasswordAssembler.makeVC(coordinator: self, container: container, delegate: delegate, email: email)
         navigationController.pushViewController(vc, animated: true)
     }
     
     func finish() {
         rootCoordinator.forgotPasswordFinished(self)
     }
-    
-    
 }
 
 extension ForgotPasswordCoordinator: ForgotPasswordCoordinatorProtocol {
+    func presentAlert(_ alert: UIViewController) {
+        navigationController.present(alert, animated: true)
+    }
+    
     func finish(shouldMoveToParent: Bool) {
         if shouldMoveToParent {
             navigationController.popViewController(animated: true)

@@ -83,6 +83,7 @@ extension ForgotPasswordVC {
         let textField = UITextField()
         textField.keyboardType = .emailAddress
         textField.placeholder = "Enter your email"
+        textField.text = viewModel.email
         textField.borderStyle = .roundedRect
         textField.font = .mRegular14
         view.addSubview(textField)
@@ -126,8 +127,16 @@ extension ForgotPasswordVC {
 
 //MARK: - UITextFieldDelegate
 extension ForgotPasswordVC: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text,
+            let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            viewModel.email = updatedText
+        }
+        return true
     }
 }
