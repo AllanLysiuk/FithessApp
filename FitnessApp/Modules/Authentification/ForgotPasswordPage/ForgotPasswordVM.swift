@@ -52,7 +52,7 @@ final class ForgotPasswordVM: ForgotPasswordVMProtocol {
                 self.finish(shouldMoveToParent: true)
             }
         })])
-        coordinator?.presentAlert(alert)
+        coordinator?.presentAlert(ViewContext(viewController: alert))
     }
     
     func finish(shouldMoveToParent: Bool) {

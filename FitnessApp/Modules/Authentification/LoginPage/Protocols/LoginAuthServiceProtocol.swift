@@ -9,4 +9,5 @@ import Foundation
 
 protocol LoginAuthServiceProtocol {
     func login(email: String, password: String, completion: @escaping (_ error: Error?) -> Void)
+    func signInWithGoogle(viewContext: ViewContext, completion: @escaping (_ error: Error?) -> Void) 
 }

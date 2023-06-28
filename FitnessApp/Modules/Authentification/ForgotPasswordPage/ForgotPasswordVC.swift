@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class ForgotPasswordVC: UIViewController {
+    private weak var imageView: UIImageView!
     private weak var emailLabel: UILabel!
     private weak var emailTextField: UITextField!
     private weak var forgotPasswordButton: UIButton!
@@ -59,12 +60,30 @@ extension ForgotPasswordVC {
     private func setUpViewsAndConstraints() {
         view.backgroundColor = .white
         
+        setUpImageView()
+        
         setUpEmailLabel()
         
         setUPEmailTextField()
         
         setUpForgotPasswordButton()
 
+    }
+    
+    private func setUpImageView() {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "forgot-password-image")
+        img.contentMode = .scaleAspectFit
+        view.addSubview(img)
+        imageView = img
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+        ])
     }
     
     private func setUpEmailLabel() {
@@ -74,8 +93,8 @@ extension ForgotPasswordVC {
         self.emailLabel = label
         
         NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0)
         ])
     }
     
@@ -132,10 +151,12 @@ extension ForgotPasswordVC: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text,
-            let textRange = Range(range, in: text) {
-            let updatedText = text.replacingCharacters(in: textRange, with: string)
-            viewModel.email = updatedText
+        if textField == emailTextField {
+            if let text = textField.text,
+               let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange, with: string)
+                viewModel.email = updatedText
+            }
         }
         return true
     }

@@ -58,8 +58,8 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
         coordinator.start(delegate: delegate, email: email)
     }
     
-    func presentAlert(_ alert: UIViewController) {
-        rootNavigationController.present(alert, animated: true)
+    func presentAlert(_ alert: ViewContext) {
+        rootNavigationController.present(alert.viewController, animated: true)
     }
 }
 

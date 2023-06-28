@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class RegisterVC: UIViewController {
+    private weak var imageView: UIImageView!
     private weak var emailLabel: UILabel!
     private weak var emailTextField: UITextField!
     private weak var passwordLabel: UILabel!
@@ -89,6 +90,8 @@ extension RegisterVC {
     private func setUpViewsAndConstraints() {
         view.backgroundColor = .white
         
+        setUpImageView()
+        
         setUpEmailLabel()
         
         setUPEmailTextField()
@@ -106,6 +109,22 @@ extension RegisterVC {
 
     }
     
+    private func setUpImageView() {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "register-image")
+        img.contentMode = .scaleAspectFit
+        view.addSubview(img)
+        imageView = img
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+        ])
+    }
+    
     private func setUpEmailLabel() {
         let label = UILabel()
         label.setupLabel(text: "Email", color: .black, fontName: (.mSemiBold16 ?? .systemFont(ofSize: 16, weight: .semibold)) )
@@ -113,8 +132,8 @@ extension RegisterVC {
         self.emailLabel = label
         
         NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
         ])
     }
     
@@ -149,7 +168,7 @@ extension RegisterVC {
         
         NSLayoutConstraint.activate([
             passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20.0),
-            passwordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
         ])
     }
     
@@ -182,7 +201,7 @@ extension RegisterVC {
         
         NSLayoutConstraint.activate([
             repeatPasswordLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20.0),
-            repeatPasswordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            repeatPasswordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
         ])
     }
     
@@ -238,10 +257,12 @@ extension RegisterVC: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text,
-            let textRange = Range(range, in: text) {
-            let updatedText = text.replacingCharacters(in: textRange, with: string)
-            viewModel.email = updatedText
+        if textField == emailTextField {
+            if let text = textField.text,
+                let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange, with: string)
+                viewModel.email = updatedText
+            }
         }
         return true
     }

@@ -57,7 +57,7 @@ final class RegisterVM: RegisterVMProtocol {
                 }
             })
         ])
-        coordinator?.presentAlert(alert)
+        coordinator?.presentAlert(ViewContext(viewController: alert))
     }
     
     func finish(shouldMoveToParent: Bool) {

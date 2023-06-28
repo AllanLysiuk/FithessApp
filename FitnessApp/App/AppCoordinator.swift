@@ -28,6 +28,7 @@ final class AppCoordinator: Coordinator {
        // let isRegistered = UserDefaults.standard.bool(forKey: UserDefaultsEnum.isRegistered.rawValue)
         
         if !isRegistered {
+            print("open login")
             openLoginScene()
         } else {
             openMainScene()

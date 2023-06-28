@@ -12,5 +12,5 @@ protocol LoginCoordinatorProtocol: AnyObject {
     func openRegisterScene(delegate: RegisterLoginDelegate, email: String?)
     func openForgotPasswordScene(delegate: ForgotPasswordLoginDelegate, email: String?)
     func finish()
-    func presentAlert(_ alert: UIViewController)
+    func presentAlert(_ alert: ViewContext)
 }

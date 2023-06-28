@@ -48,7 +48,7 @@ extension RegisterCoordinator: RegisterCoordinatorProtocol {
         finish()
     }
     
-    func presentAlert(_ alert: UIViewController) {
-        navigationController.present(alert, animated: true)
+    func presentAlert(_ alert: ViewContext) {
+        navigationController.present(alert.viewController, animated: true)
     }
 }

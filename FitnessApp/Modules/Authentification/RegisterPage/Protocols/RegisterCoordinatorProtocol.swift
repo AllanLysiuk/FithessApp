@@ -10,5 +10,5 @@ import UIKit
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     func finish(shouldMoveToParent: Bool)
-    func presentAlert(_ alert: UIViewController)
+    func presentAlert(_ alert: ViewContext)
 }

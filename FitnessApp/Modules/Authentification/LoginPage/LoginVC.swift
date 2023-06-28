@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class LoginVC: UIViewController {
+    private weak var imageView: UIImageView!
     private weak var emailLabel: UILabel!
     private weak var passwordLabel: UILabel!
     private weak var emailTextField: UITextField!
@@ -16,6 +17,7 @@ final class LoginVC: UIViewController {
     private weak var loginButton: UIButton!
     private weak var registerButton: UIButton!
     private weak var forgotPasswordButton: UIButton!
+    private weak var googleButton: UIButton!
     
     private var viewModel: LoginVMProtocol
     
@@ -59,6 +61,9 @@ extension LoginVC {
         forgotPasswordButton.addTarget(self,
                                        action: #selector(openForgotPasswordPage),
                                        for: .touchUpInside)
+        googleButton.addTarget(self,
+                               action: #selector(loginWithGoogle),
+                               for: .touchUpInside)
     }
     
     private func createRightViewSecureButton(textField: UITextField) {
@@ -90,12 +95,19 @@ extension LoginVC {
     @objc private func openForgotPasswordPage() {
         viewModel.openForgotPasswordPage(with: emailTextField.text)
     }
+    
+    @objc private func loginWithGoogle() {
+        
+        viewModel.loginWithGoogle(viewContext: ViewContext(viewController: self))
+    }
 }
 
 // MARK: Set up UI
 extension LoginVC {
     private func setUpViewsAndConstraints() {
         view.backgroundColor = .white
+        
+        setUpImageView()
         
         setUpEmailLabel()
         
@@ -110,7 +122,25 @@ extension LoginVC {
         setUpForgotPasswordButton()
         
         setUpRegisterButton()
+        
+        setUpGoogleButton()
 
+    }
+    
+    private func setUpImageView() {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "login-image")
+        img.contentMode = .scaleAspectFit
+        view.addSubview(img)
+        imageView = img
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+        ])
     }
     
     private func setUpEmailLabel() {
@@ -120,8 +150,8 @@ extension LoginVC {
         self.emailLabel = label
         
         NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
         ])
     }
     
@@ -155,7 +185,7 @@ extension LoginVC {
         
         NSLayoutConstraint.activate([
             passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20.0),
-            passwordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
         ])
     }
     
@@ -184,10 +214,10 @@ extension LoginVC {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Login", for: .normal)
-        btn.titleLabel?.font = .mSemiBold16
-        btn.layer.cornerRadius = 12
+        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         btn.backgroundColor = UIColor(red: 0.2, green: 0.41, blue: 0.95, alpha: 1)
-        btn.setTitleColor(.white, for: .normal)
+        btn.layer.cornerRadius = 12.0
+        btn.titleLabel?.font = .mSemiBold16
         view.addSubview(btn)
         loginButton = btn
         
@@ -238,13 +268,31 @@ extension LoginVC {
         registerButton = btn
         
         NSLayoutConstraint.activate([
-                    registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor,
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor,
                                                         constant: 8.0),
-                    registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                        constant: 20.0),
+            registerButton.widthAnchor.constraint(equalToConstant: (loginButton.frame.width / 2) - 4),
+            registerButton.heightAnchor.constraint(equalToConstant: 44.0),
+        ])
+    }
+    
+    private func setUpGoogleButton() {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setImage(UIImage(named: "google-logo"), for: .normal)
+        btn.contentMode = .scaleAspectFit
+        view.addSubview(btn)
+        googleButton = btn
+        
+        NSLayoutConstraint.activate([
+            googleButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor,
+                                                        constant: 20.0),
+            googleButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                             constant: 20.0),
-                    registerButton.widthAnchor.constraint(equalToConstant: (loginButton.frame.width / 2) - 4),
-                    registerButton.heightAnchor.constraint(equalToConstant: 44.0),
-                ])
+            googleButton.widthAnchor.constraint(equalToConstant: 60.0),
+            googleButton.heightAnchor.constraint(equalToConstant: 60.0)
+        ])
     }
 }
 

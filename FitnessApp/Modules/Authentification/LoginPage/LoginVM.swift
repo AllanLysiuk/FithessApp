@@ -37,12 +37,24 @@ final class LoginVM: LoginVMProtocol {
                 } else {
                     let ud = UserDefaults()
                     ud.set(true, forKey: UserDefaultsEnum.isRegistered)
-                    self.openAlert(title: "Login operation", message: "You've succsesfully signed in", shouldCloseScreen: true)
+                    self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
                 }
             }
         } else {
             openAlert(title: "Wrong Input", message: "Email or pasword can't be empty", shouldCloseScreen: false)
             return
+        }
+    }
+    
+    func loginWithGoogle(viewContext: ViewContext) {
+        authService.signInWithGoogle(viewContext: viewContext) { error in
+            if let error = error {
+                self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
+            } else {
+                let ud = UserDefaults()
+                ud.set(true, forKey: UserDefaultsEnum.isRegistered)
+                self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
+            }
         }
     }
     
@@ -54,7 +66,7 @@ final class LoginVM: LoginVMProtocol {
                 }
             })
         ])
-        coordinator?.presentAlert(alert)
+        coordinator?.presentAlert(ViewContext(viewController: alert))
     }
     
     func openRegisterPage(with email: String?) {
