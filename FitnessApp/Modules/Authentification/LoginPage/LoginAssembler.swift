@@ -20,7 +20,8 @@ final class LoginAssembler {
         return LoginVM(
             coordinator: coordinator,
             authService: makeAuthService(container: container),
-            alertFactory: makeAlertFactory(container: container)
+            alertFactory: makeAlertFactory(container: container),
+            userDataService: makeUserDataService(container: container)
         )
     }
     
@@ -29,6 +30,10 @@ final class LoginAssembler {
     }
     
     private static func makeAlertFactory(container: Container) -> AlertFactoryProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeUserDataService(container: Container) -> UserDataServiceProtocol {
         return container.resolve()
     }
 }

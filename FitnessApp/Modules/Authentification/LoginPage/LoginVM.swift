@@ -16,17 +16,19 @@ final class LoginVM: LoginVMProtocol {
     private var authService: LoginAuthServiceProtocol
     private weak var coordinator: LoginCoordinatorProtocol?
     private var alertFactory: AlertControllerFactoryProtocol
-    
+    private var userDataService: LoginUserDataServiceProtocol
     private weak var delegate: LoginVCDelegate?
     
     init(
         coordinator: LoginCoordinatorProtocol,
         authService: LoginAuthServiceProtocol,
-        alertFactory: AlertControllerFactoryProtocol
+        alertFactory: AlertControllerFactoryProtocol,
+        userDataService: LoginUserDataServiceProtocol
     ) {
         self.coordinator = coordinator
         self.authService = authService
         self.alertFactory = alertFactory
+        self.userDataService = userDataService
     }
     
     func login(email: String?, password: String?) {
@@ -35,8 +37,7 @@ final class LoginVM: LoginVMProtocol {
                 if let error = error {
                     self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
                 } else {
-                    let ud = UserDefaults()
-                    ud.set(true, forKey: UserDefaultsEnum.isRegistered)
+                    self.userDataService.setIsRegisteredFlag(boolean: true)
                     self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
                 }
             }
@@ -51,8 +52,7 @@ final class LoginVM: LoginVMProtocol {
             if let error = error {
                 self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
             } else {
-                let ud = UserDefaults()
-                ud.set(true, forKey: UserDefaultsEnum.isRegistered)
+                self.userDataService.setIsRegisteredFlag(boolean: true)
                 self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
             }
         }
