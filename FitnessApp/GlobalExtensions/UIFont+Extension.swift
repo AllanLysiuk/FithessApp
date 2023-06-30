@@ -14,6 +14,10 @@ extension UIFont {
     
     static let mSemiBold16 = UIFont(name: "Montserrat-SemiBold", size: 16)
     
+    static let mSemiBold18 = UIFont(name: "Montserrat-SemiBold", size: 18)
+    
+    static let mSemiBold20 = UIFont(name: "Montserrat-SemiBold", size: 20)
+    
     static let mRegular14 = UIFont(name: "Montserrat-Regular", size: 14)
     
     static let mRegular16 = UIFont(name: "Montserrat-Regular", size: 16)

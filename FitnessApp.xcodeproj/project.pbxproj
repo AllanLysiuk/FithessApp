@@ -98,9 +98,29 @@
 		9D75E2BD2A4D84D700628060 /* OnBoardingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2B42A4D84D600628060 /* OnBoardingViewModelProtocol.swift */; };
 		9D75E2BE2A4D84D700628060 /* OnBoardingRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2B52A4D84D600628060 /* OnBoardingRootCoordinatorProtocol.swift */; };
 		9D75E2BF2A4D84D700628060 /* OnBoardingCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2B62A4D84D600628060 /* OnBoardingCoordinatorProtocol.swift */; };
-		9D75E2C12A4D84D700628060 /* OnBoardingPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2B92A4D84D700628060 /* OnBoardingPageList.swift */; };
+		9D75E2C12A4D84D700628060 /* GenderPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2B92A4D84D700628060 /* GenderPageList.swift */; };
 		9D75E2C22A4D84D700628060 /* PageViewAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2BB2A4D84D700628060 /* PageViewAdapterProtocol.swift */; };
 		9D75E2C32A4D84D700628060 /* PageViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2BC2A4D84D700628060 /* PageViewAdapter.swift */; };
+		9D75E2C52A4D863100628060 /* OnBoardingPageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2C42A4D863100628060 /* OnBoardingPageEnum.swift */; };
+		9D75E2C72A4DE18100628060 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2C62A4DE18000628060 /* UIView+Extension.swift */; };
+		9D75E2C92A4EB7A300628060 /* PageListsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2C82A4EB7A200628060 /* PageListsDelegate.swift */; };
+		9D75E2CB2A4EBAAD00628060 /* PickerPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2CA2A4EBAAD00628060 /* PickerPageList.swift */; };
+		9D75E2CF2A4EBE3A00628060 /* PickerPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2CE2A4EBE3A00628060 /* PickerPageVM.swift */; };
+		9D75E2D12A4EBE4600628060 /* PickerPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2D02A4EBE4600628060 /* PickerPageAssembler.swift */; };
+		9D75E2D42A4EBE5F00628060 /* PickerVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2D32A4EBE5F00628060 /* PickerVMProtocol.swift */; };
+		9D75E2D82A4EBFDF00628060 /* PickerViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2D72A4EBFDF00628060 /* PickerViewAdapter.swift */; };
+		9D75E2DA2A4EBFFC00628060 /* PickerViewAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2D92A4EBFFC00628060 /* PickerViewAdapterProtocol.swift */; };
+		9D75E2DE2A4F42F500628060 /* GenderPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2DD2A4F42F500628060 /* GenderPageVM.swift */; };
+		9D75E2E02A4F430300628060 /* GenderPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2DF2A4F430300628060 /* GenderPageAssembler.swift */; };
+		9D75E2E32A4F463500628060 /* GenderVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2E22A4F463500628060 /* GenderVMProtocol.swift */; };
+		9D75E2E62A4F550D00628060 /* ImageProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2E52A4F550D00628060 /* ImageProfileList.swift */; };
+		9D75E2E92A4F594000628060 /* ImageProfileVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2E82A4F594000628060 /* ImageProfileVMProtocol.swift */; };
+		9D75E2EB2A4F5A4E00628060 /* ImageProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2EA2A4F5A4E00628060 /* ImageProfileVM.swift */; };
+		9D75E2EE2A4F5B6600628060 /* ImagePickerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2ED2A4F5B6600628060 /* ImagePickerAdapter.swift */; };
+		9D75E2F02A4F5B7700628060 /* ImagePickerAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2EF2A4F5B7700628060 /* ImagePickerAdapterProtocol.swift */; };
+		9D75E2F22A4F5C9400628060 /* ImageProfilePageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F12A4F5C9400628060 /* ImageProfilePageDelegate.swift */; };
+		9D75E2F42A4F607B00628060 /* ImageProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F32A4F607B00628060 /* ImageProfileVCDelegate.swift */; };
+		9D75E2F62A4F648200628060 /* ImageProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F52A4F648200628060 /* ImageProfileAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,9 +214,29 @@
 		9D75E2B42A4D84D600628060 /* OnBoardingViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModelProtocol.swift; sourceTree = "<group>"; };
 		9D75E2B52A4D84D600628060 /* OnBoardingRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		9D75E2B62A4D84D600628060 /* OnBoardingCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinatorProtocol.swift; sourceTree = "<group>"; };
-		9D75E2B92A4D84D700628060 /* OnBoardingPageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageList.swift; sourceTree = "<group>"; };
+		9D75E2B92A4D84D700628060 /* GenderPageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderPageList.swift; sourceTree = "<group>"; };
 		9D75E2BB2A4D84D700628060 /* PageViewAdapterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewAdapterProtocol.swift; sourceTree = "<group>"; };
 		9D75E2BC2A4D84D700628060 /* PageViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewAdapter.swift; sourceTree = "<group>"; };
+		9D75E2C42A4D863100628060 /* OnBoardingPageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageEnum.swift; sourceTree = "<group>"; };
+		9D75E2C62A4DE18000628060 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9D75E2C82A4EB7A200628060 /* PageListsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListsDelegate.swift; sourceTree = "<group>"; };
+		9D75E2CA2A4EBAAD00628060 /* PickerPageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPageList.swift; sourceTree = "<group>"; };
+		9D75E2CE2A4EBE3A00628060 /* PickerPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPageVM.swift; sourceTree = "<group>"; };
+		9D75E2D02A4EBE4600628060 /* PickerPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPageAssembler.swift; sourceTree = "<group>"; };
+		9D75E2D32A4EBE5F00628060 /* PickerVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVMProtocol.swift; sourceTree = "<group>"; };
+		9D75E2D72A4EBFDF00628060 /* PickerViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewAdapter.swift; sourceTree = "<group>"; };
+		9D75E2D92A4EBFFC00628060 /* PickerViewAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewAdapterProtocol.swift; sourceTree = "<group>"; };
+		9D75E2DD2A4F42F500628060 /* GenderPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPageVM.swift; sourceTree = "<group>"; };
+		9D75E2DF2A4F430300628060 /* GenderPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPageAssembler.swift; sourceTree = "<group>"; };
+		9D75E2E22A4F463500628060 /* GenderVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderVMProtocol.swift; sourceTree = "<group>"; };
+		9D75E2E52A4F550D00628060 /* ImageProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileList.swift; sourceTree = "<group>"; };
+		9D75E2E82A4F594000628060 /* ImageProfileVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileVMProtocol.swift; sourceTree = "<group>"; };
+		9D75E2EA2A4F5A4E00628060 /* ImageProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileVM.swift; sourceTree = "<group>"; };
+		9D75E2ED2A4F5B6600628060 /* ImagePickerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerAdapter.swift; sourceTree = "<group>"; };
+		9D75E2EF2A4F5B7700628060 /* ImagePickerAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerAdapterProtocol.swift; sourceTree = "<group>"; };
+		9D75E2F12A4F5C9400628060 /* ImageProfilePageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfilePageDelegate.swift; sourceTree = "<group>"; };
+		9D75E2F32A4F607B00628060 /* ImageProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileVCDelegate.swift; sourceTree = "<group>"; };
+		9D75E2F52A4F648200628060 /* ImageProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6616852A44417000B43125 /* Coordinator.swift */,
+				9D75E2A32A4CC2DC00628060 /* ViewContext.swift */,
 				9D6616892A44433F00B43125 /* App */,
 				9D75E26F2A48BA0400628060 /* Services */,
 				9D75E28D2A4B3F6800628060 /* Factories */,
@@ -244,7 +285,6 @@
 				9D66167B2A406D4000B43125 /* LaunchScreen.storyboard */,
 				9D66167E2A406D4000B43125 /* Info.plist */,
 				9D75E2A12A4C351000628060 /* GoogleService-Info.plist */,
-				9D75E2A32A4CC2DC00628060 /* ViewContext.swift */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -514,6 +554,7 @@
 				9D75E2832A48C38B00628060 /* UIFont+Extension.swift */,
 				9D75E2892A49898600628060 /* UITextField+Extension.swift */,
 				9D75E28B2A499C5300628060 /* UIButton+Extension.swift */,
+				9D75E2C62A4DE18000628060 /* UIView+Extension.swift */,
 			);
 			path = GlobalExtensions;
 			sourceTree = "<group>";
@@ -538,13 +579,10 @@
 		9D75E2A92A4D845700628060 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				9D75E2C42A4D863100628060 /* OnBoardingPageEnum.swift */,
 				9D75E2BA2A4D84D700628060 /* PageViewAdapter */,
+				9D75E2D52A4EBFAC00628060 /* Lists */,
 				9D75E2B72A4D84D700628060 /* PageViewController */,
-				9D75E2B32A4D84D600628060 /* Protocols */,
-				9D75E2AA2A4D84A000628060 /* OnBoardingVC.swift */,
-				9D75E2AD2A4D84A100628060 /* OnBoardingVM.swift */,
-				9D75E2AC2A4D84A100628060 /* OnBoardingCoordinator.swift */,
-				9D75E2AB2A4D84A100628060 /* OnBoardingAssembler.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -556,14 +594,17 @@
 				9D75E2B52A4D84D600628060 /* OnBoardingRootCoordinatorProtocol.swift */,
 				9D75E2B62A4D84D600628060 /* OnBoardingCoordinatorProtocol.swift */,
 			);
-			name = Protocols;
-			path = Protocols/Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		9D75E2B72A4D84D700628060 /* PageViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9D75E2B92A4D84D700628060 /* OnBoardingPageList.swift */,
+				9D75E2B32A4D84D600628060 /* Protocols */,
+				9D75E2AA2A4D84A000628060 /* OnBoardingVC.swift */,
+				9D75E2AD2A4D84A100628060 /* OnBoardingVM.swift */,
+				9D75E2AC2A4D84A100628060 /* OnBoardingCoordinator.swift */,
+				9D75E2AB2A4D84A100628060 /* OnBoardingAssembler.swift */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
@@ -575,6 +616,96 @@
 				9D75E2BC2A4D84D700628060 /* PageViewAdapter.swift */,
 			);
 			path = PageViewAdapter;
+			sourceTree = "<group>";
+		};
+		9D75E2CC2A4EBE1600628060 /* GenderPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2E12A4F462600628060 /* Protocols */,
+				9D75E2B92A4D84D700628060 /* GenderPageList.swift */,
+				9D75E2DD2A4F42F500628060 /* GenderPageVM.swift */,
+				9D75E2DF2A4F430300628060 /* GenderPageAssembler.swift */,
+			);
+			path = GenderPage;
+			sourceTree = "<group>";
+		};
+		9D75E2CD2A4EBE2100628060 /* AgePage */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2D22A4EBE4F00628060 /* Protocols */,
+				9D75E2CA2A4EBAAD00628060 /* PickerPageList.swift */,
+				9D75E2CE2A4EBE3A00628060 /* PickerPageVM.swift */,
+				9D75E2D02A4EBE4600628060 /* PickerPageAssembler.swift */,
+			);
+			path = AgePage;
+			sourceTree = "<group>";
+		};
+		9D75E2D22A4EBE4F00628060 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2D32A4EBE5F00628060 /* PickerVMProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D75E2D52A4EBFAC00628060 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2C82A4EB7A200628060 /* PageListsDelegate.swift */,
+				9D75E2D62A4EBFC000628060 /* PickerViewAdapter */,
+				9D75E2E42A4F543B00628060 /* ImageProfilePage */,
+				9D75E2CD2A4EBE2100628060 /* AgePage */,
+				9D75E2CC2A4EBE1600628060 /* GenderPage */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		9D75E2D62A4EBFC000628060 /* PickerViewAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2D72A4EBFDF00628060 /* PickerViewAdapter.swift */,
+				9D75E2D92A4EBFFC00628060 /* PickerViewAdapterProtocol.swift */,
+			);
+			path = PickerViewAdapter;
+			sourceTree = "<group>";
+		};
+		9D75E2E12A4F462600628060 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2E22A4F463500628060 /* GenderVMProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D75E2E42A4F543B00628060 /* ImageProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2EC2A4F5B4E00628060 /* ImagePickerAdapter */,
+				9D75E2E72A4F591900628060 /* Protocols */,
+				9D75E2E52A4F550D00628060 /* ImageProfileList.swift */,
+				9D75E2EA2A4F5A4E00628060 /* ImageProfileVM.swift */,
+				9D75E2F52A4F648200628060 /* ImageProfileAssembler.swift */,
+			);
+			path = ImageProfilePage;
+			sourceTree = "<group>";
+		};
+		9D75E2E72A4F591900628060 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2E82A4F594000628060 /* ImageProfileVMProtocol.swift */,
+				9D75E2F12A4F5C9400628060 /* ImageProfilePageDelegate.swift */,
+				9D75E2F32A4F607B00628060 /* ImageProfileVCDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D75E2EC2A4F5B4E00628060 /* ImagePickerAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E2ED2A4F5B6600628060 /* ImagePickerAdapter.swift */,
+				9D75E2EF2A4F5B7700628060 /* ImagePickerAdapterProtocol.swift */,
+			);
+			path = ImagePickerAdapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,10 +792,13 @@
 			files = (
 				9D6616A72A444F3900B43125 /* RegisterRootCoordinatorProtocol.swift in Sources */,
 				9D75E2762A48BA9B00628060 /* AuthService.swift in Sources */,
+				9D75E2DE2A4F42F500628060 /* GenderPageVM.swift in Sources */,
 				9D6616F32A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift in Sources */,
 				9D6617032A45BC8A00B43125 /* MotivationCoordinatorProtocol.swift in Sources */,
+				9D75E2CB2A4EBAAD00628060 /* PickerPageList.swift in Sources */,
 				9D6616EB2A45B79000B43125 /* HistoryAssembler.swift in Sources */,
 				9D6616A02A444B5800B43125 /* LoginRootCoordinatorProtocol.swift in Sources */,
+				9D75E2C72A4DE18100628060 /* UIView+Extension.swift in Sources */,
 				9D6616FB2A45BAB700B43125 /* ProfileCoordinator.swift in Sources */,
 				9D6616B22A44778A00B43125 /* ForgotPasswordVMProtocol.swift in Sources */,
 				9D75E2882A48CE7200628060 /* RegisterAuthServiceProtocol.swift in Sources */,
@@ -673,8 +807,10 @@
 				9D75E2902A4B3F8C00628060 /* AlertControllerFactory.swift in Sources */,
 				9D6616C92A45837500B43125 /* TabBarAssembler.swift in Sources */,
 				9D6616882A44420800B43125 /* AppCoordinator.swift in Sources */,
+				9D75E2F42A4F607B00628060 /* ImageProfileVCDelegate.swift in Sources */,
 				9D75E2942A4B44FA00628060 /* RegisterLoginDelegate.swift in Sources */,
 				9D6616F72A45BA0800B43125 /* ProfileVC.swift in Sources */,
+				9D75E2F62A4F648200628060 /* ImageProfileAssembler.swift in Sources */,
 				9D6616F92A45BA8800B43125 /* ProfileVM.swift in Sources */,
 				9D75E2C32A4D84D700628060 /* PageViewAdapter.swift in Sources */,
 				9D6616E52A45B5E300B43125 /* HistoryVC.swift in Sources */,
@@ -688,6 +824,7 @@
 				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
 				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
+				9D75E2F02A4F5B7700628060 /* ImagePickerAdapterProtocol.swift in Sources */,
 				9D75E2842A48C38B00628060 /* UIFont+Extension.swift in Sources */,
 				9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */,
 				9D75E2822A48C33500628060 /* UILabel+Extension.swift in Sources */,
@@ -696,26 +833,36 @@
 				9D75E2A42A4CC2DC00628060 /* ViewContext.swift in Sources */,
 				9D6616A52A444F2800B43125 /* RegisterCoordinatorProtocol.swift in Sources */,
 				9D6616BE2A447B2400B43125 /* ForgotPasswordAssembler.swift in Sources */,
+				9D75E2E92A4F594000628060 /* ImageProfileVMProtocol.swift in Sources */,
 				9D66170D2A45BDF100B43125 /* MotivationAssembler.swift in Sources */,
+				9D75E2E62A4F550D00628060 /* ImageProfileList.swift in Sources */,
+				9D75E2D42A4EBE5F00628060 /* PickerVMProtocol.swift in Sources */,
 				9D75E28A2A49898600628060 /* UITextField+Extension.swift in Sources */,
+				9D75E2E02A4F430300628060 /* GenderPageAssembler.swift in Sources */,
 				9D6617092A45BD7700B43125 /* MotivationVM.swift in Sources */,
+				9D75E2EE2A4F5B6600628060 /* ImagePickerAdapter.swift in Sources */,
+				9D75E2E32A4F463500628060 /* GenderVMProtocol.swift in Sources */,
 				9D75E2C22A4D84D700628060 /* PageViewAdapterProtocol.swift in Sources */,
 				9D75E2A82A4D767000628060 /* LoginUserDataServiceProtocol.swift in Sources */,
 				9D6616D92A458E9100B43125 /* TrainingCoordiantor.swift in Sources */,
 				9D6616E92A45B75D00B43125 /* HistoryCoordinator.swift in Sources */,
+				9D75E2C92A4EB7A300628060 /* PageListsDelegate.swift in Sources */,
 				9D6616B62A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift in Sources */,
 				9D6616AF2A44503500B43125 /* RegisterAssembler.swift in Sources */,
 				9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */,
 				9D75E2782A48BAEF00628060 /* LoginAuthServiceProtocol.swift in Sources */,
 				9D6617072A45BCDD00B43125 /* MotivationVC.swift in Sources */,
 				9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */,
+				9D75E2F22A4F5C9400628060 /* ImageProfilePageDelegate.swift in Sources */,
 				9D75E2962A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift in Sources */,
 				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
 				9D75E28C2A499C5300628060 /* UIButton+Extension.swift in Sources */,
-				9D75E2C12A4D84D700628060 /* OnBoardingPageList.swift in Sources */,
+				9D75E2EB2A4F5A4E00628060 /* ImageProfileVM.swift in Sources */,
+				9D75E2C12A4D84D700628060 /* GenderPageList.swift in Sources */,
 				9D75E2722A48BA3000628060 /* Container.swift in Sources */,
 				9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */,
 				9D6616DF2A45B55800B43125 /* HistoryVMProtocol.swift in Sources */,
+				9D75E2DA2A4EBFFC00628060 /* PickerViewAdapterProtocol.swift in Sources */,
 				9D6616AD2A44500C00B43125 /* RegisterCoordinator.swift in Sources */,
 				9D66169A2A4447E100B43125 /* LoginAssembler.swift in Sources */,
 				9D6616DB2A458F2900B43125 /* TrainingAssembler.swift in Sources */,
@@ -735,9 +882,13 @@
 				9D75E2742A48BA4300628060 /* ServiceConfigurations.swift in Sources */,
 				9D6616982A4447D300B43125 /* LoginCoordinator.swift in Sources */,
 				9D6616C52A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift in Sources */,
+				9D75E2D82A4EBFDF00628060 /* PickerViewAdapter.swift in Sources */,
+				9D75E2CF2A4EBE3A00628060 /* PickerPageVM.swift in Sources */,
+				9D75E2C52A4D863100628060 /* OnBoardingPageEnum.swift in Sources */,
 				9D75E2A62A4D718500628060 /* UserDataService.swift in Sources */,
 				9D6616D12A458BC900B43125 /* TrainingCoordinatorProtocol.swift in Sources */,
 				9D6616F52A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift in Sources */,
+				9D75E2D12A4EBE4600628060 /* PickerPageAssembler.swift in Sources */,
 				9D66170B2A45BDAA00B43125 /* MotivationCoordinator.swift in Sources */,
 				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
 				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,

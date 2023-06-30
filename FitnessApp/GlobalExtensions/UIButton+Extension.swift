@@ -17,4 +17,30 @@ extension UIButton{
           self.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         }
     }
+    
+    func unselectButton() {
+        self.isSelected = false
+        self.backgroundColor = .white
+    }
+    
+    func createTitleInTwoLines(btnTitle: String, firstLineFont: UIFont, secondLineFont: UIFont) {
+        self.titleLabel?.lineBreakMode = .byWordWrapping
+        self.titleLabel?.textAlignment = .center
+        let btnTitle: NSString = btnTitle as NSString
+        let newlineRange: NSRange = btnTitle.range(of: "\n")
+        var subString1 = ""
+        var subString2 = ""
+        if(newlineRange.location != NSNotFound) {
+            subString1 = btnTitle.substring(to: newlineRange.location)
+            subString2 = btnTitle.substring(from: newlineRange.location)
+            }
+        let attributes1 = [NSMutableAttributedString.Key.font: firstLineFont]
+        let attrString1 = NSMutableAttributedString(string: subString1, attributes: attributes1)
+    
+        let attributes2 = [NSMutableAttributedString.Key.font: secondLineFont]
+        let attrString2 = NSMutableAttributedString(string: subString2, attributes: attributes2)
+    
+        attrString1.append(attrString2)
+        self.setAttributedTitle(attrString1, for: [])
+    }
 }

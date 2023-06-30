@@ -26,18 +26,31 @@ final class AppCoordinator: Coordinator {
     func start() {
        let isRegistered = false
        // let isRegistered = UserDefaults.standard.bool(forKey: UserDefaultsEnum.isRegistered.rawValue)
-        
-        if !isRegistered {
-            print("open login")
-            openLoginScene()
-        } else {
-            openMainScene()
-        }
+    //    openLoginScene()
+    openOnBoarding()
+//        if !isRegistered {
+//            print("open login")
+//            openLoginScene()
+//        } else {
+//            openMainScene()
+//        }
         window?.makeKeyAndVisible()
     }
     
     func finish() {
 
+    }
+    
+    private func openOnBoarding() {
+        let loginWindow = UIWindow(windowScene: windowScene)
+        let nc = UINavigationController()
+        loginWindow.rootViewController = nc
+        
+        let onBoardingCoordinator = OnBoardingCoordinator(rootNavigationController: nc, rootCoordinator: self)
+        childCoordinators.append(onBoardingCoordinator)
+        onBoardingCoordinator.start()
+        
+        window = loginWindow
     }
     
     private func openLoginScene() {
@@ -83,6 +96,15 @@ extension AppCoordinator: LoginRootCoordinatorProtocol {
 
 extension AppCoordinator: TabBarRootCoordinatorProtocol {
     func mainSceneFinished(_ coordinator: Coordinator) {
+        childCoordinators.removeAll { tmp in
+            tmp === coordinator
+        }
+        start()
+    }
+}
+
+extension AppCoordinator: OnBoardingRootCoordinatorProtocol {
+    func finishedOnBoarding(_ coordinator: Coordinator) {
         childCoordinators.removeAll { tmp in
             tmp === coordinator
         }

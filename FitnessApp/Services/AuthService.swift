@@ -29,7 +29,8 @@ final class AuthService: AuthServiceProtocol {
         GIDSignIn.sharedInstance.signIn(withPresenting: viewContext.viewController) { result, error in
             let user = result?.user
             guard let idToken = user?.idToken else {
-                assert(false, "ID Token missing")
+                print("ID Token missing")
+                return
             }
             if let accessToken = user?.accessToken {
                 let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
