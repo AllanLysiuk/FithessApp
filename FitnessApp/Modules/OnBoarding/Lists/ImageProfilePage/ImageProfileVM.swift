@@ -29,8 +29,8 @@ final class ImageProfileVM: ImageProfileVMProtocol {
     }
     
     func showImagePicker() {
-        imagePickerAdapter.showImagePicker()
         imagePickerAdapter.setUpDelegate(self)
+        imagePickerAdapter.showImagePicker()
     }
     
     func saveTapped() {
