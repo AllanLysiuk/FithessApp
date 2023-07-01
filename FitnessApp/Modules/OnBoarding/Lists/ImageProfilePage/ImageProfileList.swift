@@ -78,9 +78,11 @@ extension ImageProfileList {
     
     private func setUpImageView() {
         let imageView = UIImageView()
+        imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        
+        imageView.image = UIImage(named: "default-profile-image")
+        imageView.layer.cornerRadius = 100
         imageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self,
                                                 action: #selector(didTapOnView(_:)))
@@ -91,15 +93,14 @@ extension ImageProfileList {
         view.addSubview(imageView)
         profileImage = imageView
         
-        profileImage.image = UIImage(named: "default-profile-image")
+
         
         NSLayoutConstraint.activate([
             profileImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20.0),
             profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            profileImage.heightAnchor.constraint(equalToConstant: 300.0),
-            profileImage.widthAnchor.constraint(equalToConstant: 300.0)
+            profileImage.heightAnchor.constraint(equalToConstant: 200.0),
+            profileImage.widthAnchor.constraint(equalToConstant: 200.0)
         ])
-        profileImage.layer.cornerRadius = 150
     }
     
     private func setUpSaveButton() {
