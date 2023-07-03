@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ImageProfileVMProtocol {
     func setUpDelegate(_ delegate: ImageProfileVCDelegate)
     func showImagePicker()
-    func saveTapped()
+    func saveTapped(img: UIImage)
 }

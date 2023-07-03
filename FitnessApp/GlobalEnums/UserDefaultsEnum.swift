@@ -9,4 +9,5 @@ import Foundation
 
 enum UserDefaultsEnum {
     static var isRegistered = "isRegistred"
+    static var onBoardingShowed = "onBoardingShowed"
 }

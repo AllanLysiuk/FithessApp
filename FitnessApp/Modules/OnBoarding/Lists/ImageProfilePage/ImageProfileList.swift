@@ -47,7 +47,7 @@ extension ImageProfileList {
     }
         
     @objc private func saveButtonDidTap() {
-        viewModel.saveTapped()
+        viewModel.saveTapped(img: profileImage.image ?? UIImage(named: "default-profile-image")!)
     }
 
 }

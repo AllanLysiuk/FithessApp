@@ -33,8 +33,8 @@ final class ImageProfileVM: ImageProfileVMProtocol {
         imagePickerAdapter.showImagePicker()
     }
     
-    func saveTapped() {
-        pageListsDelegate?.saveButtonTapped(by: typeOfScreen, with: "")
+    func saveTapped(img: UIImage) {
+        pageListsDelegate?.saveButtonTapped(by: typeOfScreen, with: img)
     }
 }
 

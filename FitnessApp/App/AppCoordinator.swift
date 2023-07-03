@@ -24,16 +24,17 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-       let isRegistered = false
-       // let isRegistered = UserDefaults.standard.bool(forKey: UserDefaultsEnum.isRegistered.rawValue)
-    //    openLoginScene()
-    openOnBoarding()
-//        if !isRegistered {
-//            print("open login")
-//            openLoginScene()
-//        } else {
-//            openMainScene()
-//        }
+       //let isRegistered = false
+        let isRegistered = UserDefaults.standard.bool(forKey: UserDefaultsEnum.isRegistered)
+        let onBoardingShowed = UserDefaults.standard.bool(forKey: UserDefaultsEnum.onBoardingShowed)
+
+        if !isRegistered {
+            openLoginScene()
+        } else if !onBoardingShowed {
+            openOnBoarding()
+        } else {
+            openMainScene()
+        }
         window?.makeKeyAndVisible()
     }
     
@@ -46,7 +47,10 @@ final class AppCoordinator: Coordinator {
         let nc = UINavigationController()
         loginWindow.rootViewController = nc
         
-        let onBoardingCoordinator = OnBoardingCoordinator(rootNavigationController: nc, rootCoordinator: self)
+        let onBoardingCoordinator = OnBoardingCoordinator(
+            rootNavigationController: nc,
+            rootCoordinator: self,
+            container: container)
         childCoordinators.append(onBoardingCoordinator)
         onBoardingCoordinator.start()
         

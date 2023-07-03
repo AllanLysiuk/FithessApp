@@ -12,15 +12,21 @@ final class OnBoardingCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     private var rootNavigationController: UINavigationController
+    private var container: Container
     private var rootCoordinator: OnBoardingRootCoordinatorProtocol
     
-    init(rootNavigationController: UINavigationController, rootCoordinator: OnBoardingRootCoordinatorProtocol) {
+    init(
+        rootNavigationController: UINavigationController,
+         rootCoordinator: OnBoardingRootCoordinatorProtocol,
+        container: Container
+    ) {
         self.rootCoordinator = rootCoordinator
         self.rootNavigationController = rootNavigationController
+        self.container = container
     }
     
     func start() {
-        let vc = OnBoardingAssembler.makeOnBoardingVC(coordinator: self)
+        let vc = OnBoardingAssembler.makeOnBoardingVC(coordinator: self, container: container)
         rootNavigationController.pushViewController(vc, animated: false)
     }
     

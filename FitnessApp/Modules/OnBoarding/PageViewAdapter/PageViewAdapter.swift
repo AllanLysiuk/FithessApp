@@ -30,13 +30,9 @@ final class PageViewAdapter: NSObject, PageViewAdapterProtocol {
         setupPageView()
     }
     
-    
     func nextTapped() {
-           // delegate?.finishOnBoarding()
-
-            goToNextPage()
-
-        }
+        goToNextPage()
+    }
     
     func setupActionDelegate(_ delegate: AdapterActionDelegate) {
         self.delegate = delegate
@@ -45,8 +41,6 @@ final class PageViewAdapter: NSObject, PageViewAdapterProtocol {
     //MARK: Private functions
     private func setupPageView() {
         pageView?.dataSource = self
-       // pageView?.delegate = self
-        
         setUp()
     }
     
@@ -55,13 +49,6 @@ final class PageViewAdapter: NSObject, PageViewAdapterProtocol {
      }
     
 }
-
-////MARK: Delegate extension
-//extension PageViewAdapter: UIPageViewControllerDelegate {
-//    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//        guard let viewControllers = pageViewController.viewControllers else { return }
-//    }
-//}
 
 //MARK: Data Source extension
 extension PageViewAdapter: UIPageViewControllerDataSource {
@@ -91,8 +78,7 @@ extension PageViewAdapter {
         
         guard let currentPage = pageView.viewControllers?[0] else { return }
         if currentPage == pages.last {
-            print("FinishOnBoarding")
-           // delegate?.finishOnBoarding()
+           delegate?.finishOnBoarding()
         } else {
             guard let nextPage = pageView.dataSource?.pageViewController(pageView,
                                                                          viewControllerAfter: currentPage) else { return }

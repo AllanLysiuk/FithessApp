@@ -16,5 +16,9 @@ final class UserDataService: UserDataServiceProtocol {
     func setIsRegisteredFlag(boolean: Bool) {
         ud.set(boolean, forKey: UserDefaultsEnum.isRegistered)
     }
+    
+    func setOnBoardingFlag(boolean: Bool) {
+        ud.set(boolean, forKey: UserDefaultsEnum.onBoardingShowed)
+    }
 
 }
