@@ -21,4 +21,11 @@ final class UserDataService: UserDataServiceProtocol {
         ud.set(boolean, forKey: UserDefaultsEnum.onBoardingShowed)
     }
 
+    func saveUserEmail(email: String) {
+        ud.set(email, forKey: UserDefaultsEnum.currentUserEmail)
+    }
+    
+    func getUserEmail() -> String {
+       return ud.string(forKey: UserDefaultsEnum.currentUserEmail) ?? ""
+    }
 }

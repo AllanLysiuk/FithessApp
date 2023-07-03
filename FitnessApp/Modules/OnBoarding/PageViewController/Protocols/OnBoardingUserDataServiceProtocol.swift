@@ -9,4 +9,5 @@ import Foundation
 
 protocol OnBoardingUserDataServiceProtocol {
     func setOnBoardingFlag(boolean: Bool)
+    func getUserEmail() -> String
 }

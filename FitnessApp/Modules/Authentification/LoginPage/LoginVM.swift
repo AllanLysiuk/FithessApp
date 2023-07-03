@@ -38,6 +38,7 @@ final class LoginVM: LoginVMProtocol {
                     self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
                 } else {
                     self.userDataService.setIsRegisteredFlag(boolean: true)
+                    self.userDataService.saveUserEmail(email: email)
                     self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
                 }
             }
@@ -48,11 +49,12 @@ final class LoginVM: LoginVMProtocol {
     }
     
     func loginWithGoogle(viewContext: ViewContext) {
-        authService.signInWithGoogle(viewContext: viewContext) { error in
+        authService.signInWithGoogle(viewContext: viewContext) { error, email  in
             if let error = error {
                 self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
             } else {
                 self.userDataService.setIsRegisteredFlag(boolean: true)
+                self.userDataService.saveUserEmail(email: email)
                 self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
             }
         }

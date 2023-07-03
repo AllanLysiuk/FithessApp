@@ -10,8 +10,8 @@ import UIKit
 
 final class OnBoardingVM: OnBoardingViewModelProtocol {
 
-    var pages: [OnBoardingPageEnum] = [.genderScreen, .ageScreen, .growthScreen, .weightScreen, .profileImageScreen]
-    private var profileModel = ProfileModel(age: 0, weight: 0, growth: 0, gender: "Male", profileImagePath: "")
+    var pages: [OnBoardingPageEnum] = [.nameScreen, .genderScreen, .ageScreen, .growthScreen, .weightScreen, .profileImageScreen]
+    private var profileModel = ProfileModel(email: "", name: "", age: 0, weight: 0, growth: 0, gender: "Male", profileImagePath: "")
     
     private var adapter: PageViewAdapterProtocol
     private var imageService: OnBoardingImageServiceProtocol
@@ -35,6 +35,10 @@ final class OnBoardingVM: OnBoardingViewModelProtocol {
         adapter.setupPageView(pageView, pages, delegate: self)
     }
     
+    func goToPreviousPage() {
+        adapter.backTapped()
+    }
+    
 }
 
 extension OnBoardingVM: PageListsDelegate {
@@ -48,6 +52,9 @@ extension OnBoardingVM: PageListsDelegate {
     
     func saveButtonTapped(by typeOfScreen: OnBoardingPageEnum, with value: Any) {
         switch typeOfScreen {
+        case .nameScreen:
+            profileModel.email = userDataService.getUserEmail()
+            profileModel.name = String(describing: value)
         case .genderScreen:
             profileModel.gender = String(describing: value)
         case .ageScreen:

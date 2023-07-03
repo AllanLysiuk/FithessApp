@@ -12,4 +12,5 @@ protocol PageViewAdapterProtocol {
     func setupPageView(_ pageView: UIPageViewController, _ pages: [OnBoardingPageEnum], delegate: PageListsDelegate)
     func setupActionDelegate(_ delegate: AdapterActionDelegate)
     func nextTapped()
+    func backTapped()
 }

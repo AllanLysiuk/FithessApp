@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 protocol OnBoardingViewModelProtocol: AnyObject {
     func setUp(with pageView: UIPageViewController)
-
+    func goToPreviousPage()
 }

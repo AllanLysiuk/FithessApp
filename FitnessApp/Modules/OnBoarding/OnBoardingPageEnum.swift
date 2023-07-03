@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 enum OnBoardingPageEnum {
+    case nameScreen
     case genderScreen
     case ageScreen
     case growthScreen
@@ -17,6 +18,8 @@ enum OnBoardingPageEnum {
     
     func getViewController(delegate: PageListsDelegate) -> UIViewController {
         switch self {
+        case .nameScreen:
+            return NamePageAssembler.makeVC(delegate: delegate, typeOfScreen: self)
         case .genderScreen:
             return GenderPageAssembler.makeVC(delegate: delegate, typeOfScreen: self)
         case .ageScreen:

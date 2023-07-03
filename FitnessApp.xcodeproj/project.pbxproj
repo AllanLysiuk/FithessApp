@@ -125,6 +125,10 @@
 		9D75E2FB2A501D6300628060 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2FA2A501D6300628060 /* ImageService.swift */; };
 		9D75E2FD2A52CC9300628060 /* OnBoardingImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2FC2A52CC9300628060 /* OnBoardingImageServiceProtocol.swift */; };
 		9D75E2FF2A52D1C700628060 /* OnBoardingUserDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2FE2A52D1C700628060 /* OnBoardingUserDataServiceProtocol.swift */; };
+		9D75E3022A52E7DB00628060 /* NamePageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E3012A52E7DB00628060 /* NamePageList.swift */; };
+		9D75E3042A52E7E700628060 /* NamePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E3032A52E7E700628060 /* NamePageVM.swift */; };
+		9D75E3062A52E7FA00628060 /* NamePageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E3052A52E7FA00628060 /* NamePageAssembler.swift */; };
+		9D75E3092A52E81C00628060 /* NamePageVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E3082A52E81C00628060 /* NamePageVMProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +249,10 @@
 		9D75E2FA2A501D6300628060 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		9D75E2FC2A52CC9300628060 /* OnBoardingImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingImageServiceProtocol.swift; sourceTree = "<group>"; };
 		9D75E2FE2A52D1C700628060 /* OnBoardingUserDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingUserDataServiceProtocol.swift; sourceTree = "<group>"; };
+		9D75E3012A52E7DB00628060 /* NamePageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePageList.swift; sourceTree = "<group>"; };
+		9D75E3032A52E7E700628060 /* NamePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePageVM.swift; sourceTree = "<group>"; };
+		9D75E3052A52E7FA00628060 /* NamePageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePageAssembler.swift; sourceTree = "<group>"; };
+		9D75E3082A52E81C00628060 /* NamePageVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePageVMProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -664,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				9D75E2C82A4EB7A200628060 /* PageListsDelegate.swift */,
+				9D75E3002A52E7B800628060 /* NamePage */,
 				9D75E2D62A4EBFC000628060 /* PickerViewAdapter */,
 				9D75E2E42A4F543B00628060 /* ImageProfilePage */,
 				9D75E2CD2A4EBE2100628060 /* PickerPage */,
@@ -726,6 +735,25 @@
 				9D75E2F82A50198900628060 /* ProfileModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9D75E3002A52E7B800628060 /* NamePage */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E3072A52E7FE00628060 /* Protocols */,
+				9D75E3012A52E7DB00628060 /* NamePageList.swift */,
+				9D75E3032A52E7E700628060 /* NamePageVM.swift */,
+				9D75E3052A52E7FA00628060 /* NamePageAssembler.swift */,
+			);
+			path = NamePage;
+			sourceTree = "<group>";
+		};
+		9D75E3072A52E7FE00628060 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D75E3082A52E81C00628060 /* NamePageVMProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -837,7 +865,9 @@
 				9D6616E52A45B5E300B43125 /* HistoryVC.swift in Sources */,
 				9D6616D52A458C7F00B43125 /* TrainingVC.swift in Sources */,
 				9D75E2B12A4D84A100628060 /* OnBoardingVM.swift in Sources */,
+				9D75E3062A52E7FA00628060 /* NamePageAssembler.swift in Sources */,
 				9D6616F12A45B9A700B43125 /* ProfileVMProtocol.swift in Sources */,
+				9D75E3042A52E7E700628060 /* NamePageVM.swift in Sources */,
 				9D6616B42A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift in Sources */,
 				9D75E2FB2A501D6300628060 /* ImageService.swift in Sources */,
 				9D6616B82A44786B00B43125 /* ForgotPasswordVC.swift in Sources */,
@@ -858,6 +888,7 @@
 				9D75E2E92A4F594000628060 /* ImageProfileVMProtocol.swift in Sources */,
 				9D66170D2A45BDF100B43125 /* MotivationAssembler.swift in Sources */,
 				9D75E2E62A4F550D00628060 /* ImageProfileList.swift in Sources */,
+				9D75E3022A52E7DB00628060 /* NamePageList.swift in Sources */,
 				9D75E2D42A4EBE5F00628060 /* PickerVMProtocol.swift in Sources */,
 				9D75E28A2A49898600628060 /* UITextField+Extension.swift in Sources */,
 				9D75E2E02A4F430300628060 /* GenderPageAssembler.swift in Sources */,
@@ -913,6 +944,7 @@
 				9D6616D12A458BC900B43125 /* TrainingCoordinatorProtocol.swift in Sources */,
 				9D6616F52A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift in Sources */,
 				9D75E2D12A4EBE4600628060 /* PickerPageAssembler.swift in Sources */,
+				9D75E3092A52E81C00628060 /* NamePageVMProtocol.swift in Sources */,
 				9D66170B2A45BDAA00B43125 /* MotivationCoordinator.swift in Sources */,
 				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
 				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,

@@ -97,7 +97,6 @@ extension LoginVC {
     }
     
     @objc private func loginWithGoogle() {
-        
         viewModel.loginWithGoogle(viewContext: ViewContext(viewController: self))
     }
 }

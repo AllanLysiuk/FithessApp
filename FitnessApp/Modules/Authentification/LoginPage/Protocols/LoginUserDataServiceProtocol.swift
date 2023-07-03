@@ -9,4 +9,5 @@ import Foundation
 
 protocol LoginUserDataServiceProtocol {
     func setIsRegisteredFlag(boolean: Bool)
+    func saveUserEmail(email: String)
 }

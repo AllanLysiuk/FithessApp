@@ -25,9 +25,19 @@ final class OnBoardingVC: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.setUp(with: self)
+        setUpActions()
     }
     
 }
 
-
-
+//MARK: Actions
+extension OnBoardingVC {
+    private func setUpActions() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action:  #selector(backTapped(_:)))
+       
+    }
+    
+    @objc func backTapped(_ sender: UIButton) {
+        viewModel.goToPreviousPage()
+    }
+}

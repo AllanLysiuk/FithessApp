@@ -19,7 +19,7 @@ final class AuthService: AuthServiceProtocol {
         }
     }
     
-    func signInWithGoogle(viewContext: ViewContext, completion: @escaping (_ error: Error?) -> Void) {
+    func signInWithGoogle(viewContext: ViewContext, completion: @escaping (_ error: Error?, _ email: String) -> Void) {
 
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
@@ -36,7 +36,7 @@ final class AuthService: AuthServiceProtocol {
                 let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
                 Auth.auth().signIn(with: credential) { dataRes, error in
 //                    dataRes?.user
-                    completion(error)
+                    completion(error, dataRes?.user.email ?? "")
                 }
             }
         }

@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 struct ProfileModel {
+    var email: String
+    var name: String
     var age: Int
     var weight: Int
     var growth: Int
