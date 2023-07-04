@@ -11,11 +11,28 @@ import UIKit
 final class ProfileAssembler {
     private init() { }
     
-    static func makeProfileVC(coordinator: ProfileCoordinatorProtocol) -> UIViewController {
-        return ProfileVC(viewModel: makeViewModel(coordinator: coordinator))
+    static func makeProfileVC(coordinator: ProfileCoordinatorProtocol, container: Container) -> UIViewController {
+        return ProfileVC(viewModel: makeViewModel(coordinator: coordinator, container: container))
     }
     
-    private static func makeViewModel(coordinator: ProfileCoordinatorProtocol) -> ProfileVMProtocol {
-        return ProfileVM(coordinator: coordinator)
+    private static func makeViewModel(coordinator: ProfileCoordinatorProtocol, container: Container) -> ProfileVMProtocol {
+        return ProfileVM(
+            coordinator: coordinator,
+            coreDataService: makeCoreDataService(container: container),
+            userDataService: makeUserDataService(container: container),
+            imageService: makeImageService(container: container)
+        )
+    }
+    
+    private static func makeImageService(container: Container) -> ImageServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeUserDataService(container: Container) -> UserDataServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeCoreDataService(container: Container) -> CoreDataServiceProtocol {
+        return container.resolve()
     }
 }

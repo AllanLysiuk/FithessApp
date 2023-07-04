@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D5881A82A541E60007B42A3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881A62A541E60007B42A3 /* DataModel.xcdatamodeld */; };
+		9D5881AB2A541F67007B42A3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881AA2A541F67007B42A3 /* CoreDataStack.swift */; };
+		9D5881AD2A541FFF007B42A3 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881AC2A541FFF007B42A3 /* CoreDataService.swift */; };
+		9D5881B02A54224C007B42A3 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881AE2A54224B007B42A3 /* Profile+CoreDataClass.swift */; };
+		9D5881B12A54224C007B42A3 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881AF2A54224C007B42A3 /* Profile+CoreDataProperties.swift */; };
+		9D5881B32A545727007B42A3 /* OnBoardingCoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B22A545727007B42A3 /* OnBoardingCoreDataServiceProtocol.swift */; };
+		9D5881B52A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */; };
+		9D5881B72A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */; };
+		9D5881B92A5461A6007B42A3 /* ProfileImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */; };
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
@@ -132,6 +141,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D5881A72A541E60007B42A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		9D5881AA2A541F67007B42A3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9D5881AC2A541FFF007B42A3 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		9D5881AE2A54224B007B42A3 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9D5881AF2A54224C007B42A3 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9D5881B22A545727007B42A3 /* OnBoardingCoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserDataServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageServiceProtocol.swift; sourceTree = "<group>"; };
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +287,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D5881A92A541F49007B42A3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9D5881AE2A54224B007B42A3 /* Profile+CoreDataClass.swift */,
+				9D5881AF2A54224C007B42A3 /* Profile+CoreDataProperties.swift */,
+				9D5881AA2A541F67007B42A3 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9D6616642A406D3C00B43125 = {
 			isa = PBXGroup;
 			children = (
@@ -296,12 +324,14 @@
 				9D75E28D2A4B3F6800628060 /* Factories */,
 				9D66168D2A44474800B43125 /* Modules */,
 				9D75E2802A48C2EF00628060 /* GlobalExtensions */,
+				9D5881A92A541F49007B42A3 /* CoreData */,
 				9D75E2792A48C1EB00628060 /* Fonts */,
 				9D66168A2A4444CC00B43125 /* GlobalEnums */,
 				9D6616792A406D4000B43125 /* Assets.xcassets */,
 				9D66167B2A406D4000B43125 /* LaunchScreen.storyboard */,
 				9D66167E2A406D4000B43125 /* Info.plist */,
 				9D75E2A12A4C351000628060 /* GoogleService-Info.plist */,
+				9D5881A62A541E60007B42A3 /* DataModel.xcdatamodeld */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -510,6 +540,9 @@
 				9D6616F02A45B9A700B43125 /* ProfileVMProtocol.swift */,
 				9D6616F22A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift */,
 				9D6616F42A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift */,
+				9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */,
+				9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */,
+				9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -543,6 +576,7 @@
 				9D75E2752A48BA9B00628060 /* AuthService.swift */,
 				9D75E2A52A4D718400628060 /* UserDataService.swift */,
 				9D75E2FA2A501D6300628060 /* ImageService.swift */,
+				9D5881AC2A541FFF007B42A3 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -613,6 +647,7 @@
 				9D75E2B62A4D84D600628060 /* OnBoardingCoordinatorProtocol.swift */,
 				9D75E2FC2A52CC9300628060 /* OnBoardingImageServiceProtocol.swift */,
 				9D75E2FE2A52D1C700628060 /* OnBoardingUserDataServiceProtocol.swift */,
+				9D5881B22A545727007B42A3 /* OnBoardingCoreDataServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -867,6 +902,7 @@
 				9D75E2B12A4D84A100628060 /* OnBoardingVM.swift in Sources */,
 				9D75E3062A52E7FA00628060 /* NamePageAssembler.swift in Sources */,
 				9D6616F12A45B9A700B43125 /* ProfileVMProtocol.swift in Sources */,
+				9D5881B02A54224C007B42A3 /* Profile+CoreDataClass.swift in Sources */,
 				9D75E3042A52E7E700628060 /* NamePageVM.swift in Sources */,
 				9D6616B42A4477C900B43125 /* ForgotPasswordCoordinatorProtocol.swift in Sources */,
 				9D75E2FB2A501D6300628060 /* ImageService.swift in Sources */,
@@ -879,6 +915,7 @@
 				9D75E2F02A4F5B7700628060 /* ImagePickerAdapterProtocol.swift in Sources */,
 				9D75E2842A48C38B00628060 /* UIFont+Extension.swift in Sources */,
 				9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */,
+				9D5881B92A5461A6007B42A3 /* ProfileImageServiceProtocol.swift in Sources */,
 				9D75E2822A48C33500628060 /* UILabel+Extension.swift in Sources */,
 				9D6616E12A45B56600B43125 /* HistoryCoordinatorProtocol.swift in Sources */,
 				9D6616942A4447B400B43125 /* LoginVC.swift in Sources */,
@@ -909,7 +946,9 @@
 				9D75E2F22A4F5C9400628060 /* ImageProfilePageDelegate.swift in Sources */,
 				9D75E2962A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift in Sources */,
 				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
+				9D5881B72A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift in Sources */,
 				9D75E28C2A499C5300628060 /* UIButton+Extension.swift in Sources */,
+				9D5881B52A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift in Sources */,
 				9D75E2EB2A4F5A4E00628060 /* ImageProfileVM.swift in Sources */,
 				9D75E2C12A4D84D700628060 /* GenderPageList.swift in Sources */,
 				9D75E2722A48BA3000628060 /* Container.swift in Sources */,
@@ -917,6 +956,7 @@
 				9D6616DF2A45B55800B43125 /* HistoryVMProtocol.swift in Sources */,
 				9D75E2DA2A4EBFFC00628060 /* PickerViewAdapterProtocol.swift in Sources */,
 				9D75E2FF2A52D1C700628060 /* OnBoardingUserDataServiceProtocol.swift in Sources */,
+				9D5881AD2A541FFF007B42A3 /* CoreDataService.swift in Sources */,
 				9D6616AD2A44500C00B43125 /* RegisterCoordinator.swift in Sources */,
 				9D75E2FD2A52CC9300628060 /* OnBoardingImageServiceProtocol.swift in Sources */,
 				9D66169A2A4447E100B43125 /* LoginAssembler.swift in Sources */,
@@ -927,6 +967,7 @@
 				9D75E2BD2A4D84D700628060 /* OnBoardingViewModelProtocol.swift in Sources */,
 				9D6616862A44417000B43125 /* Coordinator.swift in Sources */,
 				9D75E2922A4B3FC000628060 /* AlertControllerFactoryProtocol.swift in Sources */,
+				9D5881B32A545727007B42A3 /* OnBoardingCoreDataServiceProtocol.swift in Sources */,
 				9D6617012A45BC6A00B43125 /* MotivationVMProtocol.swift in Sources */,
 				9D6616D72A458E1A00B43125 /* TrainingVM.swift in Sources */,
 				9D6616FD2A45BAFD00B43125 /* ProfileAssembler.swift in Sources */,
@@ -939,12 +980,14 @@
 				9D6616C52A45834E00B43125 /* TabBarRootCoordinatorProtocol.swift in Sources */,
 				9D75E2D82A4EBFDF00628060 /* PickerViewAdapter.swift in Sources */,
 				9D75E2CF2A4EBE3A00628060 /* PickerPageVM.swift in Sources */,
+				9D5881A82A541E60007B42A3 /* DataModel.xcdatamodeld in Sources */,
 				9D75E2C52A4D863100628060 /* OnBoardingPageEnum.swift in Sources */,
 				9D75E2A62A4D718500628060 /* UserDataService.swift in Sources */,
 				9D6616D12A458BC900B43125 /* TrainingCoordinatorProtocol.swift in Sources */,
 				9D6616F52A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift in Sources */,
 				9D75E2D12A4EBE4600628060 /* PickerPageAssembler.swift in Sources */,
 				9D75E3092A52E81C00628060 /* NamePageVMProtocol.swift in Sources */,
+				9D5881B12A54224C007B42A3 /* Profile+CoreDataProperties.swift in Sources */,
 				9D66170B2A45BDAA00B43125 /* MotivationCoordinator.swift in Sources */,
 				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
 				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,
@@ -952,6 +995,7 @@
 				9D6616AB2A444FFB00B43125 /* RegisterVM.swift in Sources */,
 				9D6616D32A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift in Sources */,
 				9D75E2AF2A4D84A100628060 /* OnBoardingAssembler.swift in Sources */,
+				9D5881AB2A541F67007B42A3 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1242,19 @@
 			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9D5881A62A541E60007B42A3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D5881A72A541E60007B42A3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 9D5881A72A541E60007B42A3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9D6616652A406D3C00B43125 /* Project object */;
 }

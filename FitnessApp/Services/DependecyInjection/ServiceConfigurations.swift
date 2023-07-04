@@ -16,6 +16,7 @@ final class ServiceConfigurations {
         container.register({Self.alertFactory})
         container.register({Self.userDataService})
         container.register({Self.imageService})
+        container.register({Self.coreDataService})
     }
     
 }
@@ -24,9 +25,11 @@ protocol AuthServiceProtocol: AnyObject, LoginAuthServiceProtocol & ForgotPasswo
 
 protocol AlertFactoryProtocol: AnyObject, AlertControllerFactoryProtocol { }
 
-protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoardingUserDataServiceProtocol { }
+protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoardingUserDataServiceProtocol, ProfileUserDataServiceProtocol { }
 
-protocol ImageServiceProtocol: AnyObject, OnBoardingImageServiceProtocol { }
+protocol ImageServiceProtocol: AnyObject, OnBoardingImageServiceProtocol, ProfileImageServiceProtocol { }
+
+protocol CoreDataServiceProtocol: AnyObject, OnBoardingCoreDataServiceProtocol, ProfileCoreDataServiceProtocol { }
 
 private extension ServiceConfigurations {
     
@@ -44,5 +47,9 @@ private extension ServiceConfigurations {
     
     static var imageService: ImageServiceProtocol {
         return ImageService()
+    }
+    
+    static var coreDataService: CoreDataServiceProtocol {
+        return CoreDataService()
     }
 }

@@ -32,7 +32,7 @@ final class ImageService: ImageServiceProtocol {
         return relativePath
     }
 
-    func loadPhotoFromUD(relativePath: String?, completion: @escaping ((UIImage?) -> Void)) /* -> UIImage? */{
+    func loadPhotoBy(relativePath: String?, completion: @escaping ((UIImage?) -> Void)) /* -> UIImage? */{
         var image: UIImage?
         let queue = DispatchQueue(label: "ImageDownloadQueue", qos: .userInteractive)
         if let relativePath = relativePath {

@@ -35,7 +35,6 @@ final class AuthService: AuthServiceProtocol {
             if let accessToken = user?.accessToken {
                 let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
                 Auth.auth().signIn(with: credential) { dataRes, error in
-//                    dataRes?.user
                     completion(error, dataRes?.user.email ?? "")
                 }
             }

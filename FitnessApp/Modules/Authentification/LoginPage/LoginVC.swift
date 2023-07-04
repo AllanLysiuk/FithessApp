@@ -33,7 +33,6 @@ final class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
         setUpViewsAndConstraints()
         setUpActions()
         createRightViewSecureButton(textField: passwordTextField)

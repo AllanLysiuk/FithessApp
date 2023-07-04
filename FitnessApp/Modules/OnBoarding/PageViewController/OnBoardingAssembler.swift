@@ -24,7 +24,8 @@ final class OnBoardingAssembler {
             coordinator: coordinator,
             adapter: makeAdapter(),
             imageService: makeImageService(container: container),
-            userDataService: makeUserDataService(container: container)
+            userDataService: makeUserDataService(container: container),
+            coreDataService: makeCoreDataService(container: container)
         )
     }
     
@@ -37,6 +38,10 @@ final class OnBoardingAssembler {
     }
     
     private static func makeUserDataService(container: Container) -> UserDataServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeCoreDataService(container: Container) -> CoreDataServiceProtocol {
         return container.resolve()
     }
 }

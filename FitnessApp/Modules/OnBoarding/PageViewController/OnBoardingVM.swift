@@ -17,17 +17,20 @@ final class OnBoardingVM: OnBoardingViewModelProtocol {
     private var imageService: OnBoardingImageServiceProtocol
     private weak var coordinator: OnBoardingCoordinatorProtocol?
     private var userDataService: OnBoardingUserDataServiceProtocol
+    private var coreDataService: OnBoardingCoreDataServiceProtocol
     
     init(
         coordinator: OnBoardingCoordinatorProtocol,
         adapter: PageViewAdapterProtocol,
         imageService: OnBoardingImageServiceProtocol,
-        userDataService: OnBoardingUserDataServiceProtocol
+        userDataService: OnBoardingUserDataServiceProtocol,
+        coreDataService: OnBoardingCoreDataServiceProtocol
     ) {
         self.coordinator = coordinator
         self.adapter = adapter
         self.imageService = imageService
         self.userDataService = userDataService
+        self.coreDataService = coreDataService
         self.adapter.setupActionDelegate(self)
     }
     
@@ -77,6 +80,7 @@ extension OnBoardingVM: PageListsDelegate {
 extension OnBoardingVM: AdapterActionDelegate {
     func finishOnBoarding() {
         userDataService.setOnBoardingFlag(boolean: true)
+        coreDataService.addNewAccount(profileModel: profileModel)
         coordinator?.finish()
     }
 }

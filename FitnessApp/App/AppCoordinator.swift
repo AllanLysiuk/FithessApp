@@ -77,7 +77,8 @@ final class AppCoordinator: Coordinator {
         
         let tabBarCoordinator = TabBarCoordinator(
             rootNavigationController: nc,
-            rootCoordinator: self
+            rootCoordinator: self,
+            container: container
         )
         childCoordinators.append(tabBarCoordinator)
         tabBarCoordinator.start()
