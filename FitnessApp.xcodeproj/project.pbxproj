@@ -16,6 +16,8 @@
 		9D5881B52A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */; };
 		9D5881B72A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */; };
 		9D5881B92A5461A6007B42A3 /* ProfileImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */; };
+		9D5881BB2A559332007B42A3 /* ProfileAuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */; };
+		9D5881BD2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881BC2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift */; };
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
@@ -150,6 +152,8 @@
 		9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoreDataServiceProtocol.swift; sourceTree = "<group>"; };
 		9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserDataServiceProtocol.swift; sourceTree = "<group>"; };
 		9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAuthServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881BC2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoreDataServiceProtocol.swift; sourceTree = "<group>"; };
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -418,6 +422,7 @@
 				9D66169F2A444B5800B43125 /* LoginRootCoordinatorProtocol.swift */,
 				9D75E2772A48BAEF00628060 /* LoginAuthServiceProtocol.swift */,
 				9D75E2A72A4D767000628060 /* LoginUserDataServiceProtocol.swift */,
+				9D5881BC2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */,
 				9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */,
 				9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */,
+				9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -915,6 +921,7 @@
 				9D75E2F02A4F5B7700628060 /* ImagePickerAdapterProtocol.swift in Sources */,
 				9D75E2842A48C38B00628060 /* UIFont+Extension.swift in Sources */,
 				9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */,
+				9D5881BB2A559332007B42A3 /* ProfileAuthServiceProtocol.swift in Sources */,
 				9D5881B92A5461A6007B42A3 /* ProfileImageServiceProtocol.swift in Sources */,
 				9D75E2822A48C33500628060 /* UILabel+Extension.swift in Sources */,
 				9D6616E12A45B56600B43125 /* HistoryCoordinatorProtocol.swift in Sources */,
@@ -934,6 +941,7 @@
 				9D75E2E32A4F463500628060 /* GenderVMProtocol.swift in Sources */,
 				9D75E2C22A4D84D700628060 /* PageViewAdapterProtocol.swift in Sources */,
 				9D75E2A82A4D767000628060 /* LoginUserDataServiceProtocol.swift in Sources */,
+				9D5881BD2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift in Sources */,
 				9D6616D92A458E9100B43125 /* TrainingCoordiantor.swift in Sources */,
 				9D6616E92A45B75D00B43125 /* HistoryCoordinator.swift in Sources */,
 				9D75E2C92A4EB7A300628060 /* PageListsDelegate.swift in Sources */,

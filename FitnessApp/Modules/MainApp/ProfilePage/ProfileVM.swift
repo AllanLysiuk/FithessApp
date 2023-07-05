@@ -14,22 +14,35 @@ final class ProfileVM: ProfileVMProtocol {
     private var coreDataService: ProfileCoreDataServiceProtocol
     private var userDataService: ProfileUserDataServiceProtocol
     private var imageService: ProfileImageServiceProtocol
+    private var authService: ProfileAuthServiceProtocol
     
     init(
         coordinator: ProfileCoordinatorProtocol,
         coreDataService: ProfileCoreDataServiceProtocol,
         userDataService: ProfileUserDataServiceProtocol,
-        imageService: ProfileImageServiceProtocol
+        imageService: ProfileImageServiceProtocol,
+        authService: ProfileAuthServiceProtocol
     ) {
         self.coordinator = coordinator
         self.coreDataService = coreDataService
         self.userDataService = userDataService
         self.imageService = imageService
+        self.authService = authService
+    }
+    
+    func logOut() {
+        authService.signOut { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        self.userDataService.setIsRegisteredFlag(boolean: false)
+        self.coordinator?.finish()
     }
     
     func loadProfile() -> Profile {
         let email = userDataService.getUserEmail()
-        return coreDataService.loadAccInfoByEmail(email)
+        return coreDataService.loadAccInfoByEmail(email) ?? Profile()
     }
     
     func loadPhotoBy(_ relativePath: String) -> UIImage {
@@ -41,7 +54,13 @@ final class ProfileVM: ProfileVMProtocol {
     }
     
     func updateInfoOfProfile(email: String, name: String, age: Int, weight: Double, growth: Double, gender: String, profileImage: UIImage?) {
-        
+        if let profileImage = profileImage {
+            let path = imageService.saveImageToFileManager(profileImage: profileImage)
+            let profileModel = ProfileModel(email: email, name: name, age: age, weight: weight, growth: growth, gender: gender, profileImagePath: path)
+            coreDataService.updateInfoOfProfile(profileModel: profileModel)
+        } else {
+            //openAlert
+        }
     }
     
     

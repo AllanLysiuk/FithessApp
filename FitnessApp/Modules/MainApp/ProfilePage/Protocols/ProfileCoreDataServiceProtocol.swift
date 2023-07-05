@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ProfileCoreDataServiceProtocol {
-    func loadAccInfoByEmail(_ email: String) -> Profile
+    func loadAccInfoByEmail(_ email: String) -> Profile?
     func updateInfoOfProfile(profileModel: ProfileModel)
 }

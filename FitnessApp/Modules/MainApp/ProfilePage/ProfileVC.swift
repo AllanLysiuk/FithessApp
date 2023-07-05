@@ -32,6 +32,7 @@ final class ProfileVC: UIViewController {
     private weak var growthTextField: UITextField!
     
     private weak var editButton: UIButton!
+    private weak var logOutButton: UIButton!
     
     private var viewModel: ProfileVMProtocol
     
@@ -64,6 +65,13 @@ extension ProfileVC {
         editButton.addTarget(self,
                              action: #selector(editButtonDidTap),
                              for: .touchUpInside)
+        logOutButton.addTarget(self,
+                               action: #selector(logOutButtonDidTap),
+                               for: .touchUpInside)
+    }
+    
+    @objc private func logOutButtonDidTap() {
+        viewModel.logOut()
     }
     
     @objc private func editButtonDidTap() {
@@ -157,6 +165,8 @@ extension ProfileVC {
         setUPDoneButtonKeyboard()
         
         setUpEditButton()
+        
+        setUpLogOutButton()
     }
     
     private func setUPDoneButtonKeyboard() {
@@ -513,6 +523,29 @@ extension ProfileVC {
             editButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                             constant: -20.0),
             editButton.heightAnchor.constraint(equalToConstant: 80.0),
+        ])
+    }
+    
+    private func setUpLogOutButton() {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        
+        btn.setTitle("Log Out", for: .normal)
+        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        btn.backgroundColor = UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
+
+        btn.layer.cornerRadius = 12.0
+        btn.titleLabel?.font = .mSemiBold18
+        view.addSubview(btn)
+        logOutButton = btn
+        
+        NSLayoutConstraint.activate([
+            logOutButton.topAnchor.constraint(equalTo: editButton.bottomAnchor,
+                                                        constant: 8.0),
+            logOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
+            logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                            constant: -20.0),
+            logOutButton.heightAnchor.constraint(equalToConstant: 80.0),
         ])
     }
 

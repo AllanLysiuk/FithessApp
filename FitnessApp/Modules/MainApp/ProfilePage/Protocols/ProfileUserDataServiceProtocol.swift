@@ -8,5 +8,6 @@
 import Foundation
 
 protocol ProfileUserDataServiceProtocol {
+    func setIsRegisteredFlag(boolean: Bool)
     func getUserEmail() -> String 
 }

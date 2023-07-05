@@ -63,9 +63,9 @@ extension OnBoardingVM: PageListsDelegate {
         case .ageScreen:
             profileModel.age = value as? Int ?? 0
         case .growthScreen:
-            profileModel.growth = value as? Int ?? 0
+            profileModel.growth = Double(value as! Int)
         case .weightScreen:
-            profileModel.weight = value as? Int ?? 0
+            profileModel.weight = Double(value as! Int)
         case .profileImageScreen:
             let img = value as? UIImage
             if let img = img {

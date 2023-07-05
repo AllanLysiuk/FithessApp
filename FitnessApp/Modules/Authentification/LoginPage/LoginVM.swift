@@ -17,18 +17,22 @@ final class LoginVM: LoginVMProtocol {
     private weak var coordinator: LoginCoordinatorProtocol?
     private var alertFactory: AlertControllerFactoryProtocol
     private var userDataService: LoginUserDataServiceProtocol
+    private var coreDataService: LoginCoreDataServiceProtocol
     private weak var delegate: LoginVCDelegate?
+    
     
     init(
         coordinator: LoginCoordinatorProtocol,
         authService: LoginAuthServiceProtocol,
         alertFactory: AlertControllerFactoryProtocol,
-        userDataService: LoginUserDataServiceProtocol
+        userDataService: LoginUserDataServiceProtocol,
+        coreDataService: LoginCoreDataServiceProtocol
     ) {
         self.coordinator = coordinator
         self.authService = authService
         self.alertFactory = alertFactory
         self.userDataService = userDataService
+        self.coreDataService = coreDataService
     }
     
     func login(email: String?, password: String?) {
@@ -37,8 +41,7 @@ final class LoginVM: LoginVMProtocol {
                 if let error = error {
                     self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
                 } else {
-                    self.userDataService.setIsRegisteredFlag(boolean: true)
-                    self.userDataService.saveUserEmail(email: email)
+                    self.doAllPreparationStuff(email)
                     self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
                 }
             }
@@ -53,8 +56,7 @@ final class LoginVM: LoginVMProtocol {
             if let error = error {
                 self.openAlert(title: "Error", message: error.localizedDescription, shouldCloseScreen: false)
             } else {
-                self.userDataService.setIsRegisteredFlag(boolean: true)
-                self.userDataService.saveUserEmail(email: email)
+                self.doAllPreparationStuff(email)
                 self.openAlert(title: "Login operation", message: "You've succsesfully signed in!", shouldCloseScreen: true)
             }
         }
@@ -69,6 +71,20 @@ final class LoginVM: LoginVMProtocol {
             })
         ])
         coordinator?.presentAlert(ViewContext(viewController: alert))
+    }
+    
+    private func doAllPreparationStuff(_ email: String) {
+        self.userDataService.setIsRegisteredFlag(boolean: true)
+        self.userDataService.saveUserEmail(email: email)
+        self.checkIfAccExists(email: email)
+    }
+    
+    private func checkIfAccExists(email: String) {
+        if coreDataService.doesAccExists(with: email) {
+            userDataService.setOnBoardingFlag(boolean: true)
+        } else {
+            userDataService.setOnBoardingFlag(boolean: false)
+        }
     }
     
     func openRegisterPage(with email: String?) {

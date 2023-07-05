@@ -21,7 +21,8 @@ final class LoginAssembler {
             coordinator: coordinator,
             authService: makeAuthService(container: container),
             alertFactory: makeAlertFactory(container: container),
-            userDataService: makeUserDataService(container: container)
+            userDataService: makeUserDataService(container: container),
+            coreDataService: makeCoreDataService(container: container)
         )
     }
     
@@ -34,6 +35,10 @@ final class LoginAssembler {
     }
     
     private static func makeUserDataService(container: Container) -> UserDataServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeCoreDataService(container: Container) -> CoreDataServiceProtocol {
         return container.resolve()
     }
 }

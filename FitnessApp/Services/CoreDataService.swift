@@ -24,27 +24,36 @@ final class CoreDataService: CoreDataServiceProtocol {
         }
     }
     
-    func loadAccInfoByEmail(_ email: String) -> Profile {
+    func loadAccInfoByEmail(_ email: String) -> Profile? {
         let request = Profile.fetchRequest()
         request.predicate = NSPredicate(format: "\(#keyPath(Profile.email)) == %@", email)
         request.returnsObjectsAsFaults = false
         let profile = try? CoreDataStack.shared.backgroundContext.fetch(request)
-        return profile?.first ?? Profile()
+        return profile?.first
     }
     
     func updateInfoOfProfile(profileModel: ProfileModel) {
         let acc = loadAccInfoByEmail(profileModel.email)
-        
         let context = CoreDataStack.shared.backgroundContext
-        context.perform {
-            acc.name = profileModel.name
-            acc.age = Int32(profileModel.age)
-            acc.gender = profileModel.gender
-            acc.growth = Double(profileModel.growth)
-            acc.weight = Double(profileModel.weight)
-            acc.imagePath = profileModel.profileImagePath
-            acc.email = profileModel.email
-            CoreDataStack.shared.saveContext(context: context)
+        if let acc = acc {
+            context.perform {
+                acc.name = profileModel.name
+                acc.age = Int32(profileModel.age)
+                acc.gender = profileModel.gender
+                acc.growth = Double(profileModel.growth)
+                acc.weight = Double(profileModel.weight)
+                acc.imagePath = profileModel.profileImagePath
+                CoreDataStack.shared.saveContext(context: context)
+            }
+        }
+    }
+    
+    func doesAccExists(with email: String) -> Bool {
+        let acc = loadAccInfoByEmail(email)
+        if acc != nil {
+            return true
+        } else {
+            return false
         }
     }
 }

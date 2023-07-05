@@ -20,7 +20,8 @@ final class ProfileAssembler {
             coordinator: coordinator,
             coreDataService: makeCoreDataService(container: container),
             userDataService: makeUserDataService(container: container),
-            imageService: makeImageService(container: container)
+            imageService: makeImageService(container: container),
+            authService: makeAuthService(container: container)
         )
     }
     
@@ -33,6 +34,10 @@ final class ProfileAssembler {
     }
     
     private static func makeCoreDataService(container: Container) -> CoreDataServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeAuthService(container: Container) -> AuthServiceProtocol {
         return container.resolve()
     }
 }

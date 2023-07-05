@@ -21,7 +21,7 @@ final class ServiceConfigurations {
     
 }
 
-protocol AuthServiceProtocol: AnyObject, LoginAuthServiceProtocol & ForgotPasswordAuthServiceProtocol & RegisterAuthServiceProtocol { }
+protocol AuthServiceProtocol: AnyObject, LoginAuthServiceProtocol & ForgotPasswordAuthServiceProtocol & RegisterAuthServiceProtocol, ProfileAuthServiceProtocol { }
 
 protocol AlertFactoryProtocol: AnyObject, AlertControllerFactoryProtocol { }
 
@@ -29,7 +29,7 @@ protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoa
 
 protocol ImageServiceProtocol: AnyObject, OnBoardingImageServiceProtocol, ProfileImageServiceProtocol { }
 
-protocol CoreDataServiceProtocol: AnyObject, OnBoardingCoreDataServiceProtocol, ProfileCoreDataServiceProtocol { }
+protocol CoreDataServiceProtocol: AnyObject, OnBoardingCoreDataServiceProtocol, ProfileCoreDataServiceProtocol, LoginCoreDataServiceProtocol { }
 
 private extension ServiceConfigurations {
     

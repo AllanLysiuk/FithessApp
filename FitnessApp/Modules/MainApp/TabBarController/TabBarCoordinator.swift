@@ -83,7 +83,11 @@ extension TabBarCoordinator: HistoryRootCoordinatorProtocol {
 }
 
 extension TabBarCoordinator: ProfileRootCoordinatorProtocol {
-    func profileFinished(_ coordinator: Coordinator) { }
+    func profileFinished(_ coordinator: Coordinator) {
+        childCoordinators = []
+        rootNavigationController.popViewController(animated: false)
+        rootCoordinator.mainSceneFinished(self)
+    }
 }
 
 extension TabBarCoordinator: MotivationRootCoordinatorProtocol {
