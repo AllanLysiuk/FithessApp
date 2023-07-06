@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class ImageProfileVM: ImageProfileVMProtocol {
-    private var imagePickerAdapter: ImagePickerAdapterProtocol
+    private var imagePickerAdapter: OnBoardingImagePickerAdapterProtocol
     private weak var pageListsDelegate: PageListsDelegate?
     private weak var imageProfileVCDelegate: ImageProfileVCDelegate?
     private var typeOfScreen: OnBoardingPageEnum
@@ -17,7 +17,7 @@ final class ImageProfileVM: ImageProfileVMProtocol {
     init(
         delegate: PageListsDelegate,
         typeOfScreen: OnBoardingPageEnum,
-        imagePickerAdapter: ImagePickerAdapterProtocol
+        imagePickerAdapter: OnBoardingImagePickerAdapterProtocol
     ) {
         self.pageListsDelegate = delegate
         self.typeOfScreen = typeOfScreen
@@ -38,7 +38,7 @@ final class ImageProfileVM: ImageProfileVMProtocol {
     }
 }
 
-extension ImageProfileVM: ImageProfilePageDelegate {
+extension ImageProfileVM: OnBoardingImagePickerAdapterDelegate {
     func presentImagePicker(_ imagePicker: ViewContext) {
         pageListsDelegate?.presentImagePicker(imagePicker)
     }

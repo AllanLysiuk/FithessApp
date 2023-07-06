@@ -15,4 +15,19 @@ extension UIView {
             self.transform = CGAffineTransform.identity
         }, completion: nil)
     }
+    
+    func startWobble() {
+        let angle = Double.pi / 180.0;
+        self.transform = CGAffineTransform.identity.rotated(by: CGFloat(-angle));
+        UIView.animate(withDuration: 0.15, delay: 0, options: [.allowUserInteraction,.repeat,.autoreverse], animations: {
+             self.transform = CGAffineTransform.identity.rotated(by: CGFloat(angle));
+        }, completion: nil)
+
+    }
+
+    func stopWobble() {
+        UIView.animate(withDuration: 0.15, delay: 0, options: [.allowUserInteraction,.beginFromCurrentState,.curveLinear], animations: {
+            self.transform = CGAffineTransform.identity;
+        }, completion: nil)
+    }
 }

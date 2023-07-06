@@ -22,7 +22,7 @@ final class ImageProfileAssembler {
                               imagePickerAdapter: makeImagePickerAdapter())
     }
     
-    private static func makeImagePickerAdapter() -> ImagePickerAdapterProtocol {
+    private static func makeImagePickerAdapter() -> OnBoardingImagePickerAdapterProtocol {
         return ImagePickerAdapter()
     }
     

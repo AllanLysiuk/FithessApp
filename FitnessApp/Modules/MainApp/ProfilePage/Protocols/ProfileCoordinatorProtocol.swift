@@ -8,5 +8,7 @@
 import Foundation
 
 protocol ProfileCoordinatorProtocol: AnyObject {
+    func presentImagePicker(_ imagePicker: ViewContext)
+    func dismissImagePicker()
     func finish()
 }

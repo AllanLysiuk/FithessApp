@@ -21,7 +21,8 @@ final class ProfileAssembler {
             coreDataService: makeCoreDataService(container: container),
             userDataService: makeUserDataService(container: container),
             imageService: makeImageService(container: container),
-            authService: makeAuthService(container: container)
+            authService: makeAuthService(container: container),
+            imagePickerAdapter: makeImagePickerAdapter()
         )
     }
     
@@ -39,5 +40,9 @@ final class ProfileAssembler {
     
     private static func makeAuthService(container: Container) -> AuthServiceProtocol {
         return container.resolve()
+    }
+    
+    private static func makeImagePickerAdapter() -> ProfileImagePickerAdapterProtocol {
+        return ImagePickerAdapter()
     }
 }

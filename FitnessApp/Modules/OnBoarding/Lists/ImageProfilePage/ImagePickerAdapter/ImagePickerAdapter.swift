@@ -10,7 +10,8 @@ import UIKit
 
 final class ImagePickerAdapter: NSObject {
     
-    private weak var delegate: ImageProfilePageDelegate?
+    private weak var onBoardingDelegate: OnBoardingImagePickerAdapterDelegate?
+    private weak var profileDelegate: ProfileImagePickerAdapterDelegate?
     
     private func imagePicker(sourceType: UIImagePickerController.SourceType) -> UIImagePickerController{
         let imagePicker = UIImagePickerController()
@@ -22,22 +23,32 @@ final class ImagePickerAdapter: NSObject {
         let libraryImagePicker = self.imagePicker(sourceType: .photoLibrary)
         libraryImagePicker.delegate = self
         let libImagePicker = ViewContext(viewController: libraryImagePicker)
-        delegate?.presentImagePicker(libImagePicker)
-
+        if onBoardingDelegate != nil {
+            onBoardingDelegate?.presentImagePicker(libImagePicker)
+        } else {
+            profileDelegate?.presentImagePicker(libImagePicker)
+        }
      }
 }
 
 //MARK: Adapter protocol
-extension ImagePickerAdapter: ImagePickerAdapterProtocol {
+extension ImagePickerAdapter: OnBoardingImagePickerAdapterProtocol {
     
     func showImagePicker() {
         self.setUpImagePicker()
     }
     
-    func setUpDelegate(_ delegate: ImageProfilePageDelegate) {
-        self.delegate = delegate
+    func setUpDelegate(_ delegate: OnBoardingImagePickerAdapterDelegate) {
+        self.onBoardingDelegate = delegate
     }
 
+}
+
+extension ImagePickerAdapter: ProfileImagePickerAdapterProtocol {
+    func setUpDelegate(_ delegate: ProfileImagePickerAdapterDelegate) {
+        self.profileDelegate = delegate
+    }
+    
 }
 
 //MARK: ImagePicker Delegate
@@ -45,12 +56,22 @@ extension ImagePickerAdapter: UIImagePickerControllerDelegate & UINavigationCont
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
-        delegate?.imagePicked(image)
-        delegate?.dismissImagePicker()
+        if onBoardingDelegate != nil {
+            onBoardingDelegate?.imagePicked(image)
+            onBoardingDelegate?.dismissImagePicker()
+        } else {
+            profileDelegate?.imagePicked(image)
+            profileDelegate?.dismissImagePicker()
+        }
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        delegate?.dismissImagePicker()
+        if onBoardingDelegate != nil {
+            onBoardingDelegate?.dismissImagePicker()
+        } else {
+            profileDelegate?.dismissImagePicker()
+        }
     }
 }
 

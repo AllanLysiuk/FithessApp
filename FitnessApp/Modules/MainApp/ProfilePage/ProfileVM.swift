@@ -15,19 +15,24 @@ final class ProfileVM: ProfileVMProtocol {
     private var userDataService: ProfileUserDataServiceProtocol
     private var imageService: ProfileImageServiceProtocol
     private var authService: ProfileAuthServiceProtocol
+    private var imagePickerAdapter: ProfileImagePickerAdapterProtocol
+    private weak var profileVCDelegate: ProfileVCDelegate?
     
     init(
         coordinator: ProfileCoordinatorProtocol,
         coreDataService: ProfileCoreDataServiceProtocol,
         userDataService: ProfileUserDataServiceProtocol,
         imageService: ProfileImageServiceProtocol,
-        authService: ProfileAuthServiceProtocol
+        authService: ProfileAuthServiceProtocol,
+        imagePickerAdapter: ProfileImagePickerAdapterProtocol
+
     ) {
         self.coordinator = coordinator
         self.coreDataService = coreDataService
         self.userDataService = userDataService
         self.imageService = imageService
         self.authService = authService
+        self.imagePickerAdapter = imagePickerAdapter
     }
     
     func logOut() {
@@ -63,6 +68,27 @@ final class ProfileVM: ProfileVMProtocol {
         }
     }
     
+    func setUpDelegate(_ delegate: ProfileVCDelegate) {
+        self.profileVCDelegate = delegate
+    }
     
+    func showImagePicker() {
+        imagePickerAdapter.setUpDelegate(self)
+        imagePickerAdapter.showImagePicker()
+    }
     
+}
+
+extension ProfileVM: ProfileImagePickerAdapterDelegate {
+    func presentImagePicker(_ imagePicker: ViewContext) {
+        coordinator?.presentImagePicker(imagePicker)
+    }
+    
+    func dismissImagePicker() {
+        coordinator?.dismissImagePicker()
+    }
+    
+    func imagePicked(_ img: UIImage) {
+        profileVCDelegate?.imagePicked(img)
+    }
 }

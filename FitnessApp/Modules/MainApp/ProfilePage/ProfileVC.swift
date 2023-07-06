@@ -53,6 +53,7 @@ final class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.setUpDelegate(self)
         setUpViewsAndConstraints()
         setUpActions()
         updateUIWithNewProfile(viewModel.loadProfile())
@@ -70,6 +71,10 @@ extension ProfileVC {
                                for: .touchUpInside)
     }
     
+    @objc private func didTapOnView(_ gesture: UITapGestureRecognizer) {
+        viewModel.showImagePicker()
+    }
+    
     @objc private func logOutButtonDidTap() {
         viewModel.logOut()
     }
@@ -77,9 +82,13 @@ extension ProfileVC {
     @objc private func editButtonDidTap() {
         editButton.isSelected = !editButton.isSelected
         if editButton.isSelected {
+            startWobbling()
             editButton.backgroundColor = .white
-            makeTextFieldsInteractive(true)
+            makeProfileInfoInteractive(true)
         } else {
+            stopWobbling()
+            editButton.backgroundColor =  UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
+            makeProfileInfoInteractive(false)
             viewModel.updateInfoOfProfile(
                 email: emailTextField.text ?? "",
                 name: nameTextView.text,
@@ -89,9 +98,6 @@ extension ProfileVC {
                 gender: genderTextField.text ?? "",
                 profileImage: profileImageView.image
             )
-            editButton.backgroundColor =  UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
-            makeTextFieldsInteractive(false)
-            
         }
     }
     
@@ -100,17 +106,37 @@ extension ProfileVC {
         weightTextField.resignFirstResponder()
         growthTextField.resignFirstResponder()
     }
+    
+    
 }
 
 // MARK: Set up UI
 extension ProfileVC {
     
-    private func makeTextFieldsInteractive(_ boolean: Bool) {
+    private func makeProfileInfoInteractive(_ boolean: Bool) {
+        profileImageView.isUserInteractionEnabled = boolean
         nameTextView.isUserInteractionEnabled = boolean
         ageTextField.isUserInteractionEnabled = boolean
         weightTextField.isUserInteractionEnabled = boolean
         growthTextField.isUserInteractionEnabled = boolean
         genderTextField.isUserInteractionEnabled = boolean
+    }
+    
+    private func startWobbling() {
+        mainInfoBackgroundView.startWobble()
+        ageBackgroundView.startWobble()
+        genderBackgroundView.startWobble()
+        weightBackgroundView.startWobble()
+        growthBackgroundView.startWobble()
+        
+    }
+    
+    private func stopWobbling() {
+        mainInfoBackgroundView.stopWobble()
+        ageBackgroundView.stopWobble()
+        genderBackgroundView.stopWobble()
+        weightBackgroundView.stopWobble()
+        growthBackgroundView.stopWobble()
     }
     
     private func updateUIWithNewProfile(_ profile: Profile) {
@@ -280,8 +306,14 @@ extension ProfileVC {
     
     private func setUpImageView() {
         let img = UIImageView()
+        img.isUserInteractionEnabled = false
         img.layer.masksToBounds = true
         img.translatesAutoresizingMaskIntoConstraints = false
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(didTapOnView(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        img.addGestureRecognizer(tapGesture)
         img.layer.cornerRadius = 75
         img.image = UIImage(named: "default-profile-image")
         img.contentMode = .scaleAspectFill
@@ -556,5 +588,11 @@ extension ProfileVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
+    }
+}
+
+extension ProfileVC: ProfileVCDelegate {
+    func imagePicked(_ img: UIImage) {
+        self.profileImageView.image = img
     }
 }

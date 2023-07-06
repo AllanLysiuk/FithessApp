@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ImagePickerAdapterProtocol {
+protocol OnBoardingImagePickerAdapterProtocol {
     func showImagePicker()
-    func setUpDelegate(_ delegate: ImageProfilePageDelegate)
+    func setUpDelegate(_ delegate: OnBoardingImagePickerAdapterDelegate)
 }

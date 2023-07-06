@@ -18,6 +18,9 @@
 		9D5881B92A5461A6007B42A3 /* ProfileImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */; };
 		9D5881BB2A559332007B42A3 /* ProfileAuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */; };
 		9D5881BD2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881BC2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift */; };
+		9D5881BF2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881BE2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift */; };
+		9D5881C12A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881C02A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift */; };
+		9D5881C42A574FA8007B42A3 /* ProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881C32A574FA8007B42A3 /* ProfileVCDelegate.swift */; };
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
@@ -128,8 +131,8 @@
 		9D75E2E92A4F594000628060 /* ImageProfileVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2E82A4F594000628060 /* ImageProfileVMProtocol.swift */; };
 		9D75E2EB2A4F5A4E00628060 /* ImageProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2EA2A4F5A4E00628060 /* ImageProfileVM.swift */; };
 		9D75E2EE2A4F5B6600628060 /* ImagePickerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2ED2A4F5B6600628060 /* ImagePickerAdapter.swift */; };
-		9D75E2F02A4F5B7700628060 /* ImagePickerAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2EF2A4F5B7700628060 /* ImagePickerAdapterProtocol.swift */; };
-		9D75E2F22A4F5C9400628060 /* ImageProfilePageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F12A4F5C9400628060 /* ImageProfilePageDelegate.swift */; };
+		9D75E2F02A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2EF2A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift */; };
+		9D75E2F22A4F5C9400628060 /* OnBoardingImagePickerAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F12A4F5C9400628060 /* OnBoardingImagePickerAdapterDelegate.swift */; };
 		9D75E2F42A4F607B00628060 /* ImageProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F32A4F607B00628060 /* ImageProfileVCDelegate.swift */; };
 		9D75E2F62A4F648200628060 /* ImageProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F52A4F648200628060 /* ImageProfileAssembler.swift */; };
 		9D75E2F92A50198900628060 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75E2F82A50198900628060 /* ProfileModel.swift */; };
@@ -154,6 +157,9 @@
 		9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageServiceProtocol.swift; sourceTree = "<group>"; };
 		9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAuthServiceProtocol.swift; sourceTree = "<group>"; };
 		9D5881BC2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881BE2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerAdapterDelegate.swift; sourceTree = "<group>"; };
+		9D5881C02A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerAdapterProtocol.swift; sourceTree = "<group>"; };
+		9D5881C32A574FA8007B42A3 /* ProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCDelegate.swift; sourceTree = "<group>"; };
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,8 +269,8 @@
 		9D75E2E82A4F594000628060 /* ImageProfileVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileVMProtocol.swift; sourceTree = "<group>"; };
 		9D75E2EA2A4F5A4E00628060 /* ImageProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileVM.swift; sourceTree = "<group>"; };
 		9D75E2ED2A4F5B6600628060 /* ImagePickerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerAdapter.swift; sourceTree = "<group>"; };
-		9D75E2EF2A4F5B7700628060 /* ImagePickerAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerAdapterProtocol.swift; sourceTree = "<group>"; };
-		9D75E2F12A4F5C9400628060 /* ImageProfilePageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfilePageDelegate.swift; sourceTree = "<group>"; };
+		9D75E2EF2A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingImagePickerAdapterProtocol.swift; sourceTree = "<group>"; };
+		9D75E2F12A4F5C9400628060 /* OnBoardingImagePickerAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingImagePickerAdapterDelegate.swift; sourceTree = "<group>"; };
 		9D75E2F32A4F607B00628060 /* ImageProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileVCDelegate.swift; sourceTree = "<group>"; };
 		9D75E2F52A4F648200628060 /* ImageProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileAssembler.swift; sourceTree = "<group>"; };
 		9D75E2F82A50198900628060 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -299,6 +305,17 @@
 				9D5881AA2A541F67007B42A3 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9D5881C22A574609007B42A3 /* ServiceProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */,
+				9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */,
+				9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */,
+				9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */,
+			);
+			path = ServiceProtocols;
 			sourceTree = "<group>";
 		};
 		9D6616642A406D3C00B43125 = {
@@ -542,13 +559,12 @@
 		9D6616EF2A45B99200B43125 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9D5881C22A574609007B42A3 /* ServiceProtocols */,
 				9D6616F02A45B9A700B43125 /* ProfileVMProtocol.swift */,
 				9D6616F22A45B9BB00B43125 /* ProfileCoordinatorProtocol.swift */,
 				9D6616F42A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift */,
-				9D5881B42A545942007B42A3 /* ProfileCoreDataServiceProtocol.swift */,
-				9D5881B62A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift */,
-				9D5881B82A5461A6007B42A3 /* ProfileImageServiceProtocol.swift */,
-				9D5881BA2A559332007B42A3 /* ProfileAuthServiceProtocol.swift */,
+				9D5881BE2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift */,
+				9D5881C32A574FA8007B42A3 /* ProfileVCDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -755,7 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				9D75E2E82A4F594000628060 /* ImageProfileVMProtocol.swift */,
-				9D75E2F12A4F5C9400628060 /* ImageProfilePageDelegate.swift */,
+				9D75E2F12A4F5C9400628060 /* OnBoardingImagePickerAdapterDelegate.swift */,
 				9D75E2F32A4F607B00628060 /* ImageProfileVCDelegate.swift */,
 			);
 			path = Protocols;
@@ -765,7 +781,8 @@
 			isa = PBXGroup;
 			children = (
 				9D75E2ED2A4F5B6600628060 /* ImagePickerAdapter.swift */,
-				9D75E2EF2A4F5B7700628060 /* ImagePickerAdapterProtocol.swift */,
+				9D75E2EF2A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift */,
+				9D5881C02A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift */,
 			);
 			path = ImagePickerAdapter;
 			sourceTree = "<group>";
@@ -918,7 +935,7 @@
 				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
 				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
-				9D75E2F02A4F5B7700628060 /* ImagePickerAdapterProtocol.swift in Sources */,
+				9D75E2F02A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift in Sources */,
 				9D75E2842A48C38B00628060 /* UIFont+Extension.swift in Sources */,
 				9D6616CB2A45838D00B43125 /* TabBarCoordinator.swift in Sources */,
 				9D5881BB2A559332007B42A3 /* ProfileAuthServiceProtocol.swift in Sources */,
@@ -945,13 +962,15 @@
 				9D6616D92A458E9100B43125 /* TrainingCoordiantor.swift in Sources */,
 				9D6616E92A45B75D00B43125 /* HistoryCoordinator.swift in Sources */,
 				9D75E2C92A4EB7A300628060 /* PageListsDelegate.swift in Sources */,
+				9D5881BF2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift in Sources */,
 				9D6616B62A44780800B43125 /* ForgotPasswordRootCoordinatorProtocol.swift in Sources */,
 				9D6616AF2A44503500B43125 /* RegisterAssembler.swift in Sources */,
 				9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */,
+				9D5881C12A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift in Sources */,
 				9D75E2782A48BAEF00628060 /* LoginAuthServiceProtocol.swift in Sources */,
 				9D6617072A45BCDD00B43125 /* MotivationVC.swift in Sources */,
 				9D6616BC2A447B1100B43125 /* ForgotPasswordCoordinator.swift in Sources */,
-				9D75E2F22A4F5C9400628060 /* ImageProfilePageDelegate.swift in Sources */,
+				9D75E2F22A4F5C9400628060 /* OnBoardingImagePickerAdapterDelegate.swift in Sources */,
 				9D75E2962A4B4D0500628060 /* ForgotPasswordLoginDelegate.swift in Sources */,
 				9D6616A92A444FF100B43125 /* RegisterVC.swift in Sources */,
 				9D5881B72A545BDE007B42A3 /* ProfileUserDataServiceProtocol.swift in Sources */,
@@ -996,6 +1015,7 @@
 				9D75E2D12A4EBE4600628060 /* PickerPageAssembler.swift in Sources */,
 				9D75E3092A52E81C00628060 /* NamePageVMProtocol.swift in Sources */,
 				9D5881B12A54224C007B42A3 /* Profile+CoreDataProperties.swift in Sources */,
+				9D5881C42A574FA8007B42A3 /* ProfileVCDelegate.swift in Sources */,
 				9D66170B2A45BDAA00B43125 /* MotivationCoordinator.swift in Sources */,
 				9D66169E2A4449B400B43125 /* LoginCoordinatorProtocol.swift in Sources */,
 				9D66168C2A4444E500B43125 /* UserDefaultsEnum.swift in Sources */,

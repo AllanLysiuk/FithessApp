@@ -12,6 +12,8 @@ final class ProfileCoordinator: Coordinator {
     private var tabBarController: UITabBarController
     private var rootCoordinator: ProfileRootCoordinatorProtocol
     private var container: Container
+    private var navigationController = UINavigationController()
+    
     var childCoordinators: [Coordinator] = []
     
     
@@ -27,7 +29,8 @@ final class ProfileCoordinator: Coordinator {
     
     func start() {
         let vc = ProfileAssembler.makeProfileVC(coordinator: self, container: container)
-        tabBarController.addChild(vc)
+        navigationController.addChild(vc)
+        tabBarController.addChild(navigationController)
     }
     
     func finish() {
@@ -37,5 +40,11 @@ final class ProfileCoordinator: Coordinator {
 }
 
 extension ProfileCoordinator: ProfileCoordinatorProtocol {
+    func presentImagePicker(_ imagePicker: ViewContext) {
+        navigationController.present(imagePicker.viewController, animated: true)
+    }
     
+    func dismissImagePicker() {
+        navigationController.dismiss(animated: true)
+    }
 }

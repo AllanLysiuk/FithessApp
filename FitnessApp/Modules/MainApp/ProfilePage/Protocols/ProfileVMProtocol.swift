@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 protocol ProfileVMProtocol {
+    func showImagePicker()
+    func setUpDelegate(_ delegate: ProfileVCDelegate)
     func logOut()
     func loadProfile() -> Profile
     func loadPhotoBy(_ relativePath: String) -> UIImage
