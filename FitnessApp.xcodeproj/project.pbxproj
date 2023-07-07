@@ -21,6 +21,10 @@
 		9D5881BF2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881BE2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift */; };
 		9D5881C12A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881C02A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift */; };
 		9D5881C42A574FA8007B42A3 /* ProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881C32A574FA8007B42A3 /* ProfileVCDelegate.swift */; };
+		9D5881C82A580280007B42A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5881C72A580280007B42A3 /* HealthKit.framework */; };
+		9D5881CA2A5805E8007B42A3 /* HealtKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881C92A5805E8007B42A3 /* HealtKitService.swift */; };
+		9D5881CC2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CB2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift */; };
+		9D5881CE2A5852C2007B42A3 /* HKTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */; };
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
@@ -160,6 +164,11 @@
 		9D5881BE2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerAdapterDelegate.swift; sourceTree = "<group>"; };
 		9D5881C02A5744EC007B42A3 /* ProfileImagePickerAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerAdapterProtocol.swift; sourceTree = "<group>"; };
 		9D5881C32A574FA8007B42A3 /* ProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCDelegate.swift; sourceTree = "<group>"; };
+		9D5881C52A580280007B42A3 /* FitnessApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessApp.entitlements; sourceTree = "<group>"; };
+		9D5881C72A580280007B42A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		9D5881C92A5805E8007B42A3 /* HealtKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealtKitService.swift; sourceTree = "<group>"; };
+		9D5881CB2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHealthKitServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKTypeEnum.swift; sourceTree = "<group>"; };
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D75E2A02A4C32D300628060 /* GoogleSignInSwift in Frameworks */,
+				9D5881C82A580280007B42A3 /* HealthKit.framework in Frameworks */,
 				9D75E29B2A4B5D8700628060 /* FirebaseAuth in Frameworks */,
 				9D75E29E2A4C32D300628060 /* GoogleSignIn in Frameworks */,
 			);
@@ -318,11 +328,20 @@
 			path = ServiceProtocols;
 			sourceTree = "<group>";
 		};
+		9D5881C62A580280007B42A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D5881C72A580280007B42A3 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D6616642A406D3C00B43125 = {
 			isa = PBXGroup;
 			children = (
 				9D66166F2A406D3C00B43125 /* FitnessApp */,
 				9D66166E2A406D3C00B43125 /* Products */,
+				9D5881C62A580280007B42A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -337,6 +356,7 @@
 		9D66166F2A406D3C00B43125 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				9D5881C52A580280007B42A3 /* FitnessApp.entitlements */,
 				9D6616852A44417000B43125 /* Coordinator.swift */,
 				9D75E2A32A4CC2DC00628060 /* ViewContext.swift */,
 				9D75E2F72A50196900628060 /* Models */,
@@ -371,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				9D66168B2A4444E500B43125 /* UserDefaultsEnum.swift */,
+				9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */,
 			);
 			path = GlobalEnums;
 			sourceTree = "<group>";
@@ -518,6 +539,7 @@
 				9D6616CE2A458BB600B43125 /* TrainingVMProtocol.swift */,
 				9D6616D02A458BC900B43125 /* TrainingCoordinatorProtocol.swift */,
 				9D6616D22A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift */,
+				9D5881CB2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -599,6 +621,7 @@
 				9D75E2A52A4D718400628060 /* UserDataService.swift */,
 				9D75E2FA2A501D6300628060 /* ImageService.swift */,
 				9D5881AC2A541FFF007B42A3 /* CoreDataService.swift */,
+				9D5881C92A5805E8007B42A3 /* HealtKitService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -919,6 +942,7 @@
 				9D6616F72A45BA0800B43125 /* ProfileVC.swift in Sources */,
 				9D75E2F62A4F648200628060 /* ImageProfileAssembler.swift in Sources */,
 				9D6616F92A45BA8800B43125 /* ProfileVM.swift in Sources */,
+				9D5881CA2A5805E8007B42A3 /* HealtKitService.swift in Sources */,
 				9D75E2C32A4D84D700628060 /* PageViewAdapter.swift in Sources */,
 				9D6616E52A45B5E300B43125 /* HistoryVC.swift in Sources */,
 				9D6616D52A458C7F00B43125 /* TrainingVC.swift in Sources */,
@@ -960,6 +984,7 @@
 				9D75E2A82A4D767000628060 /* LoginUserDataServiceProtocol.swift in Sources */,
 				9D5881BD2A55DFC6007B42A3 /* LoginCoreDataServiceProtocol.swift in Sources */,
 				9D6616D92A458E9100B43125 /* TrainingCoordiantor.swift in Sources */,
+				9D5881CE2A5852C2007B42A3 /* HKTypeEnum.swift in Sources */,
 				9D6616E92A45B75D00B43125 /* HistoryCoordinator.swift in Sources */,
 				9D75E2C92A4EB7A300628060 /* PageListsDelegate.swift in Sources */,
 				9D5881BF2A5743FA007B42A3 /* ProfileImagePickerAdapterDelegate.swift in Sources */,
@@ -1009,6 +1034,7 @@
 				9D75E2CF2A4EBE3A00628060 /* PickerPageVM.swift in Sources */,
 				9D5881A82A541E60007B42A3 /* DataModel.xcdatamodeld in Sources */,
 				9D75E2C52A4D863100628060 /* OnBoardingPageEnum.swift in Sources */,
+				9D5881CC2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift in Sources */,
 				9D75E2A62A4D718500628060 /* UserDataService.swift in Sources */,
 				9D6616D12A458BC900B43125 /* TrainingCoordinatorProtocol.swift in Sources */,
 				9D6616F52A45B9CC00B43125 /* ProfileRootCoordinatorProtocol.swift in Sources */,
@@ -1162,6 +1188,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitnessApp/FitnessApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5H3Y5WAVX4;
@@ -1189,6 +1216,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitnessApp/FitnessApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5H3Y5WAVX4;

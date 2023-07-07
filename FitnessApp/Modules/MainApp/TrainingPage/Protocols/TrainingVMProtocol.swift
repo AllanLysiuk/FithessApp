@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TrainingVMProtocol {
-
+    func startButonDidTap(isSelected: Bool)
 }

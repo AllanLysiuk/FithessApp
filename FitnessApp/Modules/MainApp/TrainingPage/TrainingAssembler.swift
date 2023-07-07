@@ -11,11 +11,15 @@ import UIKit
 final class TrainingAssembler {
     private init() { }
     
-    static func makeTrainingVC(coordinator: TrainingCoordinatorProtocol) -> UIViewController {
-        return TrainingVC(viewModel: makeViewModel(coordinator: coordinator))
+    static func makeTrainingVC(coordinator: TrainingCoordinatorProtocol, container: Container) -> UIViewController {
+        return TrainingVC(viewModel: makeViewModel(coordinator: coordinator, container: container))
     }
     
-    private static func makeViewModel(coordinator: TrainingCoordinatorProtocol) -> TrainingVMProtocol {
-        return TrainingVM(coordinator: coordinator)
+    private static func makeViewModel(coordinator: TrainingCoordinatorProtocol,container: Container) -> TrainingVMProtocol {
+        return TrainingVM(coordinator: coordinator, healthKitService: makeHeakthKitService(container: container))
+    }
+    
+    private static func makeHeakthKitService(container: Container) -> HealthKitServiceProtocol {
+        return container.resolve()
     }
 }

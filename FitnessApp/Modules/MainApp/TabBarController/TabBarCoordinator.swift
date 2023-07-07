@@ -54,7 +54,7 @@ extension TabBarCoordinator {
     }
     
     private func generateTrainItem(_ tabBar: UITabBarController) {
-        let coordinator = TrainingCoordiantor(tabBarController: tabBar, rootCoordinator: self)
+        let coordinator = TrainingCoordiantor(tabBarController: tabBar, rootCoordinator: self, container: container)
         childCoordinators.append(coordinator)
         coordinator.start()
     }

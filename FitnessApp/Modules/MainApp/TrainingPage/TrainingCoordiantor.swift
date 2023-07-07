@@ -11,15 +11,21 @@ import UIKit
 final class TrainingCoordiantor: Coordinator {
     private var tabBarController: UITabBarController
     private var rootCoordinator: TrainingRootCoordinatorProtocol
+    private var container: Container
     var childCoordinators: [Coordinator] = []
     
-    init(tabBarController: UITabBarController, rootCoordinator: TrainingRootCoordinatorProtocol) {
+    init(
+        tabBarController: UITabBarController,
+        rootCoordinator: TrainingRootCoordinatorProtocol,
+        container: Container
+    ) {
         self.tabBarController = tabBarController
         self.rootCoordinator = rootCoordinator
+        self.container = container
     }
     
     func start() {
-        let vc = TrainingAssembler.makeTrainingVC(coordinator: self) 
+        let vc = TrainingAssembler.makeTrainingVC(coordinator: self, container: container)
         tabBarController.addChild(vc)
     }
     

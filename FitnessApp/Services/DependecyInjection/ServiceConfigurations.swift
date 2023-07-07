@@ -17,6 +17,7 @@ final class ServiceConfigurations {
         container.register({Self.userDataService})
         container.register({Self.imageService})
         container.register({Self.coreDataService})
+        container.register({Self.heakthKitService})
     }
     
 }
@@ -30,6 +31,8 @@ protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoa
 protocol ImageServiceProtocol: AnyObject, OnBoardingImageServiceProtocol, ProfileImageServiceProtocol { }
 
 protocol CoreDataServiceProtocol: AnyObject, OnBoardingCoreDataServiceProtocol, ProfileCoreDataServiceProtocol, LoginCoreDataServiceProtocol { }
+
+protocol HealthKitServiceProtocol: AnyObject, TrainingHealthKitServiceProtocol {}
 
 private extension ServiceConfigurations {
     
@@ -51,5 +54,9 @@ private extension ServiceConfigurations {
     
     static var coreDataService: CoreDataServiceProtocol {
         return CoreDataService()
+    }
+    
+    static var heakthKitService: HealthKitServiceProtocol {
+        return HealthKitService()
     }
 }
