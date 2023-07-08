@@ -44,7 +44,8 @@ final class HealthKitService: HealthKitServiceProtocol {
             return
         }
         let predicate = HKQuery.predicateForSamples(withStart: startTime, end: endTime, options: .strictStartDate)
-        let query = HKStatisticsQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (_, result, error) in
+        
+        let query = HKStatisticsQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: type.getHKOption()) { (_, result, error) in
             var resultCount = 0.0
             guard let result = result else {
                 completion(nil, error)

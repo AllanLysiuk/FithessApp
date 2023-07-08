@@ -8,5 +8,6 @@
 import Foundation
 
 protocol TrainingVMProtocol {
+    func setUpDelegate(_ delegate: TrainingVCDelegate)
     func startButonDidTap(isSelected: Bool)
 }

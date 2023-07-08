@@ -39,4 +39,17 @@ enum HKType {
             return .meter().unitDivided(by: .second())
         }
     }
+    
+    func getHKOption() -> HKStatisticsOptions {
+        switch self {
+        case .steps:
+            return .cumulativeSum
+        case .distance:
+            return .cumulativeSum
+        case .calories:
+            return .cumulativeSum
+        case .speed:
+            return .discreteAverage
+        }
+    }
 }

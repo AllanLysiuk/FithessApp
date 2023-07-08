@@ -11,6 +11,7 @@ final class TrainingVM: TrainingVMProtocol {
     
     private weak var coordinator: TrainingCoordinatorProtocol?
     private var healthKitService: TrainingHealthKitServiceProtocol
+    private weak var delegate: TrainingVCDelegate?
     private var startDate = Date()
     
     private var distanceWalking: Double?
@@ -24,6 +25,10 @@ final class TrainingVM: TrainingVMProtocol {
     ) {
         self.coordinator = coordinator
         self.healthKitService = healthKitService
+    }
+    
+    func setUpDelegate(_ delegate: TrainingVCDelegate) {
+        self.delegate = delegate
     }
     
     func startButonDidTap(isSelected: Bool) {
@@ -42,24 +47,54 @@ final class TrainingVM: TrainingVMProtocol {
             }
             startDate = .now
         } else {
+            delegate?.startAnimatingIndicator()
+            let group = DispatchGroup()
+            
+            group.enter()
             healthKitService.loadInfoByType(.distance, since: startDate, to: .now) { res, error in
                 if let error = error {
-                    print(error.localizedDescription)
+                    print(error.localizedDescription + "  1")
                 } else {
                     self.distanceWalking = res
-                    print(self.distanceWalking)
                 }
+                group.leave()
             }
             
+            group.enter()
             healthKitService.loadInfoByType(.steps, since: startDate, to: .now) { res, error in
                 if let error = error {
-                    print(error.localizedDescription)
+                    print(error.localizedDescription + "  2")
                 } else {
                     self.steps = res
-                    print(self.steps)
                 }
+                group.leave()
             }
+            
+            group.enter()
+            healthKitService.loadInfoByType(.speed, since: startDate, to: .now) { res, error in
+                if let error = error {
+                    print(error.localizedDescription + "  3")
+                } else {
+                    self.avgSpeed = res
+                }
+                group.leave()
+            }
+            
+            group.enter()
+            healthKitService.loadInfoByType(.calories, since: startDate, to: .now) { res, error in
+                if let error = error {
+                    print(error.localizedDescription + "  4")
+                } else {
+                    self.calories = res
+                }
+                group.leave()
+            }
+        
+            group.notify(queue: .main) {
+                self.delegate?.endAnimatingIndictor(distance: self.distanceWalking, steps: self.steps, calories: self.calories, avgSpeed: self.avgSpeed)
+            }
+            
         }
     }
-    
+
 }

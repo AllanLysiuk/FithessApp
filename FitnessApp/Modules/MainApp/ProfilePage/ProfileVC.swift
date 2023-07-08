@@ -357,6 +357,7 @@ extension ProfileVC {
     
     private func setUpEmailTitleLabel() {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setupLabel(text: "Email", color: .white, fontName: (.mRegular14 ?? .systemFont(ofSize: 14, weight: .regular)) )
         view.addSubview(label)
         self.emailTitleLabel = label
@@ -392,6 +393,7 @@ extension ProfileVC {
     
     private func setUpGenderTitleLabel() {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setupLabel(text: "Gender", color: .white, fontName: (.mRegular14 ?? .systemFont(ofSize: 14, weight: .regular)) )
         view.addSubview(label)
         self.genderTitleLabel = label
@@ -427,6 +429,7 @@ extension ProfileVC {
     
     private func setUpAgeTitleLabel() {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setupLabel(text: "Age", color: .white, fontName: (.mRegular14 ?? .systemFont(ofSize: 14, weight: .regular)) )
         view.addSubview(label)
         self.ageTitleLabel = label
@@ -462,6 +465,7 @@ extension ProfileVC {
     
     private func setUpWeightTitleLabel() {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setupLabel(text: "Weight", color: .white, fontName: (.mRegular14 ?? .systemFont(ofSize: 14, weight: .regular)) )
         view.addSubview(label)
         self.weightTitleLabel = label
@@ -497,6 +501,7 @@ extension ProfileVC {
     
     private func setUpGrowthTitleLabel() {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setupLabel(text: "Growth", color: .white, fontName: (.mRegular14 ?? .systemFont(ofSize: 14, weight: .regular)) )
         view.addSubview(label)
         self.growthTitleLabel = label
