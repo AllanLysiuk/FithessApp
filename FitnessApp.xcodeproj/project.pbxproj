@@ -26,6 +26,7 @@
 		9D5881CC2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CB2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift */; };
 		9D5881CE2A5852C2007B42A3 /* HKTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */; };
 		9D5881D02A5963C9007B42A3 /* TrainingVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CF2A5963C9007B42A3 /* TrainingVCDelegate.swift */; };
+		9D5881D22A5B1D91007B42A3 /* TrainingUserDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881D12A5B1D90007B42A3 /* TrainingUserDataServiceProtocol.swift */; };
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
@@ -171,6 +172,7 @@
 		9D5881CB2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHealthKitServiceProtocol.swift; sourceTree = "<group>"; };
 		9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKTypeEnum.swift; sourceTree = "<group>"; };
 		9D5881CF2A5963C9007B42A3 /* TrainingVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVCDelegate.swift; sourceTree = "<group>"; };
+		9D5881D12A5B1D90007B42A3 /* TrainingUserDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingUserDataServiceProtocol.swift; sourceTree = "<group>"; };
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				9D6616D22A458BDF00B43125 /* TrainingRootCoordinatorProtocol.swift */,
 				9D5881CB2A583E09007B42A3 /* TrainingHealthKitServiceProtocol.swift */,
 				9D5881CF2A5963C9007B42A3 /* TrainingVCDelegate.swift */,
+				9D5881D12A5B1D90007B42A3 /* TrainingUserDataServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 				9D75E2862A48CE4100628060 /* ForgotPasswordAuthServiceProtocol.swift in Sources */,
 				9D6616E72A45B70D00B43125 /* HistoryVM.swift in Sources */,
 				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
+				9D5881D22A5B1D91007B42A3 /* TrainingUserDataServiceProtocol.swift in Sources */,
 				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
 				9D75E2F02A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift in Sources */,

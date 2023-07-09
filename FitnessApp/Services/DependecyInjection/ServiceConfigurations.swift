@@ -26,7 +26,7 @@ protocol AuthServiceProtocol: AnyObject, LoginAuthServiceProtocol & ForgotPasswo
 
 protocol AlertFactoryProtocol: AnyObject, AlertControllerFactoryProtocol { }
 
-protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoardingUserDataServiceProtocol, ProfileUserDataServiceProtocol { }
+protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoardingUserDataServiceProtocol, ProfileUserDataServiceProtocol, TrainingUserDataServiceProtocol { }
 
 protocol ImageServiceProtocol: AnyObject, OnBoardingImageServiceProtocol, ProfileImageServiceProtocol { }
 

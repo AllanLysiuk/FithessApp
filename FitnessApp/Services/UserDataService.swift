@@ -28,4 +28,29 @@ final class UserDataService: UserDataServiceProtocol {
     func getUserEmail() -> String {
        return ud.string(forKey: UserDefaultsEnum.currentUserEmail) ?? ""
     }
+    
+    func getStartTime() -> Date? {
+        return ud.object(forKey: UserDefaultsEnum.startTime) as? Date
+    }
+    
+    func getStopTime() -> Date? {
+        return ud.object(forKey: UserDefaultsEnum.stopTime) as? Date
+    }
+    
+    func getTimerCounting() -> Bool {
+        return ud.bool(forKey: UserDefaultsEnum.timerCounting)
+    }
+    
+    func setStartTime(startTime: Date?) {
+        ud.set(startTime, forKey: UserDefaultsEnum.startTime)
+    }
+    
+    func setStopTime(stopTime: Date?) {
+        ud.set(stopTime, forKey: UserDefaultsEnum.stopTime)
+    }
+    
+    func setTimerCounting(timerCounting: Bool) {
+        ud.set(timerCounting, forKey: UserDefaultsEnum.timerCounting)
+    }
+
 }

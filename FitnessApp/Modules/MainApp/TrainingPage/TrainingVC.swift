@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 final class TrainingVC: UIViewController {
+    private var timeLabel: UILabel!
+    private var timeCounterLabel: UILabel!
     private var distanceWalkingCounterLabel: UILabel!
     private var stepsCounterLabel: UILabel!
     private var caloriesCounterLabel: UILabel!
@@ -18,7 +20,10 @@ final class TrainingVC: UIViewController {
     private var caloriesLabel: UILabel!
     private var avgSpeedLabel: UILabel!
     private var spinner: UIActivityIndicatorView!
+    private var backgroundButtonsView: UIView!
+    private var betweenButtonsView: UIView!
     private var startButton: UIButton!
+    private var resetButton: UIButton!
     private var viewModel: TrainingVMProtocol
     
     init(viewModel: TrainingVMProtocol) {
@@ -41,6 +46,7 @@ final class TrainingVC: UIViewController {
         super.viewDidLoad()
         setUpViewsAndConstraints()
         setUpActions()
+        viewModel.checkTimer()
     }
 }
 
@@ -50,26 +56,34 @@ extension TrainingVC {
         startButton.addTarget(self,
                              action: #selector(startButtonDidTap),
                              for: .touchUpInside)
+        resetButton.addTarget(self,
+                              action: #selector(resetButtonDidTap),
+                              for: .touchUpInside)
     }
     
     
     @objc private func startButtonDidTap() {
         startButton.isSelected = !startButton.isSelected
-        if startButton.isSelected {
-            startButton.backgroundColor = .white
-        } else {
-            startButton.backgroundColor =  UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
-        }
         viewModel.startButonDidTap(isSelected: startButton.isSelected)
+    }
+    
+    @objc private func resetButtonDidTap() {
+        viewModel.resetButtonDidTap()
     }
 
 }
 
 // MARK: Set up UI
 extension TrainingVC {
-    
+
     private func setUpViewsAndConstraints() {
         view.backgroundColor = .white
+        
+        setUpBackgroundButtonsView()
+        setUpBetweenButtonsView()
+        
+        setUpTimeLabel()
+        setUpTimeCounterLabel()
         
         setUpDistanceWalkingLabel()
         setUpDistanceWalkingCounterLabel()
@@ -86,6 +100,51 @@ extension TrainingVC {
         setUpActivityIndicator()
         
         setUpStartButton()
+        setUpResetButton()
+        
+    }
+    
+    private func setUpBackgroundButtonsView() {
+        let bckView = UIView()
+        bckView.translatesAutoresizingMaskIntoConstraints = false
+        bckView.backgroundColor = UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
+        bckView.layer.cornerRadius = 125
+        view.addSubview(bckView)
+        backgroundButtonsView = bckView
+        
+        NSLayoutConstraint.activate([
+            backgroundButtonsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backgroundButtonsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            backgroundButtonsView.heightAnchor.constraint(equalToConstant: 250.0),
+            backgroundButtonsView.widthAnchor.constraint(equalToConstant: 250.0)
+        ])
+    }
+    
+    private func setUpTimeLabel() {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setupLabel(text: "Training time", color: .black, fontName: (.mSemiBold30 ?? .systemFont(ofSize: 30, weight: .semibold)) )
+        view.addSubview(label)
+        self.timeLabel = label
+        
+        NSLayoutConstraint.activate([
+            timeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8.0)
+        ])
+        
+    }
+    
+    private func setUpTimeCounterLabel() {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setupLabel(text: "00:00:00", color: .black, fontName: (.mSemiBold32 ?? .systemFont(ofSize: 32, weight: .semibold)) )
+        view.addSubview(label)
+        self.timeCounterLabel = label
+        
+        NSLayoutConstraint.activate([
+            timeCounterLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timeCounterLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8.0)
+        ])
         
     }
 
@@ -98,7 +157,7 @@ extension TrainingVC {
         
         NSLayoutConstraint.activate([
             distanceWalkingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            distanceWalkingLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8.0)
+            distanceWalkingLabel.topAnchor.constraint(equalTo: timeCounterLabel.bottomAnchor, constant: 8.0)
         ])
         
     }
@@ -211,6 +270,21 @@ extension TrainingVC {
         ])
     }
     
+    private func setUpBetweenButtonsView() {
+        let btwView = UIView()
+        btwView.translatesAutoresizingMaskIntoConstraints = false
+        btwView.backgroundColor = .clear
+        view.addSubview(btwView)
+        betweenButtonsView = btwView
+        
+        NSLayoutConstraint.activate([
+            betweenButtonsView.centerXAnchor.constraint(equalTo: backgroundButtonsView.centerXAnchor),
+            betweenButtonsView.centerYAnchor.constraint(equalTo: backgroundButtonsView.centerYAnchor),
+            betweenButtonsView.heightAnchor.constraint(equalToConstant: 1),
+            betweenButtonsView.widthAnchor.constraint(equalToConstant: 1)
+        ])
+    }
+    
     private func setUpStartButton() {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -220,22 +294,39 @@ extension TrainingVC {
         btn.backgroundColor = UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
 
         btn.setTitle("Stop", for: .selected)
-        btn.setTitleColor( UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1), for: .selected)
         
-        btn.layer.cornerRadius = 125.0
-        btn.titleLabel?.font = .mSemiBold32
+        btn.layer.cornerRadius = 10.0
+        btn.titleLabel?.font = .mSemiBold20
         view.addSubview(btn)
         startButton = btn
         
         NSLayoutConstraint.activate([
-            startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
-            startButton.heightAnchor.constraint(equalToConstant: 250.0),
-            startButton.widthAnchor.constraint(equalToConstant: 250.0)
+            startButton.centerXAnchor.constraint(equalTo: backgroundButtonsView.centerXAnchor),
+            startButton.bottomAnchor.constraint(equalTo: betweenButtonsView.topAnchor, constant: 0.0),
+        ])
+    }
+    
+    private func setUpResetButton() {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        
+        btn.setTitle("Reset", for: .normal)
+        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        btn.backgroundColor = UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
+        
+        btn.layer.cornerRadius = 10.0
+        btn.titleLabel?.font = .mSemiBold20
+        view.addSubview(btn)
+        resetButton = btn
+        
+        NSLayoutConstraint.activate([
+            resetButton.centerXAnchor.constraint(equalTo: backgroundButtonsView.centerXAnchor),
+            resetButton.topAnchor.constraint(equalTo: betweenButtonsView.bottomAnchor, constant: 0.0),
         ])
     }
 }
 
+//MARK: TrainingVC delegate
 extension TrainingVC: TrainingVCDelegate {
     func startAnimatingIndicator() {
         self.view.isUserInteractionEnabled = false
@@ -254,4 +345,17 @@ extension TrainingVC: TrainingVCDelegate {
         avgSpeedCounterLabel.text = String(describing: avg)
         spinner.stopAnimating()
     }
+    
+    func setTimeLabel(_ timeString: String) {
+        timeCounterLabel.text = timeString
+    }
+    
+    func setButtonSelection(isSelected: Bool) {
+        startButton.isSelected = isSelected
+    }
+}
+
+//MARK: Private funcs
+extension TrainingVC {
+    
 }
