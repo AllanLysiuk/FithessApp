@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import MapKit
 
 final class TrainingVM: TrainingVMProtocol {
     
     private weak var coordinator: TrainingCoordinatorProtocol?
     private var healthKitService: TrainingHealthKitServiceProtocol
     private var userDataService: TrainingUserDataServiceProtocol
+    private var mapAdapter: MapAdapterProtocol
     private weak var delegate: TrainingVCDelegate?
     private var startDate = Date()
     
@@ -20,24 +22,40 @@ final class TrainingVM: TrainingVMProtocol {
     private var calories: Double?
     private var avgSpeed: Double?
     
-    var timerCounting:Bool = false
-    var startTime:Date?
-    var stopTime:Date?
-    
+    private var timerCounting:Bool = false
+    private var startTime:Date?
+    private var stopTime:Date?
+    private var locationUpdatingTimer: Int = 0
+    private var locations: [CLLocationCoordinate2D] = []
     private var scheduledTimer: Timer!
     
     init(
         coordinator: TrainingCoordinatorProtocol,
         healthKitService: TrainingHealthKitServiceProtocol,
-        userDataService: TrainingUserDataServiceProtocol
+        userDataService: TrainingUserDataServiceProtocol,
+        mapAdapter: MapAdapterProtocol
     ) {
         self.coordinator = coordinator
         self.healthKitService = healthKitService
         self.userDataService = userDataService
+        self.mapAdapter = mapAdapter
     }
     
     func setUpDelegate(_ delegate: TrainingVCDelegate) {
         self.delegate = delegate
+    }
+    
+    func setUpMapView(_ mapView: MKMapView) {
+        mapAdapter.setUpMapView(mapView)
+    }
+    
+    func setUpMapItems() {
+        guard let latitude = userDataService.getLastLocationLatitude(),
+              let longitude = userDataService.getLastLocationLongitude() else { return }
+        for i in 0..<latitude.count {
+            locations.append(CLLocationCoordinate2D(latitude: latitude[i], longitude: longitude[i]))
+        }
+       // mapAdapter.setUpItems(locations)
     }
     
     func startButonDidTap(isSelected: Bool) {
@@ -107,6 +125,10 @@ final class TrainingVM: TrainingVMProtocol {
         }
     }
     
+    private func resetArr() {
+        userDataService.setLastLocationLatitude(latitude: [])
+        userDataService.setLastLocationLongitude(longitude: [])
+    }
 }
 
 //MARK: Timer
@@ -116,7 +138,7 @@ extension TrainingVM {
         startTime = userDataService.getStartTime()
         stopTime = userDataService.getStopTime()
         timerCounting = userDataService.getTimerCounting()
-        
+        mapAdapter.setUpItems(locations)
         if timerCounting {
             startTimer()
         } else {
@@ -171,6 +193,10 @@ extension TrainingVM {
     
     func setTimeLabel(_ val: Int) {
         let time = secondsToHoursMinutesSeconds(val)
+        if time.1 - locationUpdatingTimer >= 1 {
+            mapAdapter.updateLocation()
+            locationUpdatingTimer = time.1
+        }
         delegate?.setTimeLabel(makeTimeString(hour: time.0, min: time.1, sec: time.2))
     }
     
@@ -200,6 +226,7 @@ extension TrainingVM {
     }
     
     func resetButtonDidTap() {
+        resetArr()
         setStopTime(date: nil)
         setStartTime(date: nil)
         delegate?.setTimeLabel(makeTimeString(hour: 0, min: 0, sec: 0))
@@ -219,5 +246,12 @@ extension TrainingVM {
     func setTimerCounting(_ val: Bool) {
         timerCounting = val
         userDataService.setTimerCounting(timerCounting: timerCounting)
+    }
+}
+
+extension TrainingVM: MapAdapterDelegate {
+    func returnCurrentLocation(latitude: [Double], longitude: [Double]) {
+        userDataService.setLastLocationLatitude(latitude: latitude)
+        userDataService.setLastLocationLongitude(longitude: longitude)
     }
 }

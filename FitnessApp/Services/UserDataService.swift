@@ -10,7 +10,7 @@ import Foundation
 final class UserDataService: UserDataServiceProtocol {
     
     private lazy var ud: UserDefaults = {
-       return UserDefaults()
+        return UserDefaults()
     }()
     
     func setIsRegisteredFlag(boolean: Bool) {
@@ -20,13 +20,13 @@ final class UserDataService: UserDataServiceProtocol {
     func setOnBoardingFlag(boolean: Bool) {
         ud.set(boolean, forKey: UserDefaultsEnum.onBoardingShowed)
     }
-
+    
     func saveUserEmail(email: String) {
         ud.set(email, forKey: UserDefaultsEnum.currentUserEmail)
     }
     
     func getUserEmail() -> String {
-       return ud.string(forKey: UserDefaultsEnum.currentUserEmail) ?? ""
+        return ud.string(forKey: UserDefaultsEnum.currentUserEmail) ?? ""
     }
     
     func getStartTime() -> Date? {
@@ -52,5 +52,21 @@ final class UserDataService: UserDataServiceProtocol {
     func setTimerCounting(timerCounting: Bool) {
         ud.set(timerCounting, forKey: UserDefaultsEnum.timerCounting)
     }
-
+    
+    func  setLastLocationLatitude(latitude: [Double]?) {
+        ud.set(latitude, forKey: UserDefaultsEnum.lastLocationLatitude)
+    }
+    
+    func  getLastLocationLatitude() -> [Double]? {
+        return ud.array(forKey: UserDefaultsEnum.lastLocationLatitude) as? [Double]
+    }
+    
+    func  setLastLocationLongitude (longitude: [Double]?) {
+        ud.set(longitude, forKey: UserDefaultsEnum.lastLocationLongitude)
+    }
+    
+    func  getLastLocationLongitude() -> [Double]? {
+        return ud.array(forKey: UserDefaultsEnum.lastLocationLongitude) as? [Double]
+    }
+    
 }

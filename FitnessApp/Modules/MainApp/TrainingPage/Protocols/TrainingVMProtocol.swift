@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import MapKit
 
 protocol TrainingVMProtocol {
     func setUpDelegate(_ delegate: TrainingVCDelegate)
+    func setUpMapView(_ mapView: MKMapView)
+    func setUpMapItems()
     func checkTimer()
     func startStopButtonDidTap()
     func resetButtonDidTap()

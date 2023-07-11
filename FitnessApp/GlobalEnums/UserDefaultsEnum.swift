@@ -17,4 +17,7 @@ enum UserDefaultsEnum {
     static var timerCounting = "timerCounting"
     
     static var trainingButtonIsSelected = "trainingButtonIsSelected"
+    
+    static var lastLocationLatitude = "lastLocationLatitude"
+    static var lastLocationLongitude = "lastLocationLongitude"
 }

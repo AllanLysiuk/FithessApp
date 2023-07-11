@@ -15,4 +15,9 @@ protocol TrainingUserDataServiceProtocol {
     func setStartTime(startTime: Date?)
     func setStopTime(stopTime: Date?)
     func setTimerCounting(timerCounting: Bool)
+    
+    func  setLastLocationLatitude(latitude: [Double]?)
+    func  getLastLocationLatitude() -> [Double]?
+    func  setLastLocationLongitude (longitude: [Double]?)
+    func  getLastLocationLongitude() -> [Double]?
 }

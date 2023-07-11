@@ -27,6 +27,8 @@
 		9D5881CE2A5852C2007B42A3 /* HKTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */; };
 		9D5881D02A5963C9007B42A3 /* TrainingVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881CF2A5963C9007B42A3 /* TrainingVCDelegate.swift */; };
 		9D5881D22A5B1D91007B42A3 /* TrainingUserDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881D12A5B1D90007B42A3 /* TrainingUserDataServiceProtocol.swift */; };
+		9D5881D52A5C4526007B42A3 /* MapAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881D42A5C4525007B42A3 /* MapAdapter.swift */; };
+		9D5881D72A5C4543007B42A3 /* MapAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5881D62A5C4543007B42A3 /* MapAdapterProtocol.swift */; };
 		9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616702A406D3C00B43125 /* AppDelegate.swift */; };
 		9D6616732A406D3C00B43125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6616722A406D3C00B43125 /* SceneDelegate.swift */; };
 		9D66167A2A406D4000B43125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6616792A406D4000B43125 /* Assets.xcassets */; };
@@ -173,6 +175,8 @@
 		9D5881CD2A5852C1007B42A3 /* HKTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKTypeEnum.swift; sourceTree = "<group>"; };
 		9D5881CF2A5963C9007B42A3 /* TrainingVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVCDelegate.swift; sourceTree = "<group>"; };
 		9D5881D12A5B1D90007B42A3 /* TrainingUserDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingUserDataServiceProtocol.swift; sourceTree = "<group>"; };
+		9D5881D42A5C4525007B42A3 /* MapAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAdapter.swift; sourceTree = "<group>"; };
+		9D5881D62A5C4543007B42A3 /* MapAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAdapterProtocol.swift; sourceTree = "<group>"; };
 		9D66166D2A406D3C00B43125 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6616702A406D3C00B43125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6616722A406D3C00B43125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -338,6 +342,15 @@
 				9D5881C72A580280007B42A3 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D5881D32A5C4504007B42A3 /* MapAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				9D5881D42A5C4525007B42A3 /* MapAdapter.swift */,
+				9D5881D62A5C4543007B42A3 /* MapAdapterProtocol.swift */,
+			);
+			path = MapAdapter;
 			sourceTree = "<group>";
 		};
 		9D6616642A406D3C00B43125 = {
@@ -528,6 +541,7 @@
 		9D6616CC2A458B8900B43125 /* TrainingPage */ = {
 			isa = PBXGroup;
 			children = (
+				9D5881D32A5C4504007B42A3 /* MapAdapter */,
 				9D6616CD2A458B9F00B43125 /* Protocols */,
 				9D6616D42A458C7F00B43125 /* TrainingVC.swift */,
 				9D6616D62A458E1A00B43125 /* TrainingVM.swift */,
@@ -965,6 +979,7 @@
 				9D66169C2A44481B00B43125 /* LoginVMProtocol.swift in Sources */,
 				9D5881D22A5B1D91007B42A3 /* TrainingUserDataServiceProtocol.swift in Sources */,
 				9D6616A32A444F1500B43125 /* RegisterVMProtocol.swift in Sources */,
+				9D5881D52A5C4526007B42A3 /* MapAdapter.swift in Sources */,
 				9D6616712A406D3C00B43125 /* AppDelegate.swift in Sources */,
 				9D75E2F02A4F5B7700628060 /* OnBoardingImagePickerAdapterProtocol.swift in Sources */,
 				9D75E2842A48C38B00628060 /* UIFont+Extension.swift in Sources */,
@@ -1012,6 +1027,7 @@
 				9D75E2EB2A4F5A4E00628060 /* ImageProfileVM.swift in Sources */,
 				9D75E2C12A4D84D700628060 /* GenderPageList.swift in Sources */,
 				9D75E2722A48BA3000628060 /* Container.swift in Sources */,
+				9D5881D72A5C4543007B42A3 /* MapAdapterProtocol.swift in Sources */,
 				9D6616BA2A44794300B43125 /* ForgotPasswordVM.swift in Sources */,
 				9D6616DF2A45B55800B43125 /* HistoryVMProtocol.swift in Sources */,
 				9D75E2DA2A4EBFFC00628060 /* PickerViewAdapterProtocol.swift in Sources */,
@@ -1202,6 +1218,11 @@
 				DEVELOPMENT_TEAM = 5H3Y5WAVX4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitnessApp/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to use your health information, in order to provide more individual information.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to use your health information, in order to provide more individual information.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Program requires GPS to track location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Program requires GPS to track location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Program requires GPS to track location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1230,6 +1251,11 @@
 				DEVELOPMENT_TEAM = 5H3Y5WAVX4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitnessApp/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to use your health information, in order to provide more individual information.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to use your health information, in order to provide more individual information.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Program requires GPS to track location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Program requires GPS to track location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Program requires GPS to track location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
