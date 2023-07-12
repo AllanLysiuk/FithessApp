@@ -12,5 +12,5 @@ protocol MapAdapterProtocol {
     func setUpMapView(_ mapView: MKMapView)
     func updateLocation()
     func setUpItems(_ items: [CLLocationCoordinate2D])
-   // func setUpDelegate(_ delegate: SettingsAdapterDelegate)
+    func setUpDelegate(_ delegate: MapAdapterDelegate)
 }

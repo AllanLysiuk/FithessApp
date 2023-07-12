@@ -59,6 +59,10 @@ extension MapAdapter: MapAdapterProtocol {
     
     func setUpItems(_ items: [CLLocationCoordinate2D]) {
         pathCoordinates = items
+        if pathCoordinates.count == 0 {
+            mapView?.removeAnnotations(mapView?.annotations ?? [])
+            mapView?.removeOverlays(mapView?.overlays ?? [])
+        }
         updateLocation()
     }
     
@@ -66,6 +70,10 @@ extension MapAdapter: MapAdapterProtocol {
         if CLLocationManager.locationServicesEnabled() {
             locationManager?.startUpdatingLocation()
         }
+    }
+    
+    func setUpDelegate(_ delegate: MapAdapterDelegate) {
+        self.delegate = delegate
     }
 }
 
@@ -90,7 +98,7 @@ extension MapAdapter: CLLocationManagerDelegate {
         if let userLocation = locations.last {
             let currentLocation = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
             pathCoordinates.append(currentLocation)
-            
+            print(pathCoordinates)
             let separatedCoordArr = convertToTwoArrays(coordinates: pathCoordinates)
             delegate?.returnCurrentLocation(latitude: separatedCoordArr.0, longitude: separatedCoordArr.1)
             

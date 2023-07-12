@@ -47,6 +47,7 @@ final class TrainingVM: TrainingVMProtocol {
     
     func setUpMapView(_ mapView: MKMapView) {
         mapAdapter.setUpMapView(mapView)
+        mapAdapter.setUpDelegate(self)
     }
     
     func setUpMapItems() {
@@ -128,6 +129,7 @@ final class TrainingVM: TrainingVMProtocol {
     private func resetArr() {
         userDataService.setLastLocationLatitude(latitude: [])
         userDataService.setLastLocationLongitude(longitude: [])
+        mapAdapter.setUpItems([])
     }
 }
 
