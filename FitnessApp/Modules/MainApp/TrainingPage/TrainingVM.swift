@@ -100,7 +100,7 @@ final class TrainingVM: TrainingVMProtocol {
             }
             
             group.enter()
-            healthKitService.loadInfoByType(.speed, since: startDate, to: .now) { res, error in
+            healthKitService.loadWalkingInfo(since: startDate, to: .now) { res, error in
                 if let error = error {
                     print(error.localizedDescription + "  3")
                 } else {
@@ -231,6 +231,7 @@ extension TrainingVM {
         resetArr()
         setStopTime(date: nil)
         setStartTime(date: nil)
+        locationUpdatingTimer = 0
         delegate?.setTimeLabel(makeTimeString(hour: 0, min: 0, sec: 0))
         stopTimer()
     }

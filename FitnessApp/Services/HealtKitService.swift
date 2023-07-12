@@ -51,11 +51,30 @@ final class HealthKitService: HealthKitServiceProtocol {
                 completion(nil, error)
                 return
             }
-            HKUnit.count()
-            HKUnit.meter()
-            HKUnit.meter().unitDivided(by: HKUnit.second())
             if let quantity = result.sumQuantity() {
                 resultCount = quantity.doubleValue(for: type.getHKUnit())
+            }
+            DispatchQueue.main.async {
+                completion(resultCount, nil)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    func loadWalkingInfo( since startTime: Date, to endTime: Date, completion: @escaping ((Double?, Error?) -> Void)) {
+        guard let quantityType = HKQuantityType.quantityType(forIdentifier: .walkingSpeed) else {
+            return
+        }
+        let predicate = HKQuery.predicateForSamples(withStart: startTime, end: endTime, options: .strictStartDate)
+        
+        let query = HKStatisticsQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: .discreteAverage) { (_, result, error) in
+            var resultCount = 0.0
+            guard let result = result else {
+                completion(nil, error)
+                return
+            }
+            if let quantity = result.averageQuantity() {
+                resultCount = quantity.doubleValue(for: .meter().unitDivided(by: .second()))
             }
             DispatchQueue.main.async {
                 completion(resultCount, nil)

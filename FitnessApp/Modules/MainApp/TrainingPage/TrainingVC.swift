@@ -74,6 +74,10 @@ extension TrainingVC {
     }
     
     @objc private func resetButtonDidTap() {
+        stepsCounterLabel.text = "0.0"
+        distanceWalkingCounterLabel.text = "0.0"
+        caloriesCounterLabel.text = "0.0"
+        avgSpeedCounterLabel.text = "0.0"
         viewModel.resetButtonDidTap()
     }
 
@@ -369,14 +373,25 @@ extension TrainingVC: TrainingVCDelegate {
     
     func endAnimatingIndictor(distance: Double?, steps: Double?, calories: Double?, avgSpeed: Double?) {
         self.view.isUserInteractionEnabled = true
-        let dist = distance ?? 0.0
-        let stp = steps ?? 0.0
-        let cal = calories ?? 0.0
-        let avg = avgSpeed ?? 0.0
+        var dist = (distance ?? 0.0)
+        var stp = steps ?? 0.0
+        var cal = calories ?? 0.0
+        var avg = avgSpeed ?? 0.0
+        if let previousDist = Double(distanceWalkingCounterLabel.text ?? "0.0"),
+           let previousSteps = Double(stepsCounterLabel.text ?? "0.0"),
+           let previousCal = Double(caloriesCounterLabel.text ?? "0.0"),
+           let previousSpeed = Double(avgSpeedCounterLabel.text ?? "0.0")
+        {
+            dist += previousDist
+            stp += previousSteps
+            cal += previousCal
+            avg += previousSpeed
+        }
+        
         distanceWalkingCounterLabel.text = String(describing: dist)
         stepsCounterLabel.text = String(describing: stp)
         caloriesCounterLabel.text = String(describing: cal)
-        avgSpeedCounterLabel.text = String(describing: avg)
+        avgSpeedCounterLabel.text = String(describing: avg / 2)
         spinner.stopAnimating()
     }
     
