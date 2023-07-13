@@ -377,6 +377,7 @@ extension TrainingVC: TrainingVCDelegate {
         var stp = steps ?? 0.0
         var cal = calories ?? 0.0
         var avg = avgSpeed ?? 0.0
+        var prevSpeed: Double = 0.0
         if let previousDist = Double(distanceWalkingCounterLabel.text ?? "0.0"),
            let previousSteps = Double(stepsCounterLabel.text ?? "0.0"),
            let previousCal = Double(caloriesCounterLabel.text ?? "0.0"),
@@ -385,13 +386,17 @@ extension TrainingVC: TrainingVCDelegate {
             dist += previousDist
             stp += previousSteps
             cal += previousCal
-            avg += previousSpeed
+            prevSpeed = previousSpeed
         }
-        
+        if (prevSpeed != 0) && (avg != 0) {
+            avg += prevSpeed
+            avgSpeedCounterLabel.text = String(describing: avg / 2 )
+        }
         distanceWalkingCounterLabel.text = String(describing: dist)
         stepsCounterLabel.text = String(describing: stp)
         caloriesCounterLabel.text = String(describing: cal)
-        avgSpeedCounterLabel.text = String(describing: avg / 2)
+        avgSpeedCounterLabel.text = String(describing: avg )
+       
         spinner.stopAnimating()
     }
     
