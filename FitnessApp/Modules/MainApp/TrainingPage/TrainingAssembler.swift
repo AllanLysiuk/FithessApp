@@ -16,7 +16,7 @@ final class TrainingAssembler {
     }
     
     private static func makeViewModel(coordinator: TrainingCoordinatorProtocol,container: Container) -> TrainingVMProtocol {
-        return TrainingVM(coordinator: coordinator, healthKitService: makeHeakthKitService(container: container), userDataService: makeUserDataService(container: container), mapAdapter: makeMapAdapter())
+        return TrainingVM(coordinator: coordinator, healthKitService: makeHeakthKitService(container: container), userDataService: makeUserDataService(container: container), mapAdapter: makeMapAdapter(), coreDataService: makeCoreDataService(container: container))
     }
     
     private static func makeHeakthKitService(container: Container) -> HealthKitServiceProtocol {
@@ -27,7 +27,13 @@ final class TrainingAssembler {
         return container.resolve()
     }
     
+    private static func makeCoreDataService(container: Container) -> CoreDataServiceProtocol {
+        return container.resolve()
+    }
+    
     private static func makeMapAdapter() -> MapAdapterProtocol {
         return MapAdapter()
     }
+    
+    
 }

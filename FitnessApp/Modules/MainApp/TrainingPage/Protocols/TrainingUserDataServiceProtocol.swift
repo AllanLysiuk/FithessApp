@@ -8,6 +8,8 @@
 import Foundation
 
 protocol TrainingUserDataServiceProtocol {
+    func getUserEmail() -> String
+    
     func getStartTime() -> Date?
     func getStopTime() -> Date?
     func getTimerCounting() -> Bool

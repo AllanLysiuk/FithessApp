@@ -27,6 +27,7 @@ final class TrainingVC: UIViewController {
     private var betweenButtonsView: UIView!
     private var startButton: UIButton!
     private var resetButton: UIButton!
+    private var testButton: UIButton!
     
     private var viewModel: TrainingVMProtocol
     
@@ -60,13 +61,12 @@ final class TrainingVC: UIViewController {
 extension TrainingVC {
     private func setUpActions() {
         startButton.addTarget(self,
-                             action: #selector(startButtonDidTap),
-                             for: .touchUpInside)
+                              action: #selector(startButtonDidTap),
+                              for: .touchUpInside)
         resetButton.addTarget(self,
                               action: #selector(resetButtonDidTap),
                               for: .touchUpInside)
     }
-    
     
     @objc private func startButtonDidTap() {
         startButton.isSelected = !startButton.isSelected
@@ -74,18 +74,26 @@ extension TrainingVC {
     }
     
     @objc private func resetButtonDidTap() {
-        stepsCounterLabel.text = "0.0"
+        
+        if let time = timeCounterLabel.text,
+           let dist = Double(distanceWalkingCounterLabel.text ?? "0.0"),
+           let steps = Int64(stepsCounterLabel.text ?? "0"),
+           let calories = Double(caloriesCounterLabel.text ?? "0.0"),
+           let avgSpeed = Double(avgSpeedCounterLabel.text ?? "0.0") {
+            viewModel.resetButtonDidTap(time: time, distance: dist, steps: steps, calories: calories, avgSpeed: avgSpeed)
+        }
+        stepsCounterLabel.text = "0"
         distanceWalkingCounterLabel.text = "0.0"
         caloriesCounterLabel.text = "0.0"
         avgSpeedCounterLabel.text = "0.0"
-        viewModel.resetButtonDidTap()
+        
     }
-
+    
 }
 
 // MARK: Set up UI
 extension TrainingVC {
-
+    
     private func setUpViewsAndConstraints() {
         view.backgroundColor = .white
         
@@ -161,7 +169,7 @@ extension TrainingVC {
         ])
         
     }
-
+    
     private func setUpDistanceWalkingLabel() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -209,7 +217,7 @@ extension TrainingVC {
     private func setUpStepsCounterLabel() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.setupLabel(text: "0.0", color: .black, fontName: (.mSemiBold18 ?? .systemFont(ofSize: 18, weight: .semibold)) )
+        label.setupLabel(text: "0", color: .black, fontName: (.mSemiBold18 ?? .systemFont(ofSize: 18, weight: .semibold)) )
         view.addSubview(label)
         self.stepsCounterLabel = label
         
@@ -330,7 +338,7 @@ extension TrainingVC {
         btn.setTitle("Start", for: .normal)
         btn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         btn.backgroundColor = UIColor(red: 114.0 / 255.0, green:  101.0 / 255.0, blue:  227.0 / 255.0, alpha: 1)
-
+        
         btn.setTitle("Stop", for: .selected)
         
         btn.layer.cornerRadius = 10.0
@@ -374,12 +382,12 @@ extension TrainingVC: TrainingVCDelegate {
     func endAnimatingIndictor(distance: Double?, steps: Double?, calories: Double?, avgSpeed: Double?) {
         self.view.isUserInteractionEnabled = true
         var dist = (distance ?? 0.0)
-        var stp = steps ?? 0.0
+        var stp = Int(steps ?? 0.0)
         var cal = calories ?? 0.0
         var avg = avgSpeed ?? 0.0
         var prevSpeed: Double = 0.0
         if let previousDist = Double(distanceWalkingCounterLabel.text ?? "0.0"),
-           let previousSteps = Double(stepsCounterLabel.text ?? "0.0"),
+           let previousSteps = Int(stepsCounterLabel.text ?? "0"),
            let previousCal = Double(caloriesCounterLabel.text ?? "0.0"),
            let previousSpeed = Double(avgSpeedCounterLabel.text ?? "0.0")
         {
@@ -396,7 +404,7 @@ extension TrainingVC: TrainingVCDelegate {
         stepsCounterLabel.text = String(describing: stp)
         caloriesCounterLabel.text = String(describing: cal)
         avgSpeedCounterLabel.text = String(describing: avg )
-       
+        
         spinner.stopAnimating()
     }
     

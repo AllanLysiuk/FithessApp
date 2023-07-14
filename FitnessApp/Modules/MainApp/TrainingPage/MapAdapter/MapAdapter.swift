@@ -29,22 +29,16 @@ final class MapAdapter: NSObject {
         locationManager?.allowsBackgroundLocationUpdates = true
         locationManager?.requestAlwaysAuthorization()
     }
-    
-//    private func testCoordsCreation() {
-//        let coords1 = CLLocationCoordinate2D(latitude: 53.935513, longitude: 27.5810050)
-//        let coords2 = CLLocationCoordinate2D(latitude: 53.930333, longitude: 27.5756621)
-//        let coords3 = CLLocationCoordinate2D(latitude: 53.925785, longitude: 27.5710916)
-//        let coords4 = CLLocationCoordinate2D(latitude: 53.927655, longitude: 27.5667572)
-//        testcoords = [coords1,coords2,coords3,coords4]
-//        determineCurrentLocation()
-//    }
+
     
     private func convertToTwoArrays(coordinates: [CLLocationCoordinate2D]) -> ([Double], [Double]) {
         var latitudeArr: [Double] = []
         var lonitudeArr: [Double] = []
-        coordinates.forEach { elem in
-            latitudeArr.append(elem.latitude)
-            lonitudeArr.append(elem.longitude)
+        if coordinates.count > 1 {
+            coordinates.forEach { elem in
+                latitudeArr.append(elem.latitude)
+                lonitudeArr.append(elem.longitude)
+            }
         }
         return (latitudeArr, lonitudeArr)
     }
@@ -67,8 +61,10 @@ extension MapAdapter: MapAdapterProtocol {
     }
     
     func updateLocation() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager?.startUpdatingLocation()
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager?.startUpdatingLocation()
+            }
         }
     }
     

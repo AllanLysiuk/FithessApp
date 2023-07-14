@@ -13,7 +13,9 @@ final class TrainingVM: TrainingVMProtocol {
     private weak var coordinator: TrainingCoordinatorProtocol?
     private var healthKitService: TrainingHealthKitServiceProtocol
     private var userDataService: TrainingUserDataServiceProtocol
+    private var coreDataService: TrainingCoreDataServiceProtocol
     private var mapAdapter: MapAdapterProtocol
+    
     private weak var delegate: TrainingVCDelegate?
     private var startDate = Date()
     
@@ -33,12 +35,14 @@ final class TrainingVM: TrainingVMProtocol {
         coordinator: TrainingCoordinatorProtocol,
         healthKitService: TrainingHealthKitServiceProtocol,
         userDataService: TrainingUserDataServiceProtocol,
-        mapAdapter: MapAdapterProtocol
+        mapAdapter: MapAdapterProtocol,
+        coreDataService: TrainingCoreDataServiceProtocol
     ) {
         self.coordinator = coordinator
         self.healthKitService = healthKitService
         self.userDataService = userDataService
         self.mapAdapter = mapAdapter
+        self.coreDataService = coreDataService
     }
     
     func setUpDelegate(_ delegate: TrainingVCDelegate) {
@@ -131,6 +135,24 @@ final class TrainingVM: TrainingVMProtocol {
         userDataService.setLastLocationLongitude(longitude: [])
         mapAdapter.setUpItems([])
     }
+    
+    private func saveRunToCoreData(time: String, distance: Double, steps: Int64, calories: Double, avgSpeed: Double) {
+        let userEmail = userDataService.getUserEmail()
+
+        var runModel = RunModel(time: time, distance: distance, steps: steps, calories: calories, avgSpeed: avgSpeed, latitudeArr: [], longitudeArr: [], date: Date())
+        locations.forEach { coord2D in
+            runModel.latitudeArr.append(coord2D.latitude)
+            runModel.longitudeArr.append(coord2D.longitude)
+        }
+        
+        coreDataService.addNewRunToProfile(profileEmail: userEmail, run: runModel)
+    }
+    
+//    func printRuns() {
+//        let userEmail = userDataService.getUserEmail()
+//        let arr = coreDataService.loadAccRuns(userEmail)
+//        print(arr)
+//    }
 }
 
 //MARK: Timer
@@ -144,6 +166,7 @@ extension TrainingVM {
         if timerCounting {
             startTimer()
         } else {
+            
             stopTimer()
             if let start = startTime {
                 if let stop = stopTime {
@@ -178,7 +201,9 @@ extension TrainingVM {
     }
     
     func startTimer() {
+       // mapAdapter.setUpItems(locations)
         scheduledTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(refreshValue), userInfo: nil, repeats: true)
+        
         setTimerCounting(true)
         delegate?.setButtonSelection(isSelected: true)
     }
@@ -227,7 +252,8 @@ extension TrainingVM {
         delegate?.setButtonSelection(isSelected: false)
     }
     
-    func resetButtonDidTap() {
+    func resetButtonDidTap(time: String, distance: Double, steps: Int64, calories: Double, avgSpeed: Double) {
+        saveRunToCoreData(time: time, distance: distance, steps: steps, calories: calories, avgSpeed: avgSpeed)
         resetArr()
         setStopTime(date: nil)
         setStartTime(date: nil)

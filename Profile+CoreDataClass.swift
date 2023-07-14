@@ -2,7 +2,7 @@
 //  Profile+CoreDataClass.swift
 //  FitnessApp
 //
-//  Created by Allan on 4.07.23.
+//  Created by Аллан Лысюк on 14.07.23.
 //
 //
 

@@ -30,7 +30,7 @@ protocol UserDataServiceProtocol: AnyObject, LoginUserDataServiceProtocol, OnBoa
 
 protocol ImageServiceProtocol: AnyObject, OnBoardingImageServiceProtocol, ProfileImageServiceProtocol { }
 
-protocol CoreDataServiceProtocol: AnyObject, OnBoardingCoreDataServiceProtocol, ProfileCoreDataServiceProtocol, LoginCoreDataServiceProtocol { }
+protocol CoreDataServiceProtocol: AnyObject, OnBoardingCoreDataServiceProtocol, ProfileCoreDataServiceProtocol, LoginCoreDataServiceProtocol, TrainingCoreDataServiceProtocol { }
 
 protocol HealthKitServiceProtocol: AnyObject, TrainingHealthKitServiceProtocol {}
 

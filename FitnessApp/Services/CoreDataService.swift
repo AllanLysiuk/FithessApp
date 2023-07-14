@@ -20,6 +20,7 @@ final class CoreDataService: CoreDataServiceProtocol {
             newAccount.weight = Double(profileModel.weight)
             newAccount.imagePath = profileModel.profileImagePath
             newAccount.email = profileModel.email
+            newAccount.runs = []
             CoreDataStack.shared.saveContext(context: context)
         }
     }
@@ -55,5 +56,52 @@ final class CoreDataService: CoreDataServiceProtocol {
         } else {
             return false
         }
+    }
+}
+
+extension CoreDataService {
+    func addNewRunToProfile(profileEmail: String, run: RunModel) {
+        let acc = loadAccInfoByEmail(profileEmail)
+        let context = CoreDataStack.shared.backgroundContext
+        if let acc = acc {
+            createRun(run: run) { newRun in
+                context.perform {
+                    acc.addToRuns(newRun)
+                    CoreDataStack.shared.saveContext(context: context)
+                }
+            }
+        }
+    }
+    
+    private func createRun(run: RunModel, completion: @escaping ((Run) -> Void)){
+        let context = CoreDataStack.shared.backgroundContext
+        context.perform {
+            let newRun = Run(context: context)
+            newRun.avgSpeed = run.avgSpeed
+            newRun.calories = run.calories
+            newRun.date = run.date
+            newRun.distance = run.distance
+            newRun.latitudeArr = run.latitudeArr
+            newRun.longitudeArr = run.longitudeArr
+            newRun.steps = run.steps
+            newRun.time = run.time
+            completion(newRun)
+            CoreDataStack.shared.saveContext(context: context)
+        }
+    }
+    
+    func loadAccRuns(_ email: String) -> [Run]? {
+        let request = Profile.fetchRequest()
+        request.predicate = NSPredicate(format: "\(#keyPath(Profile.email)) == %@", email)
+        request.returnsObjectsAsFaults = false
+        let profiles = try? CoreDataStack.shared.backgroundContext.fetch(request)
+        let acc = profiles?.first
+        return acc?.runsArray
+    }
+    
+    func deleteRun(run: Run) {
+        let context = CoreDataStack.shared.backgroundContext
+        context.delete(run)
+        try? context.save()
     }
 }

@@ -14,6 +14,6 @@ protocol TrainingVMProtocol {
     func setUpMapItems()
     func checkTimer()
     func startStopButtonDidTap()
-    func resetButtonDidTap()
+    func resetButtonDidTap(time: String, distance: Double, steps: Int64, calories: Double, avgSpeed: Double)
     func startButonDidTap(isSelected: Bool)
 }
